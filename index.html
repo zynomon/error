@@ -5,6 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>error.os</title>
   <style>
+    /* Error screen styles */
+    #error-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000000;
+      color: #ff0000;
+      font-family: 'Courier New', monospace;
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeOut 2s ease-in-out forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    /* Main splash styles */
     body {
       margin: 0;
       background: radial-gradient(circle at center, #0f0f0f, #000000);
@@ -51,12 +77,42 @@
     .links a:hover {
       color: #ffffff;
     }
+
+    .discord {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    .discord a {
+      color: #7289da;
+      text-decoration: none;
+    }
+
+    .discord a:hover {
+      color: #ffffff;
+    }
   </style>
 </head>
 <body>
+  <!-- Error animation screen -->
+  <div id="error-screen">
+    CRITICAL ERROR: Kernel panic at 0x0000F1A7
+  </div>
+
+  <!-- Main splash content -->
   <h1>error.os</h1>
   <div class="tagline">Born from failure. Built for control.</div>
   <div class="blink">_</div>
   <div class="links" style="margin-top: 3em;">
     <a href="#errde">err.DE</a>
     <a href="#wayerr">wayerr.deai</a>
+    <a href="https://github.com/zynomon/error" target="_blank">GitHub</a>
+  </div>
+  <div class="discord">
+    Join the community: <a href="https://discord.gg/Jn7FBwu99F" target="_blank">discord.gg/Jn7FBwu99F</a>
+  </div>
+</body>
+</html>
+
