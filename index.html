@@ -1,218 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  />
-  <title>error os</title>
-  <meta name="color-scheme" content="dark light" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>error.os</title>
   <style>
-    :root {
-      /* Change this to adjust how long the panic overlay stays visible */
-      --panic-duration: 2000ms;
-      --bg: #0b0b0b;
-      --fg: #e6e6e6;
-      --accent: #7aa2ff;
+    /* Error screen styles */
+    #error-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000000;
+      color: #ff0000;
+      font-family: 'Courier New', monospace;
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeOut 2s ease-in-out forwards;
+      animation-delay: 1s;
     }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
 
+    /* Main splash styles */
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-                   "Noto Sans", "Liberation Sans", Arial, "Apple Color Emoji",
-                   "Segoe UI Emoji";
-    }
-
-    /* ===== Kernel panic overlay ===== */
-    .panic-overlay {
-      position: fixed;
-      inset: 0;
-      background: #000;
-      color: #d8d8d8;
-      font: 14px/1.35 "SFMono-Regular", Menlo, Consolas,
-            "Liberation Mono", monospace;
-      padding: 20px 22px;
-      display: grid;
-      align-content: start;
-      gap: 2px;
-      z-index: 9999;
+      background: radial-gradient(circle at center, #0f0f0f, #000000);
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       overflow: hidden;
     }
 
-    /* Scanline veneer */
-    .panic-overlay::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        repeating-linear-gradient(
-          to bottom,
-          rgba(255,255,255,0.05) 0 2px,
-          rgba(0,0,0,0) 2px 4px
-        );
-      mix-blend-mode: overlay;
-      pointer-events: none;
+    h1 {
+      font-size: 3em;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.2em;
     }
 
-    .panic-overlay .line {
-      opacity: 0;
-      white-space: pre;
-      animation: reveal steps(1, end) forwards;
+    .tagline {
+      font-size: 1.2em;
+      color: #888;
+      margin-bottom: 2em;
     }
 
-    /* Staggered reveal (feels like a real dump bursting in) */
-    @keyframes reveal { to { opacity: 1; } }
-
-    /* Blink cursor */
-    .cursor {
-      display: inline-block;
-      width: 0.6em;
-      height: 1em;
-      background: currentColor;
-      vertical-align: -0.15em;
-      animation: blink 1s steps(1, end) infinite;
-    }
-    @keyframes blink { 50% { opacity: 0; } }
-
-    /* Fade out when time's up */
-    .fade-out {
-      animation: fadeOut 260ms ease forwards;
-    }
-    @keyframes fadeOut {
-      to { opacity: 0; visibility: hidden; }
+    .blink {
+      font-weight: bold;
+      font-size: 2em;
+      animation: blink 1s steps(2, start) infinite;
     }
 
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      .panic-overlay .line { animation: none; opacity: 1; }
-      .cursor { animation: none; }
-      .fade-out { transition: none; }
+    @keyframes blink {
+      to { visibility: hidden; }
     }
 
-    /* ===== Main page ===== */
-    .page {
-      min-height: 100dvh;
-      display: grid;
-      place-content: center;
-      text-align: center;
-      gap: 18px;
-      padding: 32px;
+    .links a {
+      color: #00ffcc;
+      text-decoration: none;
+      margin: 0 1em;
+      font-size: 1em;
+      transition: color 0.3s ease;
     }
 
-    .title {
-      font-size: clamp(28px, 5vw, 56px);
-      letter-spacing: 0.02em;
-      font-weight: 700;
+    .links a:hover {
+      color: #ffffff;
     }
 
     .discord {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      color: #0b0b0b;
-      background: var(--accent);
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: transform 120ms ease, box-shadow 120ms ease;
-      box-shadow: 0 6px 20px rgba(122,162,255,0.25);
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #888;
     }
-    .discord:hover { transform: translateY(-1px); }
-    .discord:active { transform: translateY(0); }
 
-    .hint {
-      opacity: 0.7;
-      font-size: 14px;
+    .discord a {
+      color: #7289da;
+      text-decoration: none;
+    }
+
+    .discord a:hover {
+      color: #ffffff;
     }
   </style>
 </head>
 <body>
-  <!-- Kernel panic overlay -->
-  <div class="panic-overlay" id="panic">
-    <div class="line" style="animation-duration: 200ms;  animation-delay: 40ms;">
-      Linux version 6.1.0-erroros (gcc 13.2.0) #1 SMP PREEMPT_DYNAMIC x86_64
-    </div>
-    <div class="line" style="animation-duration: 200ms;  animation-delay: 120ms;">
-      Hardware name: error.os Vega11/AM4
-    </div>
-    <div class="line" style="animation-duration: 200ms;  animation-delay: 200ms;">
-      RIP: 0010:panic+0x123/0x2a0
-    </div>
-    <div class="line" style="animation-duration: 200ms;  animation-delay: 280ms;">
-      Code: 0f 0b e8 3f 2a 00 00 48 8b 05 2f 34 f2 ff 48 85 c0 74 0a <0f> 0b 48 8b 5d c8
-    </div>
-    <div class="line" style="animation-duration: 200ms;  animation-delay: 360ms;">
-      RSP: 0018:ffff88807a4d3d80 EFLAGS: 00010282
-    </div>
-    <div class="line" style="animation-duration: 200ms;  animation-delay: 440ms;">
-      RAX: 0000000000000000 RBX: ffff88807a4d3e10 RCX: 0000000000000001
-    </div>
-    <div class="line" style="animation-duration: 200ms;  animation-delay: 520ms;">
-      RDX: ffff88806c2d7000 RSI: 0000000000000000 RDI: ffffffff81a00100
-    </div>
-    <div class="line" style="animation-duration: 200ms;  animation-delay: 600ms;">
-      CR2: 0000000000000000 CR3: 0000000103a2c000 CR4: 0000000000750ef0
-    </div>
-    <div class="line" style="animation-duration: 200ms;  animation-delay: 760ms;">
-      Kernel panic - not syncing: Fatal exception
-    </div>
-    <div class="line" style="animation-duration: 200ms;  animation-delay: 940ms;">
-      Kernel Offset: 0x2b400000 from 0xffffffff81000000 (relocation range: ffffffff80000000-ffffffffbfffffff)
-    </div>
-    <div class="line" style="animation-duration: 200ms;  animation-delay: 1120ms;">
-      ---[ end Kernel panic - not syncing: Fatal exception ]---
-      <span class="cursor" aria-hidden="true"></span>
-    </div>
+  <!-- Error animation screen -->
+  <div id="error-screen">
+    CRITICAL ERROR: Kernel panic at 0x0000F1A7
   </div>
 
-  <!-- Main content -->
-  <main class="page" aria-live="polite">
-    <h1 class="title">error os coming soon..</h1>
-    <a
-      class="discord"
-      href="https://discord.gg/Jn7FBwu99F"
-      target="_blank"
-      rel="noopener"
-      aria-label="Join the error os Discord"
-    >
-      <!-- Simple Discord glyph -->
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M20.317 4.369A19.791 19.791 0 0 0 16.558 3c-.2.36-.43.85-.589 1.234a18.293 18.293 0 0 0-4.0 0c-.16-.384-.39-.874-.589-1.234A19.736 19.736 0 0 0 6.01 4.37C3.18 8.54 2.43 12.59 2.74 16.58a19.96 19.96 0 0 0 5.99 3.07c.48-.66.91-1.36 1.28-2.09-.7-.27-1.36-.6-1.98-.99.17-.12.34-.24.5-.37a13.98 13.98 0 0 0 8.95 0c.17.13.33.25.5.37-.62.39-1.28.72-1.98.99.37.73.8 1.43 1.29 2.09a19.86 19.86 0 0 0 5.98-3.07c.32-3.98-.41-8.04-3.42-12.21ZM9.7 14.65c-.88 0-1.6-.83-1.6-1.85s.72-1.85 1.6-1.85 1.6.83 1.6 1.85-.72 1.85-1.6 1.85Zm4.6 0c-.88 0-1.6-.83-1.6-1.85s.72-1.85 1.6-1.85 1.6.83 1.6 1.85-.72 1.85-1.6 1.85Z"/>
-      </svg>
-      Join Discord
-    </a>
-    <div class="hint">stay tuned</div>
-  </main>
-
-  <script>
-    // Hide the panic overlay after the configured duration
-    window.addEventListener("load", () => {
-      const overlay = document.getElementById("panic");
-      const duration = getComputedStyle(document.documentElement)
-        .getPropertyValue("--panic-duration")
-        .trim();
-      const ms = Number(duration.replace("ms","").replace("s","000"));
-
-      const hide = () => {
-        overlay.classList.add("fade-out");
-        overlay.addEventListener("animationend", () => {
-          overlay.remove();
-        }, { once: true });
-      };
-
-      setTimeout(hide, isNaN(ms) ? 2000 : ms);
-
-      // Optional: allow user to skip by pressing any key or clicking
-      overlay.addEventListener("click", hide, { once: true });
-      overlay.addEventListener("keydown", hide, { once: true });
-    });
-  </script>
+  <!-- Main splash content -->
+  <h1>error.os</h1>
+  <div class="tagline">Born from failure. Built for control.</div>
+  <div class="blink">_</div>
+  <div class="links" style="margin-top: 3em;">
+    <a href="#errde">err.DE</a>
+    <a href="#wayerr">wayerr.deai</a>
+    <a href="https://github.com/zynomon/error" target="_blank">GitHub</a>
+  </div>
+  <div class="discord">
+    Join the community: <a href="https://discord.gg/Jn7FBwu99F" target="_blank">discord.gg/Jn7FBwu99F</a>
+  </div>
 </body>
 </html>
