@@ -8,6 +8,15 @@
 
 
      
+/* CSS */
+#tracker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+  z-index: 9999;
+}
 
     /* Main splash styles */
     body {
@@ -65,6 +74,8 @@
 </head>
 <body>
 
+<!-- Inside index.html -->
+<script src="cursor-tracker.js"></script>
 
   <!-- Main splash content -->
   <h1>error.os</h1>
@@ -87,3 +98,9 @@
 </body>
 </html>
 
+<script>
+  document.addEventListener('mousemove', (e) => {
+    const tracker = document.getElementById('tracker');
+    tracker.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+</script>
