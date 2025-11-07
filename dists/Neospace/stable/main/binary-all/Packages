@@ -1,0 +1,34 @@
+Package: calamares-settings-error
+Architecture: all
+Version: 1.0
+Priority: optional
+Section: utils
+Maintainer: Zynomon aelius
+Installed-Size: 225
+Provides: calamares-settings
+Depends: calamares, rsync, cryptsetup, libglib2.0-bin, keyutils, pkexec, qml-module-qtquick-window2, qml-module-qtquick2, dconf-gsettings-backend | gsettings-backend
+Filename: dists/Neospace/stable/main/binary-all/calamares-settings-error.deb
+Size: 3170840
+MD5sum: d7cc815832013cc897dc7c1920cbcf6a
+SHA1: 70b0dc792e6fe7c95096ff37612fe5b1e0e92d54
+SHA256: aabd8721c8f356d883d32391985a3843c8cc9eae8ca97542db3db59781a10d75
+SHA512: 36928dd86ee6249a5edddd5e473de7696ccd1fa6da8bddea148350314b917f72fc480bb345126afcab378a81aa1e64f7577b2ab44641b6913becf4736c5e8c4d
+Homepage: https://github.com/zynomon/error
+Description: error.os calamares theme for neospace 2025
+
+Package: error.base
+Architecture: all
+Version: 1.1
+Priority: required
+Essential: yes
+Maintainer: Zynomon Aelius
+Provides: bibata-cursor-theme, errpaper
+Depends: plasma-workspace, yakuake, kde-cli-tools, plasma-desktop, qt6-style-kvantum, plymouth, plymouth-themes, sddm
+Filename: dists/Neospace/stable/main/binary-all/error.base.deb
+Size: 52269788
+MD5sum: c02af9bb4361088096a73e7461998a74
+SHA1: fcaeb58c1b3041d7e12c1135c6aa876c4f9fdd4f
+SHA256: ab98b3b8bbaf07eac4a54488dfcf597c14c3901c80d47c5ccb5d18f323abee51
+SHA512: 949f15c9111974971158d0aec2b2173fcf2cbec621a4a3843980e45f1355402ed77ebf49d4872492dfc50ec11319758da5892797a84bf492be4d1ff37b95761a
+Description: Monochrome KDE base for error.os A full-fledged dark and grey themed KDE desktop foundation. This package forms the expressive core of error.os, combining visual minimalism with modular intent. it contains Bash configuration, Monochrome KDE Plasma 6 theme, Pre-configured yakuake terminal, Kvantum Qt6 styling,Custom Plymouth boot splash,SDDM display manager configuration, a minimal version of Bibata cursor theme, GTK3 integration - so in conclusion Removal is strongly discouraged, as it may destabilize the operating system.
+
