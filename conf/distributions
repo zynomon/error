@@ -1,7 +1,7 @@
 Origin: error.os
 Label: error
 Suite: stable
-Codename: Neospace
+Codename: stable
 Architectures: amd64 all
 Components: main
-Description: error.os repo
+Description: error.os APT archive
