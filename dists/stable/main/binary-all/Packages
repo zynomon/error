@@ -25,10 +25,10 @@ Maintainer: Zynomon Aelius
 Provides: bibata-cursor-theme, errpaper
 Depends: plasma-workspace, yakuake, kde-cli-tools, plasma-desktop, qt6-style-kvantum, plymouth, plymouth-themes, sddm
 Filename: dists/stable/main/binary-all/error.base.deb
-Size: 52269788
-MD5sum: c02af9bb4361088096a73e7461998a74
-SHA1: fcaeb58c1b3041d7e12c1135c6aa876c4f9fdd4f
-SHA256: ab98b3b8bbaf07eac4a54488dfcf597c14c3901c80d47c5ccb5d18f323abee51
-SHA512: 949f15c9111974971158d0aec2b2173fcf2cbec621a4a3843980e45f1355402ed77ebf49d4872492dfc50ec11319758da5892797a84bf492be4d1ff37b95761a
+Size: 52269880
+MD5sum: 4583a2c4c29f8afb7ad3f04f0f4bee01
+SHA1: 675373701c2686d1f38f728ef86395c0a179be9a
+SHA256: 8466d1d045cb1ac997ebc3c5f189a7ad39b483f6c6feaab85ba93a34d11d9f7e
+SHA512: 75b61d5cb1f1fcf20655b574a27c9a276248ec601409a3d946a20a234de6178e6bfae1da7cc7448f55a3b892799295019ea8f302022025de8e83a6bcef3c9ac3
 Description: Monochrome KDE base for error.os A full-fledged dark and grey themed KDE desktop foundation. This package forms the expressive core of error.os, combining visual minimalism with modular intent. it contains Bash configuration, Monochrome KDE Plasma 6 theme, Pre-configured yakuake terminal, Kvantum Qt6 styling,Custom Plymouth boot splash,SDDM display manager configuration, a minimal version of Bibata cursor theme, GTK3 integration - so in conclusion Removal is strongly discouraged, as it may destabilize the operating system.
 
