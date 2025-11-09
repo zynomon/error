@@ -3,7 +3,7 @@ a set of operating systems based on unix kernel
 home page of upcoming error.os 
 # https://zynomon.github.io/error/
 ---
-and a repository for debian/ubuntu
+# this is the homepage for error.os and it's debian/apt repo
 Adding the repo to your existing system to enjoy updates and error.os apps natively.
 - type this on terminal
   
