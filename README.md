@@ -4,7 +4,12 @@ home page of upcoming error.os
 # https://zynomon.github.io/error/
 
 
-and a repository for debian apt
+and a repository for debian/ubuntu
+---
+### Adding the repo to your existing system to enjoy updates and error.os apps
+- type this on terminal
+``` curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyrings/error.gpg && echo "deb [signed-by=/usr/share/keyrings/error.gpg] https://zynomon.github.io/error stable main" | sudo tee /etc/apt/sources.list.d/erroros.list && sudo apt update
+ ```
 ```
 ├── conf
 │   └── distributions
@@ -39,8 +44,3 @@ and a repository for debian apt
 ├── index.html
 └── README.md```
 
----
-### add this repo to your existing system to enjoy updates and error.os apps
-type this on terminal
-``` curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyrings/error.gpg && echo "deb [signed-by=/usr/share/keyrings/error.gpg] https://zynomon.github.io/error stable main" | sudo tee /etc/apt/sources.list.d/erroros.list && sudo apt update
- ```
