@@ -1,7 +1,7 @@
 <img src="https://github.com/user-attachments/assets/0da01f57-54a5-47d9-9786-e53817849679" alt="error-text" style="width:1000px;">
 
  
-# [website](https://zynomon.github.io/error/)
+# .                                 ◻   [website](https://zynomon.github.io/error/)    ◻
 ---
 # this is the homepage for error.os and it's debian/apt repo
 Adding the repo to your existing system to enjoy updates and error.os apps natively.
