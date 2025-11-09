@@ -5,7 +5,7 @@ home page of upcoming error.os
 
 
 and a repository for debian apt
-.
+```
 ├── conf
 │   └── distributions
 ├── dists
@@ -37,7 +37,8 @@ and a repository for debian apt
 │       └── Release.gpg
 ├── error.gpg
 ├── index.html
-└── README.md
+└── README.md```
+
 ---
 ### add this repo to your existing system to enjoy updates and error.os apps
 type this on terminal
