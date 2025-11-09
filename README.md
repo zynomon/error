@@ -1,4 +1,4 @@
-# error
+> this ritual installs the error.os archive with scoped trust. recommended font: **Nimbus Mono**
 a set of operating systems based on unix kernel
 home page of upcoming error.os 
 # https://zynomon.github.io/error/
