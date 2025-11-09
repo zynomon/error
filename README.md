@@ -1,4 +1,4 @@
-<span style="font-family: 'Nimbus Mono', monospace; font-size: 1.1em;">error.os</span>
+![error-text](https://github.com/user-attachments/assets/0da01f57-54a5-47d9-9786-e53817849679)
 
 a set of operating systems based on unix kernel
 home page of upcoming error.os 
