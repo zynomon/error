@@ -8,7 +8,8 @@ and a repository for debian/ubuntu
 ---
 ### Adding the repo to your existing system to enjoy updates and error.os apps
 - type this on terminal
-``` curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyrings/error.gpg && echo "deb [signed-by=/usr/share/keyrings/error.gpg] https://zynomon.github.io/error stable main" | sudo tee /etc/apt/sources.list.d/erroros.list && sudo apt update
+``` 
+curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyrings/error.gpg && echo "deb [signed-by=/usr/share/keyrings/error.gpg] https://zynomon.github.io/error stable main" | sudo tee /etc/apt/sources.list.d/erroros.list && sudo apt update
  ```
 ```
 ├── conf
@@ -42,5 +43,5 @@ and a repository for debian/ubuntu
 │       └── Release.gpg
 ├── error.gpg
 ├── index.html
-└── README.md```
+└── README.md
 
