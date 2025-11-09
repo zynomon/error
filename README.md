@@ -1,7 +1,6 @@
 <img src="https://github.com/user-attachments/assets/0da01f57-54a5-47d9-9786-e53817849679" alt="error-text" style="width:1000px;">
 
-a set of operating systems based on unix kernel
-home page of upcoming error.os 
+welcome to the home page of upcoming error.os 
 # https://zynomon.github.io/error/
 ---
 # this is the homepage for error.os and it's debian/apt repo
