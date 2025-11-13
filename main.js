@@ -225,14 +225,15 @@ VANTA.CELLS({
   minWidth: 200.0,
   scale: 1.0,
   scaleMobile: 3.0,
-  backgroundColor: 0xd8d8cf,
-  color1: 0x2f2f2f,
-  color2: 0x353541,
+  backgroundAlpha: 1,
+  backgroundColor: 0xd7d8cf,
+  color1: 0xa7a797,
+  color2: 0x61667f,
   amplitudeFactor: 1.0,
   ringFactor: 1.0,
   rotationFactor: 1.0,
-  speed: 1.0,
-  size: 1.5,
+  speed: 5.0,
+  size: 0.9,
 });
 
 window.addEventListener(
