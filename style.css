@@ -19,23 +19,26 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: #000;
     z-index: 10000;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: splashFadeOut 2s ease-in-out forwards;
-    animation-delay: 1.8s;
+    animation: splashFadeOut 0.5s ease-out forwards;
+    animation-delay: 2.5s;
+    overflow: hidden;
 }
 
 @keyframes splashFadeOut {
     0% {
         opacity: 1;
+        transform: scale(1);
     }
     100% {
         opacity: 0;
+        transform: scale(1.5);
         visibility: hidden;
         pointer-events: none;
     }
@@ -46,6 +49,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background: #000;
 }
 
 .matrix-rain {
@@ -56,33 +60,38 @@ body {
     height: 100%;
     background: #000;
     overflow: hidden;
-}
-
-.matrix-rain::before {
-    content: "01001000 01100101 01101100 01110000 00100000 01101101 01100101 ERROR KERNEL PANIC SEGMENTATION FAULT FATAL EXCEPTION 0x8000FFFF SYSTEM HALTED MEMORY DUMP CRITICAL ERROR BOOT FAILURE DISK READ ERROR ACCESS VIOLATION STACK OVERFLOW BUFFER OVERRUN UNDEFINED BEHAVIOR NULL POINTER DEREFERENCE DIVIDE BY ZERO ILLEGAL INSTRUCTION HARDWARE MALFUNCTION CPU OVERHEAT THERMAL SHUTDOWN POWER FAILURE CORRUPTION DETECTED DATA LOSS IMMINENT FILESYSTEM CORRUPTED INODE ERROR BAD SECTOR RAID FAILURE NETWORK UNREACHABLE CONNECTION TIMEOUT DNS FAILURE SSL HANDSHAKE FAILED CERTIFICATE INVALID AUTHENTICATION ERROR PERMISSION DENIED ACCESS FORBIDDEN RESOURCE EXHAUSTED OUT OF MEMORY DISK FULL QUOTA EXCEEDED PROCESS KILLED SIGNAL ABORT TRAP CAUGHT EXCEPTION UNHANDLED FLOATING POINT ERROR ARITHMETIC OVERFLOW INTEGER UNDERFLOW PRECISION LOSS ROUNDING ERROR CONVERSION FAILED PARSE ERROR SYNTAX INVALID TOKEN UNEXPECTED EOF COMPILATION FAILED LINKER ERROR SYMBOL UNDEFINED RELOCATION FAILED LOADER ERROR DYNAMIC LINK MISSING DEPENDENCY UNRESOLVED VERSION MISMATCH ABI INCOMPATIBLE";
-    position: absolute;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 200%;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    line-height: 1.2;
     color: #0f0;
-    font-size: 14px;
-    line-height: 1.4;
-    word-wrap: break-word;
-    opacity: 0.8;
-    animation: matrixRain 2s linear infinite;
-    text-shadow:
-        0 0 10px #0f0,
-        0 0 20px #0f0;
-    filter: blur(1px);
 }
 
-@keyframes matrixRain {
+.matrix-rain::before,
+.matrix-rain::after {
+    content: "KERNEL PANIC ERROR 0x8000FFFF SEGFAULT CRITICAL FATAL ABORT SIGNAL 11 ACCESS VIOLATION MEMORY CORRUPTION STACK OVERFLOW NULL POINTER EXCEPTION HARDWARE FAULT CPU HALTED DISK FAILURE BOOT ERROR FILESYSTEM CORRUPTED RAID FAILED THERMAL SHUTDOWN POWER LOSS DATA CORRUPTED INODE ERROR BAD SECTOR CONNECTION LOST NETWORK DOWN DNS FAILED SSL ERROR CERTIFICATE INVALID AUTH FAILED PERMISSION DENIED RESOURCE EXHAUSTED OUT OF MEMORY DISK FULL PROCESS KILLED DIVIDE BY ZERO ARITHMETIC ERROR FLOATING POINT EXCEPTION ILLEGAL INSTRUCTION UNDEFINED BEHAVIOR BUFFER OVERRUN PARSE ERROR SYNTAX INVALID COMPILATION FAILED LINKER ERROR SYMBOL UNDEFINED RELOCATION FAILED DEPENDENCY MISSING VERSION MISMATCH ABI INCOMPATIBLE 01001000 01000101 01001100 01010000 00100000 01001101 01000101 ERROR PANIC FATAL ABORT CRITICAL 0x00 0xFF 0xDEAD 0xBEEF TRAP FAULT STOP HALT KILL TERM";
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    left: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    opacity: 0.6;
+    text-shadow: 0 0 10px #0f0;
+    animation: matrixScroll 3s linear infinite;
+    pointer-events: none;
+}
+
+.matrix-rain::after {
+    animation-delay: -1.5s;
+    opacity: 0.4;
+}
+
+@keyframes matrixScroll {
     0% {
-        transform: translateY(0);
+        transform: translateY(-100%);
     }
     100% {
-        transform: translateY(50%);
+        transform: translateY(100%);
     }
 }
 
@@ -92,22 +101,28 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 10;
+    z-index: 100;
+    width: 90%;
 }
 
 .glitch {
-    font-size: clamp(3rem, 10vw, 8rem);
-    font-weight: bold;
+    font-size: clamp(2.5rem, 12vw, 10rem);
+    font-weight: 900;
     color: #ff0000;
     position: relative;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    animation: glitchText 0.3s infinite;
+    letter-spacing: 0.05em;
+    animation:
+        shake 0.08s infinite,
+        colorShift 0.3s infinite;
     text-shadow:
+        0 0 5px #ff0000,
         0 0 10px #ff0000,
         0 0 20px #ff0000,
-        0 0 30px #ff0000,
-        0 0 40px #ff0000;
+        0 0 40px #ff0000,
+        0 0 80px #ff0000;
+    filter: contrast(1.5) brightness(1.2);
+    white-space: nowrap;
 }
 
 .glitch::before,
@@ -118,118 +133,180 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .glitch::before {
-    left: 2px;
-    text-shadow: -2px 0 #0ff;
-    clip: rect(24px, 550px, 90px, 0);
-    animation: glitchAnim 2s infinite linear alternate-reverse;
+    left: 3px;
+    text-shadow: -3px 0 #00ffff;
+    animation: glitchAnim1 0.4s infinite linear alternate-reverse;
 }
 
 .glitch::after {
-    left: -2px;
-    text-shadow:
-        -2px 0 #ff00ff,
-        2px 2px #00ff00;
-    clip: rect(85px, 550px, 140px, 0);
-    animation: glitchAnim 3s infinite linear alternate-reverse;
+    left: -3px;
+    text-shadow: 3px 0 #ff00ff;
+    animation: glitchAnim2 0.5s infinite linear alternate-reverse;
 }
 
-@keyframes glitchText {
-    0% {
-        transform: translate(0);
-    }
-    20% {
-        transform: translate(-2px, 2px);
-    }
-    40% {
-        transform: translate(-2px, -2px);
-    }
-    60% {
-        transform: translate(2px, 2px);
-    }
-    80% {
-        transform: translate(2px, -2px);
-    }
+@keyframes shake {
+    0%,
     100% {
-        transform: translate(0);
-    }
-}
-
-@keyframes glitchAnim {
-    0% {
-        clip: rect(42px, 9999px, 44px, 0);
-    }
-    5% {
-        clip: rect(12px, 9999px, 59px, 0);
+        transform: translate(0, 0) rotate(0deg);
     }
     10% {
-        clip: rect(48px, 9999px, 29px, 0);
-    }
-    15% {
-        clip: rect(42px, 9999px, 73px, 0);
+        transform: translate(-3px, 2px) rotate(-0.5deg);
     }
     20% {
-        clip: rect(63px, 9999px, 27px, 0);
-    }
-    25% {
-        clip: rect(34px, 9999px, 55px, 0);
+        transform: translate(3px, -2px) rotate(0.5deg);
     }
     30% {
-        clip: rect(86px, 9999px, 73px, 0);
-    }
-    35% {
-        clip: rect(20px, 9999px, 20px, 0);
+        transform: translate(-3px, -2px) rotate(-0.5deg);
     }
     40% {
-        clip: rect(26px, 9999px, 60px, 0);
-    }
-    45% {
-        clip: rect(25px, 9999px, 66px, 0);
+        transform: translate(3px, 2px) rotate(0.5deg);
     }
     50% {
-        clip: rect(57px, 9999px, 98px, 0);
-    }
-    55% {
-        clip: rect(5px, 9999px, 46px, 0);
+        transform: translate(-3px, 2px) rotate(-0.5deg);
     }
     60% {
-        clip: rect(82px, 9999px, 31px, 0);
-    }
-    65% {
-        clip: rect(54px, 9999px, 27px, 0);
+        transform: translate(3px, -2px) rotate(0.5deg);
     }
     70% {
-        clip: rect(28px, 9999px, 99px, 0);
-    }
-    75% {
-        clip: rect(45px, 9999px, 69px, 0);
+        transform: translate(-3px, -2px) rotate(-0.5deg);
     }
     80% {
-        clip: rect(23px, 9999px, 85px, 0);
-    }
-    85% {
-        clip: rect(54px, 9999px, 84px, 0);
+        transform: translate(3px, 2px) rotate(0.5deg);
     }
     90% {
-        clip: rect(45px, 9999px, 47px, 0);
+        transform: translate(-3px, 2px) rotate(-0.5deg);
     }
-    95% {
-        clip: rect(37px, 9999px, 20px, 0);
+}
+
+@keyframes colorShift {
+    0% {
+        color: #ff0000;
+        filter: hue-rotate(0deg) contrast(1.5);
+    }
+    33% {
+        color: #ff3333;
+        filter: hue-rotate(10deg) contrast(2);
+    }
+    66% {
+        color: #ff0000;
+        filter: hue-rotate(-10deg) contrast(1.5);
     }
     100% {
-        clip: rect(4px, 9999px, 91px, 0);
+        color: #ff0000;
+        filter: hue-rotate(0deg) contrast(1.5);
+    }
+}
+
+@keyframes glitchAnim1 {
+    0% {
+        clip-path: inset(10% 0 85% 0);
+    }
+    10% {
+        clip-path: inset(54% 0 24% 0);
+    }
+    20% {
+        clip-path: inset(76% 0 11% 0);
+    }
+    30% {
+        clip-path: inset(34% 0 43% 0);
+    }
+    40% {
+        clip-path: inset(22% 0 67% 0);
+    }
+    50% {
+        clip-path: inset(88% 0 1% 0);
+    }
+    60% {
+        clip-path: inset(41% 0 52% 0);
+    }
+    70% {
+        clip-path: inset(3% 0 93% 0);
+    }
+    80% {
+        clip-path: inset(69% 0 18% 0);
+    }
+    90% {
+        clip-path: inset(15% 0 79% 0);
+    }
+    100% {
+        clip-path: inset(50% 0 42% 0);
+    }
+}
+
+@keyframes glitchAnim2 {
+    0% {
+        clip-path: inset(65% 0 22% 0);
+    }
+    10% {
+        clip-path: inset(31% 0 58% 0);
+    }
+    20% {
+        clip-path: inset(2% 0 95% 0);
+    }
+    30% {
+        clip-path: inset(78% 0 9% 0);
+    }
+    40% {
+        clip-path: inset(44% 0 49% 0);
+    }
+    50% {
+        clip-path: inset(19% 0 74% 0);
+    }
+    60% {
+        clip-path: inset(91% 0 3% 0);
+    }
+    70% {
+        clip-path: inset(56% 0 37% 0);
+    }
+    80% {
+        clip-path: inset(8% 0 86% 0);
+    }
+    90% {
+        clip-path: inset(71% 0 21% 0);
+    }
+    100% {
+        clip-path: inset(33% 0 61% 0);
     }
 }
 
 .error-code {
-    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(1rem, 5vw, 2.5rem);
     color: #fff;
-    margin-top: 20px;
+    margin-top: 30px;
     font-family: "Courier New", monospace;
-    text-shadow: 0 0 10px #fff;
-    animation: flicker 0.15s infinite;
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #fff;
+    animation: textFlicker 0.1s infinite;
+    letter-spacing: 0.2em;
+}
+
+@keyframes textFlicker {
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        opacity: 1;
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #fff;
+    }
+    20%,
+    24%,
+    55% {
+        opacity: 0.3;
+        text-shadow: none;
+    }
 }
 
 .glitch-lines {
@@ -238,15 +315,27 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(255, 0, 0, 0.1) 0px,
-        rgba(255, 0, 0, 0.1) 1px,
-        transparent 1px,
-        transparent 2px
-    );
-    animation: scanlines 0.1s linear infinite;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 0, 0, 0.15) 0px,
+            rgba(255, 0, 0, 0.15) 2px,
+            transparent 2px,
+            transparent 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 255, 0, 0.05) 0px,
+            rgba(0, 255, 0, 0.05) 1px,
+            transparent 1px,
+            transparent 2px
+        );
+    animation:
+        scanlines 0.08s linear infinite,
+        horizontalGlitch 0.3s infinite;
     pointer-events: none;
+    opacity: 0.8;
+    mix-blend-mode: screen;
 }
 
 @keyframes scanlines {
@@ -254,7 +343,28 @@ body {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(10px);
+        transform: translateY(8px);
+    }
+}
+
+@keyframes horizontalGlitch {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-5px);
+    }
+    40% {
+        transform: translateX(5px);
+    }
+    60% {
+        transform: translateX(-5px);
+    }
+    80% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -475,15 +585,26 @@ body {
     padding: 0.6rem 1.2rem;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media (max-width: 640px) {
     .btn-3d {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.8rem;
-        gap: 0.4rem;
+        font-size: 0.75rem;
+        padding: 0.5rem 0.7rem;
+        gap: 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-3d {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.6rem;
+        gap: 0.25rem;
     }
 }
 

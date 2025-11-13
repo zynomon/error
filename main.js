@@ -1,13 +1,79 @@
 // Matrix Glitch Panic Splash Screen
 window.addEventListener("DOMContentLoaded", () => {
   const splashScreen = document.getElementById("splash-screen");
+  const matrixRain = document.querySelector(".matrix-rain");
 
-  // Remove splash screen after animation (2s + 1.8s delay = 3.8s)
+  if (matrixRain) {
+    // Create canvas for Matrix effect
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.position = "absolute";
+    canvas.style.top = "0";
+    canvas.style.left = "0";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    matrixRain.appendChild(canvas);
+
+    // Matrix characters
+    const chars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()ERROR!PANIC!FATAL!KERNEL!0x";
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = [];
+
+    // Initialize drops
+    for (let i = 0; i < columns; i++) {
+      drops[i] = Math.random() * -100;
+    }
+
+    // Draw Matrix rain
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#0F0";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        const x = i * fontSize;
+        const y = drops[i] * fontSize;
+
+        // Random color shift for panic effect
+        if (Math.random() > 0.95) {
+          ctx.fillStyle = "#F00";
+        } else if (Math.random() > 0.98) {
+          ctx.fillStyle = "#FF0";
+        } else {
+          ctx.fillStyle = "#0F0";
+        }
+
+        ctx.fillText(text, x, y);
+
+        if (y > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    // Animate Matrix rain
+    const matrixInterval = setInterval(drawMatrix, 50);
+
+    // Stop animation and remove splash after delay
+    setTimeout(() => {
+      clearInterval(matrixInterval);
+    }, 2800);
+  }
+
+  // Remove splash screen after animation
   setTimeout(() => {
     if (splashScreen) {
       splashScreen.remove();
     }
-  }, 3800);
+  }, 3200);
 });
 
 VANTA.CELLS({
