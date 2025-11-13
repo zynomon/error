@@ -1094,67 +1094,6 @@ body.scrolled .scroll-indicator {
     right: 15px;
 }
 
-/* Dropdown for system requirements */
-.requirements-dropdown {
-    margin-top: 25px;
-}
-
-.requirements-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    background: rgba(136, 136, 136, 0.1);
-    border: 2px solid rgba(136, 136, 136, 0.3);
-    border-radius: 10px;
-    cursor: pointer !important;
-    transition: all 0.3s ease;
-}
-
-.requirements-toggle:hover {
-    background: rgba(136, 136, 136, 0.2);
-    border-color: rgba(136, 136, 136, 0.5);
-}
-
-.requirements-toggle h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.requirements-arrow {
-    font-size: 1.5rem;
-    color: #888;
-    transition: transform 0.3s ease;
-}
-
-.requirements-toggle.active .requirements-arrow {
-    transform: rotate(180deg);
-}
-
-.requirements-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0 15px;
-}
-
-.requirements-content.show {
-    max-height: 500px;
-    padding: 15px;
-}
-
-.requirements-content ul {
-    margin-top: 10px;
-}
-
-.requirements-content p {
-    color: #b0b0b0;
-    margin: 10px 0;
-}
-
 .modal-overlay.show .modal-content {
     transform: scale(1) translateY(0);
 }

@@ -33,21 +33,14 @@ document.addEventListener("DOMContentLoaded", function () {
             <li>Ut labore et dolore magna aliqua</li>
           </ul>
 
-          <div class="requirements-dropdown">
-            <div class="requirements-toggle" onclick="toggleRequirements(event)">
-              <h3>System Requirements</h3>
-              <span class="requirements-arrow">▼</span>
-            </div>
-            <div class="requirements-content">
-              <ul>
-                <li>CPU: 64-bit processor (2 GHz or faster)</li>
-                <li>RAM: 2 GB minimum, 4 GB recommended</li>
-                <li>Storage: 20 GB available space</li>
-                <li>Graphics: VGA capable of 1024x768 resolution</li>
-                <li>Boot: UEFI or Legacy BIOS support</li>
-              </ul>
-            </div>
-          </div>
+          <h3>System Requirements</h3>
+          <ul>
+            <li>CPU: 64-bit processor (2 GHz or faster)</li>
+            <li>RAM: 2 GB minimum, 4 GB recommended</li>
+            <li>Storage: 20 GB available space</li>
+            <li>Graphics: VGA capable of 1024x768 resolution</li>
+            <li>Boot: UEFI or Legacy BIOS support</li>
+          </ul>
         </div>
       `;
     } else if (isoType === "neospace") {
@@ -70,21 +63,14 @@ document.addEventListener("DOMContentLoaded", function () {
             <li>Ut labore et dolore magna aliqua</li>
           </ul>
 
-          <div class="requirements-dropdown">
-            <div class="requirements-toggle" onclick="toggleRequirements(event)">
-              <h3>System Requirements</h3>
-              <span class="requirements-arrow">▼</span>
-            </div>
-            <div class="requirements-content">
-              <ul>
-                <li>CPU: 64-bit processor (2 GHz or faster)</li>
-                <li>RAM: 4 GB minimum, 8 GB recommended</li>
-                <li>Storage: 30 GB available space</li>
-                <li>Graphics: OpenGL 3.3 compatible or better</li>
-                <li>Boot: UEFI required</li>
-              </ul>
-            </div>
-          </div>
+          <h3>System Requirements</h3>
+          <ul>
+            <li>CPU: 64-bit processor (2 GHz or faster)</li>
+            <li>RAM: 4 GB minimum, 8 GB recommended</li>
+            <li>Storage: 30 GB available space</li>
+            <li>Graphics: OpenGL 3.3 compatible or better</li>
+            <li>Boot: UEFI required</li>
+          </ul>
         </div>
       `;
     }
@@ -130,15 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-// Toggle requirements dropdown
-function toggleRequirements(event) {
-  const toggle = event.currentTarget;
-  const content = toggle.nextElementSibling;
-
-  toggle.classList.toggle("active");
-  content.classList.toggle("show");
-}
 
 VANTA.CELLS({
   el: "#vanta-bg",
