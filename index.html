@@ -92,7 +92,46 @@
                 </div>
             </div>
 
-            <div class="section-spacing max-w-5xl mx-auto download-section">
+            <!-- Scroll Down for Downloads Button -->
+            <button
+                id="scroll-to-downloads-btn"
+                class="scroll-to-downloads-btn"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    class="download-icon"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                    />
+                </svg>
+                <span>Scroll for Downloads</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    class="arrow-icon"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                    />
+                </svg>
+            </button>
+
+            <div
+                class="section-spacing max-w-5xl mx-auto download-section"
+                id="downloads-section"
+            >
                 <div class="card-label">
                     <h2>DOWNLOAD OPTIONS</h2>
                 </div>
@@ -121,7 +160,7 @@
                                             class="flex items-center gap-3 mb-2"
                                         >
                                             <h3
-                                                class="text-2xl font-bold text-primary"
+                                                class="text-2xl font-bold text-white"
                                             >
                                                 Void
                                             </h3>
@@ -342,5 +381,73 @@
 
         <script src="splash.js"></script>
         <script src="main.js"></script>
+        <script>
+            // Scroll to downloads button functionality
+            (function () {
+                const scrollBtn = document.getElementById(
+                    "scroll-to-downloads-btn",
+                );
+                const downloadsSection =
+                    document.getElementById("downloads-section");
+
+                if (!scrollBtn || !downloadsSection) return;
+
+                // Check if button was already dismissed in this session
+                if (sessionStorage.getItem("scrollBtnDismissed")) {
+                    scrollBtn.style.display = "none";
+                    return;
+                }
+
+                // Show button after splash screen
+                setTimeout(() => {
+                    scrollBtn.classList.add("show");
+                }, 3000);
+
+                // Auto-hide after 10 seconds
+                setTimeout(() => {
+                    scrollBtn.classList.remove("show");
+                    setTimeout(() => {
+                        scrollBtn.style.display = "none";
+                        sessionStorage.setItem("scrollBtnDismissed", "true");
+                    }, 300);
+                }, 13000);
+
+                // Scroll to downloads on click
+                scrollBtn.addEventListener("click", () => {
+                    downloadsSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                    scrollBtn.classList.remove("show");
+                    setTimeout(() => {
+                        scrollBtn.style.display = "none";
+                        sessionStorage.setItem("scrollBtnDismissed", "true");
+                    }, 300);
+                });
+
+                // Hide on scroll down
+                let lastScroll = 0;
+                window.addEventListener(
+                    "scroll",
+                    () => {
+                        const currentScroll = window.pageYOffset;
+
+                        if (currentScroll > 100 && currentScroll > lastScroll) {
+                            scrollBtn.classList.remove("show");
+                            setTimeout(() => {
+                                scrollBtn.style.display = "none";
+                                sessionStorage.setItem(
+                                    "scrollBtnDismissed",
+                                    "true",
+                                );
+                            }, 300);
+                        }
+
+                        lastScroll = currentScroll;
+                    },
+                    { passive: true },
+                );
+            })();
+        </script>
     </body>
 </html>

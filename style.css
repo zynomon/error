@@ -864,6 +864,92 @@ body.scrolled .scroll-indicator {
     display: none !important;
 }
 
+/* Scroll to Downloads Button */
+.scroll-to-downloads-btn {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(150%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    border: 2px solid rgba(136, 136, 136, 0.5);
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(136, 136, 136, 0.3);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-to-downloads-btn.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-to-downloads-btn:hover {
+    background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+    border-color: rgba(136, 136, 136, 0.8);
+    transform: translateX(-50%) translateY(-5px);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(136, 136, 136, 0.5);
+}
+
+.scroll-to-downloads-btn:active {
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.scroll-to-downloads-btn .download-icon,
+.scroll-to-downloads-btn .arrow-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.scroll-to-downloads-btn .arrow-icon {
+    animation: bounceArrow 2s infinite;
+}
+
+@keyframes bounceArrow {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 768px) {
+    .scroll-to-downloads-btn {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+        gap: 8px;
+    }
+
+    .scroll-to-downloads-btn .download-icon,
+    .scroll-to-downloads-btn .arrow-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 .crt-overlay {
     position: fixed;
     top: 0;
@@ -1210,6 +1296,20 @@ body.scrolled .scroll-indicator {
     border-radius: 8px;
     overflow: hidden;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.requirement-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 1;
 }
 
 .requirement-item::before {
@@ -1229,6 +1329,8 @@ body.scrolled .scroll-indicator {
     cursor: pointer !important;
     transition: all 0.3s ease;
     user-select: none !important;
+    position: relative;
+    z-index: 2;
 }
 
 .requirement-header:hover {
@@ -1243,6 +1345,8 @@ body.scrolled .scroll-indicator {
     color: #e0e0e0;
     font-weight: 500;
     flex: 1;
+    position: relative;
+    z-index: 2;
 }
 
 .requirement-arrow {
@@ -1250,6 +1354,8 @@ body.scrolled .scroll-indicator {
     font-size: 0.8rem;
     transition: transform 0.3s ease;
     margin-left: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 .requirement-details {
@@ -1257,6 +1363,8 @@ body.scrolled .scroll-indicator {
     overflow: hidden;
     transition: max-height 0.3s ease;
     background: rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
 }
 
 .requirement-details p {
