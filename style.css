@@ -519,13 +519,21 @@ body {
     display: block;
 }
 
-.download-card:hover .iso-icon {
+.iso-icon:hover {
     border-color: rgba(136, 136, 136, 0.8);
     box-shadow:
         0 12px 30px rgba(0, 0, 0, 0.6),
         0 0 40px rgba(136, 136, 136, 0.6),
         inset 0 0 20px rgba(136, 136, 136, 0.1);
-    transform: scale(1.1) rotate(3deg);
+    transform: scale(1.15) rotate(5deg);
+}
+
+.iso-icon:active {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.download-card:hover .iso-icon {
+    border-color: rgba(136, 136, 136, 0.6);
 }
 
 .btn-3d {
@@ -1016,4 +1024,189 @@ body.scrolled .scroll-indicator {
     .iso-icon {
         margin-bottom: 1rem;
     }
+}
+
+/* Modal Popup Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    border: 2px solid rgba(136, 136, 136, 0.4);
+    border-radius: 20px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 40px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(136, 136, 136, 0.3);
+    transform: scale(0.9) translateY(30px);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-overlay.show .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: rgba(136, 136, 136, 0.2);
+    border: 2px solid rgba(136, 136, 136, 0.4);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: rgba(255, 0, 0, 0.3);
+    border-color: rgba(255, 0, 0, 0.6);
+    transform: rotate(90deg);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(136, 136, 136, 0.2);
+}
+
+.modal-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 0 auto 20px;
+    display: block;
+    border: 3px solid rgba(136, 136, 136, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(136, 136, 136, 0.5);
+}
+
+.modal-details {
+    color: #e0e0e0;
+    line-height: 1.8;
+}
+
+.modal-details h3 {
+    font-size: 1.5rem;
+    color: #888;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 4px solid #888;
+    padding-left: 15px;
+}
+
+.modal-details p {
+    margin-bottom: 15px;
+    color: #b0b0b0;
+}
+
+.modal-details ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.modal-details ul li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+    color: #b0b0b0;
+    border-bottom: 1px solid rgba(136, 136, 136, 0.1);
+}
+
+.modal-details ul li:last-child {
+    border-bottom: none;
+}
+
+.modal-details ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #888;
+    font-size: 1.2rem;
+}
+
+/* Modal responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 30px 20px;
+        max-height: 85vh;
+    }
+
+    .modal-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .modal-title {
+        font-size: 2rem;
+    }
+
+    .modal-details h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Scrollbar styling for modal */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(136, 136, 136, 0.1);
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.4);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(136, 136, 136, 0.6);
 }
