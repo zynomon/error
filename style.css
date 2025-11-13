@@ -1082,7 +1082,7 @@ body.scrolled .scroll-indicator {
 
 .modal-content::after {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -1090,13 +1090,74 @@ body.scrolled .scroll-indicator {
     background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
     pointer-events: none;
     border-radius: inherit;
-    z-index: 0;
+    z-index: -1;
 }
 
 .modal-header,
 .modal-details {
     position: relative;
     z-index: 1;
+}
+
+/* Dropdown for system requirements */
+.requirements-dropdown {
+    margin-top: 25px;
+}
+
+.requirements-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: rgba(136, 136, 136, 0.1);
+    border: 2px solid rgba(136, 136, 136, 0.3);
+    border-radius: 10px;
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+}
+
+.requirements-toggle:hover {
+    background: rgba(136, 136, 136, 0.2);
+    border-color: rgba(136, 136, 136, 0.5);
+}
+
+.requirements-toggle h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.requirements-arrow {
+    font-size: 1.5rem;
+    color: #888;
+    transition: transform 0.3s ease;
+}
+
+.requirements-toggle.active .requirements-arrow {
+    transform: rotate(180deg);
+}
+
+.requirements-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+}
+
+.requirements-content.show {
+    max-height: 500px;
+    padding: 15px;
+}
+
+.requirements-content ul {
+    margin-top: 10px;
+}
+
+.requirements-content p {
+    color: #b0b0b0;
+    margin: 10px 0;
 }
 
 .modal-overlay.show .modal-content {
