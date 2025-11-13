@@ -1059,10 +1059,10 @@ body.scrolled .scroll-indicator {
 
 .top-menu-btn-bg {
     position: fixed;
-    top: -8px;
-    right: -8px;
-    width: 64px;
-    height: 64px;
+    top: -4px;
+    right: -4px;
+    width: 72px;
+    height: 72px;
     background: linear-gradient(
         145deg,
         var(--color-base-200),
