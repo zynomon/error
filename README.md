@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/0da01f57-54a5-47d9-9786-e53817849679" alt="error-text" width="800">
+  <img src="https://github.com/zynomon/error/blob/web-side/icons/g12.svg" alt="error-text" width="800">
 </p>
 
 <p align="center">
