@@ -15,6 +15,20 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <!-- Matrix Glitch Panic Splash Screen -->
+        <div id="splash-screen">
+            <div class="glitch-container">
+                <div class="matrix-rain"></div>
+                <div class="panic-text">
+                    <div class="glitch" data-text="SYSTEM ERROR">
+                        SYSTEM ERROR
+                    </div>
+                    <div class="error-code">0x8000FFFF</div>
+                    <div class="glitch-lines"></div>
+                </div>
+            </div>
+        </div>
+
         <div id="vanta-bg"></div>
         <div id="tracker"></div>
         <div class="crt-overlay"></div>
@@ -127,7 +141,7 @@
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            class="h-4 w-4"
+                                            class="h-5 w-5 flex-shrink-0"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             stroke="currentColor"
@@ -139,7 +153,9 @@
                                                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                                             />
                                         </svg>
-                                        Download ISO
+                                        <span class="whitespace-nowrap"
+                                            >Download ISO</span
+                                        >
                                     </a>
                                 </div>
 
@@ -237,7 +253,7 @@
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            class="h-3 w-3"
+                                            class="h-5 w-5 flex-shrink-0"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             stroke="currentColor"
@@ -249,6 +265,9 @@
                                                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                                             />
                                         </svg>
+                                        <span class="whitespace-nowrap"
+                                            >In Development</span
+                                        >
                                         Stable release coming soon
                                     </div>
                                 </div>

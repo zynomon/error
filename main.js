@@ -1,3 +1,15 @@
+// Matrix Glitch Panic Splash Screen
+window.addEventListener("DOMContentLoaded", () => {
+  const splashScreen = document.getElementById("splash-screen");
+
+  // Remove splash screen after animation (2s + 1.8s delay = 3.8s)
+  setTimeout(() => {
+    if (splashScreen) {
+      splashScreen.remove();
+    }
+  }, 3800);
+});
+
 VANTA.CELLS({
   el: "#vanta-bg",
   mouseControls: true,
