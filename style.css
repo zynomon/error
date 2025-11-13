@@ -14,7 +14,7 @@ body {
     min-height: 100vh;
 }
 
-/* Matrix Glitch Panic Splash Screen */
+/* Matrix Glitch Panic Splash Screen - ENHANCED CHAOS EDITION */
 #splash-screen {
     position: fixed;
     top: 0;
@@ -28,12 +28,17 @@ body {
     justify-content: center;
     overflow: hidden;
     opacity: 1;
-    transition: opacity 0.5s ease-out;
+    transition:
+        opacity 0.5s ease-out,
+        transform 0.1s ease-out,
+        filter 0.1s ease-out;
+    will-change: transform, opacity, filter;
 }
 
 #splash-screen.fade-out {
     opacity: 0;
     pointer-events: none;
+    transform: scale(0.95);
 }
 
 .glitch-container {
@@ -74,13 +79,17 @@ body {
     position: relative;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    animation: glitchShake 0.1s infinite;
+    animation:
+        glitchShake 0.1s infinite,
+        colorPulse 0.3s infinite;
     text-shadow:
         0 0 10px #ff0000,
         0 0 20px #ff0000,
         0 0 40px #ff0000,
-        0 0 80px #ff0000;
+        0 0 80px #ff0000,
+        0 0 120px #ff0000;
     line-height: 1;
+    will-change: transform, filter;
 }
 
 .glitch::before,
@@ -227,9 +236,14 @@ body {
     color: #fff;
     margin-top: 2rem;
     font-family: "Courier New", monospace;
-    text-shadow: 0 0 20px #fff;
-    animation: errorFlicker 0.15s infinite;
+    text-shadow:
+        0 0 20px #fff,
+        0 0 40px #fff;
+    animation:
+        errorFlicker 0.15s infinite,
+        errorShake 0.5s infinite;
     letter-spacing: 0.3em;
+    will-change: opacity, transform;
 }
 
 @keyframes errorFlicker {
@@ -242,6 +256,32 @@ body {
     }
 }
 
+@keyframes errorShake {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-2px, 2px);
+    }
+    50% {
+        transform: translate(2px, -2px);
+    }
+    75% {
+        transform: translate(-2px, -2px);
+    }
+}
+
+@keyframes colorPulse {
+    0%,
+    100% {
+        filter: hue-rotate(0deg) brightness(1);
+    }
+    50% {
+        filter: hue-rotate(15deg) brightness(1.2);
+    }
+}
+
 .glitch-lines {
     position: fixed;
     top: 0;
@@ -250,14 +290,18 @@ body {
     height: 100%;
     background: repeating-linear-gradient(
         0deg,
-        rgba(255, 0, 0, 0.1) 0px,
-        rgba(255, 0, 0, 0.1) 2px,
+        rgba(255, 0, 0, 0.15) 0px,
+        rgba(255, 0, 0, 0.15) 2px,
         transparent 2px,
         transparent 4px
     );
-    animation: scanlineMove 0.1s linear infinite;
+    animation:
+        scanlineMove 0.1s linear infinite,
+        scanlineGlitch 0.5s infinite;
     pointer-events: none;
-    opacity: 0.7;
+    opacity: 0.8;
+    mix-blend-mode: screen;
+    will-change: transform, opacity;
 }
 
 @keyframes scanlineMove {
@@ -266,6 +310,17 @@ body {
     }
     100% {
         transform: translateY(4px);
+    }
+}
+
+@keyframes scanlineGlitch {
+    0%,
+    90%,
+    100% {
+        opacity: 0.8;
+    }
+    95% {
+        opacity: 0.3;
     }
 }
 
