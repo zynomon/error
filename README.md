@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://zynomon.github.io/error"><img src="https://img.shields.io/badge/Visit%20Website-blue?style=flat-square"></a>
   <img src="https://img.shields.io/badge/Status-Beta-yellow?style=flat-square">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square">
+  <img src="https://img.shields.io/badge/License-Apache%202.0-green?style=flat-square">
   <img src="https://img.shields.io/badge/Platform-Linux-orange?style=flat-square">
 </p>
 

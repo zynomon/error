@@ -183,8 +183,8 @@ body {
 }
 
 .iso-icon {
-    width: 70px;
-    height: 70px;
+    width: 120px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,16 +194,25 @@ body {
         rgba(204, 204, 204, 0.1)
     );
     border: 2px solid rgba(136, 136, 136, 0.3);
-    border-radius: 12px;
+    border-radius: 16px;
     flex-shrink: 0;
     transition: all 0.3s ease;
-    min-width: 70px;
+    min-width: 120px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.iso-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
 }
 
 .download-card:hover .iso-icon {
     border-color: rgba(136, 136, 136, 0.6);
-    box-shadow: 0 0 20px rgba(136, 136, 136, 0.4);
-    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(136, 136, 136, 0.5);
+    transform: scale(1.08) rotate(2deg);
 }
 
 .btn-3d {
