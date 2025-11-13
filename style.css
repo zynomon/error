@@ -1054,11 +1054,10 @@ body.scrolled .scroll-indicator {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 1001;
 }
 
-.top-menu-btn::before {
-    content: "";
+.top-menu-btn-bg {
     position: fixed;
     top: 16px;
     right: 16px;
@@ -1073,21 +1072,22 @@ body.scrolled .scroll-indicator {
     border: 1px solid rgba(136, 136, 136, 0.2);
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    z-index: 999;
+    z-index: 1000;
     pointer-events: none;
+    overflow: hidden;
 }
 
-.top-menu-btn::after {
+.top-menu-btn-bg::after {
     content: "";
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    width: 48px;
-    height: 48px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
     pointer-events: none;
-    border-radius: 10px;
-    z-index: 999;
+    border-radius: inherit;
+    z-index: 1;
 }
 
 .top-menu-btn:hover {
