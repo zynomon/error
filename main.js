@@ -31,16 +31,56 @@ document.addEventListener("DOMContentLoaded", function () {
             <li>Consectetur adipiscing elit</li>
             <li>Sed do eiusmod tempor incididunt</li>
             <li>Ut labore et dolore magna aliqua</li>
-          </ul>
+            </ul>
 
-          <h3>System Requirements</h3>
-          <ul>
-            <li>CPU: 64-bit processor (2 GHz or faster)</li>
-            <li>RAM: 2 GB minimum, 4 GB recommended</li>
-            <li>Storage: 20 GB available space</li>
-            <li>Graphics: VGA capable of 1024x768 resolution</li>
-            <li>Boot: UEFI or Legacy BIOS support</li>
-          </ul>
+            <h3>System Requirements</h3>
+            <ul class="requirements-list">
+              <li class="requirement-item">
+                <div class="requirement-header" onclick="toggleRequirement(this)">
+                  <span class="requirement-title">CPU: 64-bit processor (2 GHz or faster)</span>
+                  <span class="requirement-arrow">▼</span>
+                </div>
+                <div class="requirement-details">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Supported processors include Intel Core series and AMD Ryzen. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li class="requirement-item">
+                <div class="requirement-header" onclick="toggleRequirement(this)">
+                  <span class="requirement-title">RAM: 2 GB minimum, 4 GB recommended</span>
+                  <span class="requirement-arrow">▼</span>
+                </div>
+                <div class="requirement-details">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. More RAM allows for better multitasking and performance. Duis aute irure dolor in reprehenderit.</p>
+                </div>
+              </li>
+              <li class="requirement-item">
+                <div class="requirement-header" onclick="toggleRequirement(this)">
+                  <span class="requirement-title">Storage: 20 GB available space</span>
+                  <span class="requirement-arrow">▼</span>
+                </div>
+                <div class="requirement-details">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. SSD recommended for better performance. HDD supported but slower boot times expected.</p>
+                </div>
+              </li>
+              <li class="requirement-item">
+                <div class="requirement-header" onclick="toggleRequirement(this)">
+                  <span class="requirement-title">Graphics: VGA capable of 1024x768 resolution</span>
+                  <span class="requirement-arrow">▼</span>
+                </div>
+                <div class="requirement-details">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Basic graphics card required. Integrated graphics supported on most modern systems.</p>
+                </div>
+              </li>
+              <li class="requirement-item">
+                <div class="requirement-header" onclick="toggleRequirement(this)">
+                  <span class="requirement-title">Boot: UEFI or Legacy BIOS support</span>
+                  <span class="requirement-arrow">▼</span>
+                </div>
+                <div class="requirement-details">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Both UEFI and Legacy boot modes are supported. Secure Boot can be enabled or disabled.</p>
+                </div>
+              </li>
+            </ul>
         </div>
       `;
     } else if (isoType === "neospace") {
@@ -64,12 +104,52 @@ document.addEventListener("DOMContentLoaded", function () {
           </ul>
 
           <h3>System Requirements</h3>
-          <ul>
-            <li>CPU: 64-bit processor (2 GHz or faster)</li>
-            <li>RAM: 4 GB minimum, 8 GB recommended</li>
-            <li>Storage: 30 GB available space</li>
-            <li>Graphics: OpenGL 3.3 compatible or better</li>
-            <li>Boot: UEFI required</li>
+          <ul class="requirements-list">
+            <li class="requirement-item">
+              <div class="requirement-header" onclick="toggleRequirement(this)">
+                <span class="requirement-title">CPU: 64-bit processor (2 GHz or faster)</span>
+                <span class="requirement-arrow">▼</span>
+              </div>
+              <div class="requirement-details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Supported processors include Intel Core i3 or higher and AMD Ryzen 3 or higher. ARM processors not supported at this time.</p>
+              </div>
+            </li>
+            <li class="requirement-item">
+              <div class="requirement-header" onclick="toggleRequirement(this)">
+                <span class="requirement-title">RAM: 4 GB minimum, 8 GB recommended</span>
+                <span class="requirement-arrow">▼</span>
+              </div>
+              <div class="requirement-details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Higher RAM allows for smoother desktop experience and better application performance. 16 GB optimal for heavy workloads.</p>
+              </div>
+            </li>
+            <li class="requirement-item">
+              <div class="requirement-header" onclick="toggleRequirement(this)">
+                <span class="requirement-title">Storage: 30 GB available space</span>
+                <span class="requirement-arrow">▼</span>
+              </div>
+              <div class="requirement-details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. SSD highly recommended for optimal performance. NVMe drives provide the best experience. Additional space needed for user data and applications.</p>
+              </div>
+            </li>
+            <li class="requirement-item">
+              <div class="requirement-header" onclick="toggleRequirement(this)">
+                <span class="requirement-title">Graphics: OpenGL 3.3 compatible or better</span>
+                <span class="requirement-arrow">▼</span>
+              </div>
+              <div class="requirement-details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Modern integrated graphics from Intel and AMD supported. Dedicated GPUs from NVIDIA and AMD recommended for better visual effects.</p>
+              </div>
+            </li>
+            <li class="requirement-item">
+              <div class="requirement-header" onclick="toggleRequirement(this)">
+                <span class="requirement-title">Boot: UEFI required</span>
+                <span class="requirement-arrow">▼</span>
+              </div>
+              <div class="requirement-details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Legacy BIOS not supported in this edition. Secure Boot must be configured properly for installation.</p>
+              </div>
+            </li>
           </ul>
         </div>
       `;
@@ -116,6 +196,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Toggle requirement dropdown
+function toggleRequirement(header) {
+  const item = header.parentElement;
+  const details = header.nextElementSibling;
+  const arrow = header.querySelector(".requirement-arrow");
+
+  // Toggle active class
+  item.classList.toggle("active");
+
+  // Toggle details visibility
+  if (item.classList.contains("active")) {
+    details.style.maxHeight = details.scrollHeight + "px";
+    arrow.style.transform = "rotate(180deg)";
+  } else {
+    details.style.maxHeight = "0";
+    arrow.style.transform = "rotate(0deg)";
+  }
+}
 
 VANTA.CELLS({
   el: "#vanta-bg",

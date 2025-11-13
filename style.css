@@ -1197,6 +1197,75 @@ body.scrolled .scroll-indicator {
     font-size: 1.2rem;
 }
 
+/* Collapsible requirement items */
+.requirements-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.requirement-item {
+    padding: 0;
+    margin-bottom: 10px;
+    border: 2px solid rgba(136, 136, 136, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.requirement-item::before {
+    display: none;
+}
+
+.requirement-item:hover {
+    border-color: rgba(136, 136, 136, 0.4);
+}
+
+.requirement-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: rgba(136, 136, 136, 0.1);
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    user-select: none !important;
+}
+
+.requirement-header:hover {
+    background: rgba(136, 136, 136, 0.15);
+}
+
+.requirement-item.active .requirement-header {
+    background: rgba(136, 136, 136, 0.2);
+}
+
+.requirement-title {
+    color: #e0e0e0;
+    font-weight: 500;
+    flex: 1;
+}
+
+.requirement-arrow {
+    color: #888;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.requirement-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.requirement-details p {
+    padding: 15px;
+    margin: 0;
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
 /* Modal responsive */
 @media (max-width: 768px) {
     .modal-content {
