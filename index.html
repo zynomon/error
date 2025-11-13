@@ -392,25 +392,10 @@
 
                 if (!scrollBtn || !downloadsSection) return;
 
-                // Check if button was already dismissed in this session
-                if (sessionStorage.getItem("scrollBtnDismissed")) {
-                    scrollBtn.style.display = "none";
-                    return;
-                }
-
                 // Show button after splash screen
                 setTimeout(() => {
                     scrollBtn.classList.add("show");
                 }, 3000);
-
-                // Auto-hide after 10 seconds
-                setTimeout(() => {
-                    scrollBtn.classList.remove("show");
-                    setTimeout(() => {
-                        scrollBtn.style.display = "none";
-                        sessionStorage.setItem("scrollBtnDismissed", "true");
-                    }, 300);
-                }, 13000);
 
                 // Scroll to downloads on click
                 scrollBtn.addEventListener("click", () => {
@@ -418,32 +403,19 @@
                         behavior: "smooth",
                         block: "start",
                     });
-                    scrollBtn.classList.remove("show");
-                    setTimeout(() => {
-                        scrollBtn.style.display = "none";
-                        sessionStorage.setItem("scrollBtnDismissed", "true");
-                    }, 300);
                 });
 
                 // Hide on scroll down
-                let lastScroll = 0;
                 window.addEventListener(
                     "scroll",
                     () => {
                         const currentScroll = window.pageYOffset;
 
-                        if (currentScroll > 100 && currentScroll > lastScroll) {
+                        if (currentScroll > 100) {
                             scrollBtn.classList.remove("show");
-                            setTimeout(() => {
-                                scrollBtn.style.display = "none";
-                                sessionStorage.setItem(
-                                    "scrollBtnDismissed",
-                                    "true",
-                                );
-                            }, 300);
+                        } else {
+                            scrollBtn.classList.add("show");
                         }
-
-                        lastScroll = currentScroll;
                     },
                     { passive: true },
                 );
