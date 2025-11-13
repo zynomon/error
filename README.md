@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="[https://github.com/zynomon/error/blob/web-side/icons/icon.svg](https://github.com/zynomon/error/blob/web-side/icons/logo.svg)" alt="icon" width="800">
+  <img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="icon" width="800">
 </p>
+
 
 <p align="center">
   <a href="https://zynomon.github.io/error"><img src="https://img.shields.io/badge/Visit%20Website-blue?style=flat-square"></a>
