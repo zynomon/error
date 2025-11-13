@@ -872,19 +872,20 @@ body.scrolled .scroll-indicator {
     transform: translateX(-50%) translateY(150%);
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 15px 30px;
-    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-    border: 2px solid rgba(136, 136, 136, 0.5);
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(136, 136, 136, 0.3);
     border-radius: 50px;
     color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 0.875rem;
+    font-weight: 600;
     cursor: pointer;
     z-index: 1000;
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.6),
-        0 0 30px rgba(136, 136, 136, 0.3);
+        0 4px 15px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(136, 136, 136, 0.2);
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     opacity: 0;
     pointer-events: none;
@@ -897,26 +898,22 @@ body.scrolled .scroll-indicator {
 }
 
 .scroll-to-downloads-btn:hover {
-    background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
-    border-color: rgba(136, 136, 136, 0.8);
+    background: rgba(26, 26, 26, 0.85);
+    border-color: rgba(136, 136, 136, 0.5);
     transform: translateX(-50%) translateY(-5px);
     box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.8),
-        0 0 40px rgba(136, 136, 136, 0.5);
+        0 8px 25px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(136, 136, 136, 0.4);
 }
 
 .scroll-to-downloads-btn:active {
     transform: translateX(-50%) translateY(-2px);
 }
 
-.scroll-to-downloads-btn .download-icon,
 .scroll-to-downloads-btn .arrow-icon {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
-}
-
-.scroll-to-downloads-btn .arrow-icon {
     animation: bounceArrow 2s infinite;
 }
 
@@ -938,15 +935,14 @@ body.scrolled .scroll-indicator {
 
 @media (max-width: 768px) {
     .scroll-to-downloads-btn {
-        font-size: 0.9rem;
-        padding: 12px 20px;
-        gap: 8px;
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        gap: 6px;
     }
 
-    .scroll-to-downloads-btn .download-icon,
     .scroll-to-downloads-btn .arrow-icon {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
     }
 }
 
