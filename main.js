@@ -1,3 +1,93 @@
+// Modal functions for ISO details
+function openModal(isoType) {
+  const modal = document.getElementById("iso-modal");
+  const modalBody = document.getElementById("modal-body");
+
+  if (!modal || !modalBody) {
+    console.error("Modal elements not found");
+    return;
+  }
+
+  let content = "";
+
+  if (isoType === "void") {
+    content = `
+      <div class="modal-header">
+        <img src="icons/void.png" alt="Void" class="modal-image" />
+        <h2 class="modal-title">Void</h2>
+        <span class="badge badge-beta text-white font-bold">BETA</span>
+      </div>
+      <div class="modal-details">
+        <h3>About Void Edition</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <h3>Features</h3>
+        <ul>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Consectetur adipiscing elit</li>
+          <li>Sed do eiusmod tempor incididunt</li>
+          <li>Ut labore et dolore magna aliqua</li>
+        </ul>
+
+        <h3>System Requirements</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    `;
+  } else if (isoType === "neospace") {
+    content = `
+      <div class="modal-header">
+        <img src="icons/neospace.jpg" alt="NeoSpace" class="modal-image" />
+        <h2 class="modal-title">NeoSpace</h2>
+        <span class="badge badge-disabled text-white font-bold">COMING SOON</span>
+      </div>
+      <div class="modal-details">
+        <h3>About NeoSpace Edition</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <h3>Planned Features</h3>
+        <ul>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Consectetur adipiscing elit</li>
+          <li>Sed do eiusmod tempor incididunt</li>
+          <li>Ut labore et dolore magna aliqua</li>
+        </ul>
+
+        <h3>Expected Release</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    `;
+  }
+
+  modalBody.innerHTML = content;
+  modal.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  const modal = document.getElementById("iso-modal");
+  if (modal) {
+    modal.classList.remove("show");
+    document.body.style.overflow = "";
+  }
+}
+
+// Close modal on outside click
+document.addEventListener("click", function (e) {
+  const modal = document.getElementById("iso-modal");
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+// Close modal on ESC key
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
+
 VANTA.CELLS({
   el: "#vanta-bg",
   mouseControls: true,
