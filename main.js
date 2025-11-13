@@ -22,63 +22,61 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="modal-details">
           <h3>About Void Edition</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Void is not a rolling release title for error.os distro it's an unstable title shipped when the iso is bootable and people can use it for preview.</p>
+          <p>you cannot update or upgrade the distro in void title by our official support, And its very heavy on system unlike the stable release</p>
 
           <h3>Features</h3>
           <ul>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Consectetur adipiscing elit</li>
-            <li>Sed do eiusmod tempor incididunt</li>
-            <li>Ut labore et dolore magna aliqua</li>
+            <li>Seeing error.os fully dark custom prototype assets in action</li>
+            <li>Prototype testing in action</li>
+            <li>A working new  linux distro preview</li>
             </ul>
 
             <h3>System Requirements</h3>
             <ul class="requirements-list">
               <li class="requirement-item">
                 <div class="requirement-header" onclick="toggleRequirement(this)">
-                  <span class="requirement-title">CPU: 64-bit processor (2 GHz or faster)</span>
+                  <span class="requirement-title">CPU: 2 cores 64-bit processor</span>
                   <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
                 <div class="requirement-details">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Supported processors include Intel Core series and AMD Ryzen. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Amd or intel 64 architecture or anything with virtualization support by using on a virtual machine</p>
                 </div>
               </li>
               <li class="requirement-item">
                 <div class="requirement-header" onclick="toggleRequirement(this)">
-                  <span class="requirement-title">RAM: 2 GB minimum, 4 GB recommended</span>
+                  <span class="requirement-title">RAM: 1.5 GB minimum</span>
                   <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
                 <div class="requirement-details">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. More RAM allows for better multitasking and performance. Duis aute irure dolor in reprehenderit.</p>
+               <p>1.5 or 2 GB is minimum and required is above that</p>
                 </div>
               </li>
               <li class="requirement-item">
                 <div class="requirement-header" onclick="toggleRequirement(this)">
-                  <span class="requirement-title">Storage: 20 GB available space</span>
+                  <span class="requirement-title">Storage: 10 GB recommended</span>
                   <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
                 <div class="requirement-details">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. SSD recommended for better performance. HDD supported but slower boot times expected.</p>
+                 <p>Around 10 GB available space is required for the installation of the operating system and applications. But due to unstable behavior of "void" titles, it is recommended to have more than 20 GB available. or a usb stick with 3 gb free ( use ventoy for better live booting)</p>
                 </div>
               </li>
               <li class="requirement-item">
                 <div class="requirement-header" onclick="toggleRequirement(this)">
-                  <span class="requirement-title">Graphics: VGA capable of 1024x768 resolution</span>
+                  <span class="requirement-title">Graphics: Anything</span>
                   <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
                 <div class="requirement-details">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Basic graphics card required. Integrated graphics supported on most modern systems.</p>
-                </div>
+                  <p>except obscure graphics cards that are not mainstream. like some unknown diy made GPUs
+                   details about blur: when gpu is being used the thing would show blur when gpu isn't being used it will be opaque</p> </div>
               </li>
               <li class="requirement-item">
                 <div class="requirement-header" onclick="toggleRequirement(this)">
-                  <span class="requirement-title">Boot: UEFI or Legacy BIOS support</span>
+                  <span class="requirement-title">Motherboard : Anything with modern support</span>
                   <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
                 <div class="requirement-details">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Both UEFI and Legacy boot modes are supported. Secure Boot can be enabled or disabled.</p>
-                </div>
+                  <p>The requirement is about whether you use a motherboard with modern Bios or uefi support and secure boot toggling support</p> </div>
               </li>
             </ul>
         </div>
@@ -86,71 +84,69 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (isoType === "neospace") {
       content = `
         <div class="modal-header">
-          <img src="icons/neospace.jpg" alt="NeoSpace" class="modal-image" />
-          <h2 class="modal-title">NeoSpace</h2>
-          <span class="badge badge-disabled text-white font-bold">COMING SOON</span>
+          <img src="icons/void.png" alt="Void" class="modal-image" />
+          <h2 class="modal-title">Void</h2>
+          <span class="badge badge-beta text-white font-bold">BETA</span>
         </div>
         <div class="modal-details">
-          <h3>About NeoSpace Edition</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          <h3>Planned Features</h3>
+          <h3>About Neospace Edition</h3>
+          <p>Neospace is going to be the first linux distro to be stable for every purpose in bangladeshi linux community</p>
+          <h3>Aimed Features</h3>
           <ul>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Consectetur adipiscing elit</li>
-            <li>Sed do eiusmod tempor incididunt</li>
-            <li>Ut labore et dolore magna aliqua</li>
-          </ul>
+            <li>Bleeding edge animations</li>
+            <li>Lightweight not in visual but in performance</li>
+            <li>Easy to install, use and customize</li>
+            <li>Better at performance</li>
+            <li>Modern UI</li>
+            <li>Letting users configure the whole distro in gui as if they made it.</li>
+            </ul>
 
-          <h3>System Requirements</h3>
-          <ul class="requirements-list">
-            <li class="requirement-item">
-              <div class="requirement-header" onclick="toggleRequirement(this)">
-                <span class="requirement-title">CPU: 64-bit processor (2 GHz or faster)</span>
-                <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
-              <div class="requirement-details">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Supported processors include Intel Core i3 or higher and AMD Ryzen 3 or higher. ARM processors not supported at this time.</p>
-              </div>
-            </li>
-            <li class="requirement-item">
-              <div class="requirement-header" onclick="toggleRequirement(this)">
-                <span class="requirement-title">RAM: 4 GB minimum, 8 GB recommended</span>
-                <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
-              <div class="requirement-details">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Higher RAM allows for smoother desktop experience and better application performance. 16 GB optimal for heavy workloads.</p>
-              </div>
-            </li>
-            <li class="requirement-item">
-              <div class="requirement-header" onclick="toggleRequirement(this)">
-                <span class="requirement-title">Storage: 30 GB available space</span>
-                <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
-              <div class="requirement-details">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. SSD highly recommended for optimal performance. NVMe drives provide the best experience. Additional space needed for user data and applications.</p>
-              </div>
-            </li>
-            <li class="requirement-item">
-              <div class="requirement-header" onclick="toggleRequirement(this)">
-                <span class="requirement-title">Graphics: OpenGL 3.3 compatible or better</span>
-                <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
-              <div class="requirement-details">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Modern integrated graphics from Intel and AMD supported. Dedicated GPUs from NVIDIA and AMD recommended for better visual effects.</p>
-              </div>
-            </li>
-            <li class="requirement-item">
-              <div class="requirement-header" onclick="toggleRequirement(this)">
-                <span class="requirement-title">Boot: UEFI required</span>
-                <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
-              <div class="requirement-details">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Legacy BIOS not supported in this edition. Secure Boot must be configured properly for installation.</p>
-              </div>
-            </li>
-          </ul>
+            <h3>Aimed System Requirements</h3>
+            <ul class="requirements-list">
+              <li class="requirement-item">
+                <div class="requirement-header" onclick="toggleRequirement(this)">
+                  <span class="requirement-title">CPU: 2 cores 64-bit processor</span>
+                  <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                <div class="requirement-details">
+                <p>Any 64 bit cpu (depends on linux firmware and auto configured driver support)</p>
+                </div>
+              </li>
+              <li class="requirement-item">
+                <div class="requirement-header" onclick="toggleRequirement(this)">
+                  <span class="requirement-title">RAM: 1.5 GB minimum</span>
+                  <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                <div class="requirement-details">
+               <p>1.5 or 2 GB is minimum and required is above that</p>
+                </div>
+              </li>
+              <li class="requirement-item">
+                <div class="requirement-header" onclick="toggleRequirement(this)">
+                  <span class="requirement-title">Storage: 5 GB minimum</span>
+                  <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                <div class="requirement-details">
+                 <p>10 gb is perfect for daily use while users can still use it in 5 gb Storage by choosing minimal profile</p> </div>
+              </li>
+              <li class="requirement-item">
+                <div class="requirement-header" onclick="toggleRequirement(this)">
+                  <span class="requirement-title">Graphics: Anything</span>
+                  <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                <div class="requirement-details">
+                  <p>except obscure graphics cards that are not mainstream. like some unknown diy made GPUs
+                   details about blur: when gpu is being used the thing would show blur when gpu isn't being used it will be opaque</p> </div>
+              </li>
+              <li class="requirement-item">
+                <div class="requirement-header" onclick="toggleRequirement(this)">
+                  <span class="requirement-title">Motherboard : Anything with modern support</span>
+                  <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                <div class="requirement-details">
+                  <p>The requirement is about whether you use a motherboard with modern Bios or UEFI support and secure boot toggling support</p> </div>
+              </li>
+            </ul>
         </div>
       `;
     }

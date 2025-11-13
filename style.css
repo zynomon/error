@@ -246,7 +246,7 @@ body {
 
 .error-code {
     font-size: clamp(1.5rem, 6vw, 3rem);
-    color: #fff;
+    color: #888;
     margin-top: 2rem;
     font-family: "Courier New", monospace;
     text-shadow:
