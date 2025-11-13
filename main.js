@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <li class="requirement-item">
                 <div class="requirement-header" onclick="toggleRequirement(this)">
                   <span class="requirement-title">CPU: 64-bit processor (2 GHz or faster)</span>
-                  <span class="requirement-arrow">▼</span>
+                  <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
                 <div class="requirement-details">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Supported processors include Intel Core series and AMD Ryzen. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <li class="requirement-item">
                 <div class="requirement-header" onclick="toggleRequirement(this)">
                   <span class="requirement-title">RAM: 2 GB minimum, 4 GB recommended</span>
-                  <span class="requirement-arrow">▼</span>
+                  <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
                 <div class="requirement-details">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. More RAM allows for better multitasking and performance. Duis aute irure dolor in reprehenderit.</p>
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <li class="requirement-item">
                 <div class="requirement-header" onclick="toggleRequirement(this)">
                   <span class="requirement-title">Storage: 20 GB available space</span>
-                  <span class="requirement-arrow">▼</span>
+                  <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
                 <div class="requirement-details">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. SSD recommended for better performance. HDD supported but slower boot times expected.</p>
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <li class="requirement-item">
                 <div class="requirement-header" onclick="toggleRequirement(this)">
                   <span class="requirement-title">Graphics: VGA capable of 1024x768 resolution</span>
-                  <span class="requirement-arrow">▼</span>
+                  <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
                 <div class="requirement-details">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Basic graphics card required. Integrated graphics supported on most modern systems.</p>
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <li class="requirement-item">
                 <div class="requirement-header" onclick="toggleRequirement(this)">
                   <span class="requirement-title">Boot: UEFI or Legacy BIOS support</span>
-                  <span class="requirement-arrow">▼</span>
+                  <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
                 <div class="requirement-details">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Both UEFI and Legacy boot modes are supported. Secure Boot can be enabled or disabled.</p>
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <li class="requirement-item">
               <div class="requirement-header" onclick="toggleRequirement(this)">
                 <span class="requirement-title">CPU: 64-bit processor (2 GHz or faster)</span>
-                <span class="requirement-arrow">▼</span>
+                <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </div>
               <div class="requirement-details">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Supported processors include Intel Core i3 or higher and AMD Ryzen 3 or higher. ARM processors not supported at this time.</p>
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <li class="requirement-item">
               <div class="requirement-header" onclick="toggleRequirement(this)">
                 <span class="requirement-title">RAM: 4 GB minimum, 8 GB recommended</span>
-                <span class="requirement-arrow">▼</span>
+                <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </div>
               <div class="requirement-details">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Higher RAM allows for smoother desktop experience and better application performance. 16 GB optimal for heavy workloads.</p>
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <li class="requirement-item">
               <div class="requirement-header" onclick="toggleRequirement(this)">
                 <span class="requirement-title">Storage: 30 GB available space</span>
-                <span class="requirement-arrow">▼</span>
+                <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </div>
               <div class="requirement-details">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. SSD highly recommended for optimal performance. NVMe drives provide the best experience. Additional space needed for user data and applications.</p>
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <li class="requirement-item">
               <div class="requirement-header" onclick="toggleRequirement(this)">
                 <span class="requirement-title">Graphics: OpenGL 3.3 compatible or better</span>
-                <span class="requirement-arrow">▼</span>
+                <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </div>
               <div class="requirement-details">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Modern integrated graphics from Intel and AMD supported. Dedicated GPUs from NVIDIA and AMD recommended for better visual effects.</p>
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <li class="requirement-item">
               <div class="requirement-header" onclick="toggleRequirement(this)">
                 <span class="requirement-title">Boot: UEFI required</span>
-                <span class="requirement-arrow">▼</span>
+                <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </div>
               <div class="requirement-details">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Legacy BIOS not supported in this edition. Secure Boot must be configured properly for installation.</p>
