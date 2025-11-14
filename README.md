@@ -1,3 +1,4 @@
+<img src="https://img.shields.io/badge/Download%20ISO-grey?style=plastic&logo=debian&logoColor=white" alt="Download ISO">
 <img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="error-text" style="width:1000px;">
 <p align="center">
   <a href="https://zynomon.github.io/error"><img src="https://img.shields.io/badge/Visit%20Website-blue?style=flat-square"></a>
