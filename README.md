@@ -2,23 +2,20 @@
 
 <p align="center">
   <a href="https://zynomon.github.io/error">
-    <img src="https://img.shields.io/badge/Visit%20Website-blue?style=plastic">
+    <img src="https://img.shields.io/badge/Visit%20Website-blue?style=social">
   </a>
-  <img src="https://img.shields.io/badge/Status-Beta-yellow?style=plastic">
-  <img src="https://img.shields.io/badge/License-Apache%202.0-green?style=plastic">
-  <img src="https://img.shields.io/badge/Platform-Linux-orange?style=plastic">
-  <img src="https://hits.sh/zynomon.github.io/error.svg?style=plastic&label=visits">
-  <a href="https://zynomon.github.io/error/">
-    <img src="https://img.shields.io/badge/Download%20ISO-grey?style=plastic&logo=debian&logoColor=white" alt="Download ISO">
-  </a>
+  <img src="https://img.shields.io/badge/Status-Beta-yellow?style=social">
+  <img src="https://img.shields.io/badge/License-Apache%202.0-green?style=social">
+  <img src="https://img.shields.io/badge/Platform-Linux-orange?style=social">
+  <img src="https://hits.sh/zynomon.github.io/error.svg?style=social&label=visits">
 </p>
 
 <p align="center">
   <a href="https://github.com/zynomon/error">
-    <img src="https://img.shields.io/github/stars/zynomon/error?style=plastic">
+    <img src="https://img.shields.io/github/stars/zynomon/error?style=social">
   </a>
   <a href="https://github.com/zynomon/error/fork">
-    <img src="https://img.shields.io/github/forks/zynomon/error?style=plastic">
+    <img src="https://img.shields.io/github/forks/zynomon/error?style=social">
   </a>
 </p>
 ---
