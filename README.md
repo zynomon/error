@@ -1,23 +1,26 @@
 <img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="error-text" style="width:1000px;">
 
-<p align="center">
-  <a href="https://zynomon.github.io/error">
-    <img src="https://img.shields.io/badge/VISIT%20WEBSITE-blue?style=for-the-badge">
-  </a>
-  <img src="https://img.shields.io/badge/STATUS-BETA-yellow?style=for-the-badge">
-  <img src="https://img.shields.io/badge/LICENSE-APACHE%202.0-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/PLATFORM-LINUX-orange?style=for-the-badge">
-  <img src="https://hits.sh/zynomon.github.io/error.svg?style=for-the-badge&label=VISITS">
-</p>
+<img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="error-text" style="width:1000px;">
 
 <p align="center">
+  <a href="https://zynomon.github.io/error">
+    <img src="https://img.shields.io/badge/Visit%20Website-blue?style=plastic&logo=google-chrome&logoColor=white">
+  </a>
+  <img src="https://img.shields.io/badge/Status-Beta-yellow?style=plastic&logo=progress">
+  <img src="https://img.shields.io/badge/License-Apache%202.0-green?style=plastic&logo=open-source-initiative&logoColor=white">
+  <img src="https://img.shields.io/badge/Platform-Linux-orange?style=plastic&logo=linux&logoColor=white">
+  <img src="https://hits.sh/zynomon.github.io/error.svg?style=plastic&label=visits&logo=counter-culture&logoColor=white">
   <a href="https://github.com/zynomon/error">
-    <img src="https://img.shields.io/github/stars/zynomon/error?style=for-the-badge">
+    <img src="https://img.shields.io/github/stars/zynomon/error?style=plastic&logo=github">
   </a>
   <a href="https://github.com/zynomon/error/fork">
-    <img src="https://img.shields.io/github/forks/zynomon/error?style=for-the-badge">
+    <img src="https://img.shields.io/github/forks/zynomon/error?style=plastic&logo=github">
+  </a>
+  <a href="https://discord.gg/Jn7FBwu99F">
+    <img src="https://img.shields.io/badge/Join%20Discord-5865F2?style=plastic&logo=discord&logoColor=white">
   </a>
 </p>
+
 ---
 # this is the homepage for error.os and it's debian/apt repo
 Adding the repo to your existing system to enjoy updates and error.os apps natively.
