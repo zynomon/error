@@ -1,16 +1,25 @@
-<img src="https://img.shields.io/badge/Download%20ISO-grey?style=plastic&logo=debian&logoColor=white" alt="Download ISO">
 <img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="error-text" style="width:1000px;">
+
 <p align="center">
-  <a href="https://zynomon.github.io/error"><img src="https://img.shields.io/badge/Visit%20Website-blue?style=flat-square"></a>
-  <img src="https://img.shields.io/badge/Status-Beta-yellow?style=flat-square">
-  <img src="https://img.shields.io/badge/License-Apache%202.0-green?style=flat-square">
-  <img src="https://img.shields.io/badge/Platform-Linux-orange?style=flat-square">
-  <img src="https://hits.sh/zynomon.github.io/error.svg?style=flat-square&label=visits">
+  <a href="https://zynomon.github.io/error">
+    <img src="https://img.shields.io/badge/Visit%20Website-blue?style=plastic">
+  </a>
+  <img src="https://img.shields.io/badge/Status-Beta-yellow?style=plastic">
+  <img src="https://img.shields.io/badge/License-Apache%202.0-green?style=plastic">
+  <img src="https://img.shields.io/badge/Platform-Linux-orange?style=plastic">
+  <img src="https://hits.sh/zynomon.github.io/error.svg?style=plastic&label=visits">
+  <a href="https://zynomon.github.io/error/">
+    <img src="https://img.shields.io/badge/Download%20ISO-grey?style=plastic&logo=debian&logoColor=white" alt="Download ISO">
+  </a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/zynomon/error"><img src="https://img.shields.io/github/stars/zynomon/error?style=social"></a>
-  <a href="https://github.com/zynomon/error/fork"><img src="https://img.shields.io/github/forks/zynomon/error?style=social"></a>
+  <a href="https://github.com/zynomon/error">
+    <img src="https://img.shields.io/github/stars/zynomon/error?style=plastic">
+  </a>
+  <a href="https://github.com/zynomon/error/fork">
+    <img src="https://img.shields.io/github/forks/zynomon/error?style=plastic">
+  </a>
 </p>
 ---
 # this is the homepage for error.os and it's debian/apt repo
