@@ -71,7 +71,7 @@ born from failure, built for control.
   <a href="https://discord.gg/Jn7FBwu99F">
     <img src="https://img.shields.io/badge/-5865F2?style=plastic&logo=discord&logoColor=white">
 
-  <img src="https://img.shields.io/badge/⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀-white?style=plastic">
+  <img src="https://img.shields.io/badge/⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀-white?style=plastic">
 
 
   </a>
