@@ -16,9 +16,7 @@
   <a href="https://github.com/zynomon/error/fork">
     <img src="https://img.shields.io/github/forks/zynomon/error?style=plastic&logo=github">
   </a>
-  <a href="https://discord.gg/Jn7FBwu99F">
-    <img src="https://img.shields.io/badge/Join%20Discord-5865F2?style=plastic&logo=discord&logoColor=white">
-  </a>
+  
 </p>
 
 ---
@@ -66,6 +64,11 @@ won't work for now because there is a major bug to fix
 └── README.md
 ```
 ---
-# 𝚎𝚛𝚛𝚘𝚛.𝚘𝚜 
+# 𝚎𝚛𝚛𝚘𝚛.𝚘𝚜™
 born from failure, built for control. 
 
+
+<a href="https://discord.gg/Jn7FBwu99F">
+    <img src="https://img.shields.io/badge/Join%20Discord-5865F2?style=plastic&logo=discord&logoColor=white">
+  </a>
+a
