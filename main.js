@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (isoType === "neospace") {
       content = `
         <div class="modal-header">
-          <img src="icons/neospace.png" alt="Void" class="modal-image" />
+          <img src="icons/neospace.png" alt="neospace" class="modal-image" />
           <h2 class="modal-title">Neospace</h2>
           <span class="badge badge-beta text-white font-bold">Incoming..</span>
         </div>
