@@ -28,6 +28,7 @@ Adding the repo to your existing system to enjoy updates and error.os apps nativ
 ``` 
 curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyrings/error.gpg && echo "deb [signed-by=/usr/share/keyrings/error.gpg] https://zynomon.github.io/error stable main" | sudo tee /etc/apt/sources.list.d/erroros.list && sudo apt update
  ```
+won't work for now because there is a major bug to fix
 ```
 ├── conf
 │   └── distributions
