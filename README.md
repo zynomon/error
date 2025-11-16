@@ -1,7 +1,7 @@
 
 <img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="error-text" style="width:1000px;">
 
-<p align="center"> 𝚎𝚛𝚛𝚘𝚛.𝚘𝚜 </p>
+<p align="center" size="25px"> 𝚎𝚛𝚛𝚘𝚛.𝚘𝚜 </p>
 
 <p align="center">
   <a href="https://zynomon.github.io/error">
