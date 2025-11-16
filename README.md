@@ -66,9 +66,9 @@ won't work for now because there is a major bug to fix
 born from failure, built for control. 
 <p align="right">
   <a href="https://zynomon.github.io/error">
-    <img src="https://img.shields.io/badge/Visit%20on%20Website-blue?style=plastic&logo=internet&logoColor=white">
+    <img src="https://img.shields.io/badge/blue?style=plastic&logo=google-chrome&logoColor=white">
   </a>
 <a href="https://discord.gg/Jn7FBwu99F">
-    <img src="https://img.shields.io/badge/Join%20Discord-5865F2?style=plastic&logo=discord&logoColor=white">
+    <img src="https://img.shields.io/badge/5865F2?style=plastic&logo=discord&logoColor=white">
   </a>
 </p>
