@@ -1,4 +1,3 @@
-<p align="center" size="25px">𝚎𝚛𝚛𝚘𝚛.𝚘𝚜</p>
 
 <img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="error-text" style="width:1000px;">
 
@@ -64,4 +63,6 @@ won't work for now because there is a major bug to fix
 ├── error.gpg
 ├── index.html
 └── README.md
+# 𝚎𝚛𝚛𝚘𝚛.𝚘𝚜 
+born from failure, built for control. 
 
