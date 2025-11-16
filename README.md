@@ -64,7 +64,7 @@ won't work for now because there is a major bug to fix
 ---
 # 𝚎𝚛𝚛𝚘𝚛.𝚘𝚜™
 born from failure, built for control. 
-<p align="right">
+<p align="left">
   <a href="https://zynomon.github.io">
     <img src="https://img.shields.io/badge/-blue?style=plastic&logo=globe&logoColor=white">
   </a>
