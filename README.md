@@ -2,6 +2,8 @@
 <img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="error-text" style="width:1000px;">
 
 
+<p align="center">
+
   <img src="https://img.shields.io/badge/Status-Beta-yellow?style=plastic&logo=progress">
   <img src="https://img.shields.io/badge/License-Apache%202.0-green?style=plastic&logo=open-source-initiative&logoColor=white">
   <img src="https://img.shields.io/badge/Platform-Linux-orange?style=plastic&logo=linux&logoColor=white">
@@ -62,10 +64,8 @@ won't work for now because there is a major bug to fix
 ---
 # 𝚎𝚛𝚛𝚘𝚛.𝚘𝚜™
 born from failure, built for control. 
-
-<p align="center">
   <a href="https://zynomon.github.io/error">
-    <img src="https://img.shields.io/badge/Visit%20on%20Website-blue?style=plastic&logo=browser&logoColor=white">
+    <img src="https://img.shields.io/badge/Visit%20on%20Website-blue?style=plastic&logo=internet&logoColor=white">
   </a>
 
 <a href="https://discord.gg/Jn7FBwu99F">
