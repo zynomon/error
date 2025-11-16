@@ -66,8 +66,8 @@ won't work for now because there is a major bug to fix
 born from failure, built for control. 
 <p align="left">
   <a href="https://zynomon.github.io">
-    <img src="https://img.shields.io/badge/-blue?style=plastic&logo=globe&logoColor=white">
-  </a>
+    <img src="https://img.shields.io/badge/Website-blue?style=plastic&logo=globe&logoColor=white">
+</a>
   <a href="https://discord.gg/Jn7FBwu99F">
     <img src="https://img.shields.io/badge/-5865F2?style=plastic&logo=discord&logoColor=white">
 
