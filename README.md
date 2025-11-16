@@ -1,9 +1,5 @@
-<p align="center">
-<<<<<<< Updated upstream
-  <img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="icon" width="800">
-=======
+
   <img src="https://github.com/zynomon/error/blob/web-side/icons/icon.svg" alt="icon" width="800">
->>>>>>> Stashed changes
 </p>
 
 
