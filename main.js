@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isoType === "void") {
       content = `
         <div class="modal-header">
-          <img src="icons/void.png" alt="Void" class="modal-image" />
+          <img src="icons/void.jpg" alt="Void" class="modal-image" />
           <h2 class="modal-title">Void</h2>
           <span class="badge badge-beta text-white font-bold">BETA</span>
         </div>
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (isoType === "neospace") {
       content = `
         <div class="modal-header">
-          <img src="icons/neospace.png" alt="n" class="modal-image" />
+          <img src="icons/neospace.jpg" alt="n" class="modal-image" />
           <h2 class="modal-title">Neospace</h2>
           <span class="badge badge-beta text-white font-bold">In development</span>
         </div>
