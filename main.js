@@ -84,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (isoType === "neospace") {
       content = `
         <div class="modal-header">
-          <img src="icons/void.png" alt="Void" class="modal-image" />
-          <h2 class="modal-title">Void</h2>
-          <span class="badge badge-beta text-white font-bold">BETA</span>
+          <img src="icons/neospace.png" alt="n" class="modal-image" />
+          <h2 class="modal-title">Neospace</h2>
+          <span class="badge badge-beta text-white font-bold">In development</span>
         </div>
         <div class="modal-details">
           <h3>About Neospace Edition</h3>
@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <li>Better at performance</li>
             <li>Modern UI</li>
             <li>Letting users configure the whole distro in gui as if they made it.</li>
+            <li>Supporting Bangla language support fully</li>
             </ul>
 
             <h3>Aimed System Requirements</h3>
@@ -109,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <svg class="requirement-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
                 <div class="requirement-details">
-                <p>Any 64 bit cpu (depends on linux firmware and auto configured driver support)</p>
+                <p>Any 64 bit cpu (depends on linux firmware and auto configured driver support made by error.os systems)</p>
                 </div>
               </li>
               <li class="requirement-item">

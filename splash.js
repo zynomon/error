@@ -5,7 +5,7 @@
     duration: 4000,
     pauseDuration: 1000,
     fadeDuration: 800,
-    matrixFPS: 50,
+    matrixFPS: 100,
     glitchInterval: 120,
     shakeIntensity: 20,
     fontSize: 16,
