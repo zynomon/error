@@ -1,0 +1,7 @@
+Origin: error.os
+Label: error
+Suite: stable
+Codename: stable
+Architectures: amd64 all
+Components: main
+Description: error.os APT archive
