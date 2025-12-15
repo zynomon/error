@@ -13,7 +13,11 @@ born from failure, built for control.
 
   </a>
 </p>
-
+<p align="center">
+  <a href="https://zynomon.github.io/error/e.html">
+    <img src="https://img.shields.io/badge/browse%20repo-black?style=plastic">
+  </a>
+</p>
 ---
 # this is the homepage for error.os and it's debian/apt repo
 Adding the repo to your existing system to enjoy updates and error.os apps natively.
