@@ -7,16 +7,14 @@ born from failure, built for control.
 </a>
   <a href="https://discord.gg/Jn7FBwu99F">
     <img src="https://img.shields.io/badge/-5865F2?style=plastic&logo=discord&logoColor=white">
-
-  <img src="https://img.shields.io/badge/⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀-white?style=plastic">
-
-
-  </a>
-</p>
-<p align="center">
+      </a>
   <a href="https://zynomon.github.io/error/e.html">
     <img src="https://img.shields.io/badge/browse%20repo-black?style=plastic">
   </a>
+      <img src="https://img.shields.io/badge/⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀-white?style=plastic">
+</p>
+<p align="center">
+  
 </p>
 ---
 # this is the homepage for error.os and it's debian/apt repo
