@@ -9,7 +9,7 @@ born from failure, built for control.
     <img src="https://img.shields.io/badge/-5865F2?style=plastic&logo=discord&logoColor=white">
       </a>
   <a href="https://zynomon.github.io/error/e.html">
-    <img src="https://img.shields.io/badge/browse%20repo-black?style=plastic">
+    <img src="https://img.shields.io/badge/repo-black?style=plastic">
   </a>
       <img src="https://img.shields.io/badge/⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀-white?style=plastic">
 </p>
@@ -17,9 +17,12 @@ born from failure, built for control.
   
 </p>
 ---
+
+
 # this is the homepage for error.os and it's debian/apt repo
-Adding the repo to your existing system to enjoy updates and error.os apps natively.
-- type this on terminal
+
+
+- type this on terminal to get our latest updates on any debian/ubuntu linux distro
   
 ``` 
 curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyrings/error.gpg && echo "deb [signed-by=/usr/share/keyrings/error.gpg] https://zynomon.github.io/error stable main" | sudo tee /etc/apt/sources.list.d/erroros.list && sudo apt update
@@ -97,10 +100,9 @@ curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyri
 
 </details>
 
+
 e.html is supposed to work as an index viewer every e.html is hardlinked 
-
-so adding e after any zynomon.gtihub.io/error/ turns on index viewer you could try out here is the link,
+so adding e.html after any zynomon.gtihub.io/error/ turns on index viewer you could try out here is the link,
 https://zynomon.github.io/error/e.html
-
 
 ---
