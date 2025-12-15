@@ -2,324 +2,191 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Directory index</title>
+        <title>Directory Index</title>
+
         <style>
             body {
-                font-family: "Courier New", monospace;
-                margin: 0;
-                padding: 0;
-                background: #000;
-                color: #e0e0e0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
+                font-family: monospace;
+                margin: 20px;
+                background: #fafafa;
+                color: #222;
             }
-            body.light {
-                background: #f5f5f5;
-                color: #111;
+            body.dark {
+                background: #111;
+                color: #eee;
             }
-            #viewer-shell {
-                width: 90%;
-                max-width: 960px;
-            }
-            #viewer-box {
-                position: relative;
-                border-radius: 14px;
-                overflow: hidden;
-                box-shadow:
-                    0 18px 40px rgba(0, 0, 0, 0.7),
-                    0 0 60px rgba(136, 136, 136, 0.45);
-            }
-            body.light #viewer-box {
-                box-shadow:
-                    0 18px 40px rgba(0, 0, 0, 0.25),
-                    0 0 40px rgba(50, 50, 50, 0.25);
-            }
-            #noise-layer {
-                position: absolute;
-                inset: 0;
-                z-index: 0;
-            }
-            #noise-layer svg {
-                width: 100%;
-                height: 100%;
-                display: block;
-            }
-            #content-layer {
-                position: relative;
-                z-index: 1;
-                padding: 20px;
-                background: linear-gradient(
-                    145deg,
-                    rgba(10, 10, 10, 0.96),
-                    rgba(18, 18, 18, 0.98)
-                );
-                backdrop-filter: blur(10px);
-            }
-            body.light #content-layer {
-                background: linear-gradient(
-                    145deg,
-                    rgba(245, 245, 245, 0.96),
-                    rgba(255, 255, 255, 0.98)
-                );
-            }
-            #top-bar {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+
+            #darkToggle {
+                padding: 6px 12px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+                background: #f0f0f0;
+                color: #222;
                 margin-bottom: 12px;
             }
-            #path-label {
-                font-size: 12px;
-                opacity: 0.7;
+            body.dark #darkToggle {
+                background: #222;
+                color: #eee;
+                border-color: #444;
             }
-            #themeToggle {
-                padding: 4px 10px;
-                border-radius: 999px;
-                border: 1px solid rgba(136, 136, 136, 0.5);
-                cursor: pointer;
-                background: rgba(20, 20, 20, 0.9);
-                color: #e0e0e0;
-                font-size: 12px;
-            }
-            body.light #themeToggle {
-                background: #e0e0e0;
-                color: #111;
-                border-color: rgba(80, 80, 80, 0.5);
-            }
+
             #breadcrumbs {
-                font-size: 13px;
-                margin-bottom: 10px;
+                margin-bottom: 12px;
             }
             #breadcrumbs .crumb {
                 cursor: pointer;
-                color: #9ed0ff;
+                color: #4da3ff;
             }
-            body.light #breadcrumbs .crumb {
-                color: #0050aa;
-            }
-            #breadcrumbs .crumb:hover {
-                text-shadow: 0 0 8px rgba(158, 208, 255, 0.6);
-            }
-            body.light #breadcrumbs .crumb:hover {
-                text-shadow: none;
-            }
+
             #listing {
                 list-style: none;
                 padding: 0;
                 margin: 0;
-                border-radius: 8px;
-                background: rgba(5, 5, 5, 0.7);
-                border: 1px solid rgba(90, 90, 90, 0.4);
-            }
-            body.light #listing {
-                background: rgba(255, 255, 255, 0.8);
-                border-color: rgba(150, 150, 150, 0.4);
             }
             #listing li {
                 display: flex;
                 align-items: center;
                 gap: 8px;
                 padding: 6px 10px;
-                border-bottom: 1px solid rgba(70, 70, 70, 0.35);
-                font-size: 13px;
-            }
-            body.light #listing li {
-                border-bottom-color: rgba(180, 180, 180, 0.5);
-            }
-            #listing li:last-child {
-                border-bottom: none;
+                border-bottom: 1px solid rgba(128, 128, 128, 0.2);
             }
             #listing li img {
                 width: 16px;
                 height: 16px;
             }
-            #listing li a {
-                color: inherit;
-                text-decoration: none;
-            }
-            #listing li a:hover {
-                text-decoration: underline;
-            }
             .meta {
                 margin-left: auto;
                 opacity: 0.7;
-                font-size: 11px;
-            }
-            #status {
-                margin-top: 10px;
-                font-size: 11px;
-                opacity: 0.7;
+                font-size: 12px;
             }
         </style>
     </head>
+
     <body>
-        <div id="viewer-shell">
-            <div id="viewer-box">
-                <div id="noise-layer">
-                    <svg
-                        viewBox="0 0 200 200"
-                        xmlns="http://www.w3.org/2000/svg"
-                        preserveAspectRatio="none"
-                    >
-                        <filter id="noiseFilter">
-                            <feTurbulence
-                                type="fractalNoise"
-                                baseFrequency="0.9"
-                                numOctaves="4"
-                                stitchTiles="stitch"
-                            />
-                        </filter>
-                        <rect
-                            width="100%"
-                            height="100%"
-                            filter="url(#noiseFilter)"
-                            opacity="0.17"
-                        />
-                    </svg>
-                </div>
-                <div id="content-layer">
-                    <div id="top-bar">
-                        <div id="path-label"></div>
-                        <button id="themeToggle">light</button>
-                    </div>
-                    <div id="breadcrumbs"></div>
-                    <ul id="listing"></ul>
-                    <div id="status"></div>
-                </div>
-            </div>
-        </div>
+        <button id="darkToggle">dark</button>
+        <div id="breadcrumbs"></div>
+        <ul id="listing"></ul>
+
         <script>
-            const ICONS = "/error/icons/";
+            const ICONS = "../icons/";
             const repoOwner = "zynomon";
             const repoName = "error";
             const branch = "web-side";
 
-            document.getElementById("themeToggle").onclick = function () {
-                document.body.classList.toggle("light");
-                this.textContent = document.body.classList.contains("light")
-                    ? "dark"
-                    : "light";
-            };
+            document.getElementById("darkToggle").onclick = () =>
+                document.body.classList.toggle("dark");
 
-            let rawPath = window.location.pathname;
-            rawPath = rawPath.replace(/^\/+/, "");
-            rawPath = rawPath.replace(/^error\//, "");
-            rawPath = rawPath.replace(/\.html$/, "");
-            if (rawPath.endsWith("/")) rawPath = rawPath.slice(0, -1);
-            const path = rawPath;
+            let path = window.location.pathname;
 
-            document.getElementById("path-label").textContent =
-                path === "" ? "/error" : "/error/" + path;
+            path = path.replace(/^\/error\//, "");
 
-            function breadcrumbs(p) {
+            path = path.replace(/e\.html$/, "");
+
+            if (path.endsWith("/")) path = path.slice(0, -1);
+
+            function breadcrumbs(path) {
                 const bc = document.getElementById("breadcrumbs");
                 bc.innerHTML = "";
-                const parts = p === "" ? ["root"] : p.split("/");
+
+                const parts = path === "" ? ["root"] : path.split("/");
                 let cur = "";
-                parts.forEach(function (seg, i) {
-                    if (seg !== "root") cur += (i ? "/" : "") + seg;
+
+                parts.forEach((p, i) => {
+                    if (p !== "root") cur += (i ? "/" : "") + p;
+
                     const span = document.createElement("span");
-                    span.textContent = seg;
+                    span.textContent = p;
                     span.className = "crumb";
-                    span.onclick = function () {
-                        if (seg === "root") {
-                            window.location.href = "/error/.html";
-                        } else {
-                            const upCount = parts.length - i - 1;
-                            const up = "../".repeat(upCount);
-                            window.location.href = up + ".html";
-                        }
+                    span.onclick = () => {
+                        window.location.href =
+                            cur === ""
+                                ? "./e.html"
+                                : "../".repeat(parts.length - i - 1) + "e.html";
                     };
+
                     bc.appendChild(span);
                     if (i < parts.length - 1)
                         bc.appendChild(document.createTextNode(" / "));
                 });
             }
 
-            function iconFor(name, type, p) {
+            function iconFor(name, type, path) {
                 if (name === "..") return "dirback.png";
                 if (type === "dir") return "dir.png";
                 if (name.endsWith(".deb")) return "deb.png";
-                if (name.indexOf("Packages") !== -1) return "pac.png";
+                if (name.includes("Packages")) return "pac.png";
                 if (
                     [
                         "Release",
                         "InRelease",
                         "Release.gpg",
                         "error.gpg",
-                    ].indexOf(name) !== -1
+                    ].includes(name)
                 )
                     return "key.png";
-                if (
-                    p.indexOf("/i18n/") !== -1 ||
-                    name.indexOf("Translation") !== -1
-                )
+                if (path.includes("/i18n/") || name.includes("Translation"))
                     return "lang.png";
                 return "other.png";
             }
 
-            async function loadDir(p) {
-                breadcrumbs(p);
+            async function loadDir(path) {
+                breadcrumbs(path);
+
                 const ul = document.getElementById("listing");
-                const status = document.getElementById("status");
                 ul.innerHTML = "";
-                status.textContent = "loading…";
-                const api =
-                    "https://api.github.com/repos/" +
-                    repoOwner +
-                    "/" +
-                    repoName +
-                    "/contents/" +
-                    p +
-                    "?ref=" +
-                    branch;
+
+                const api = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}?ref=${branch}`;
+
                 let data;
                 try {
                     const res = await fetch(api);
                     data = await res.json();
-                    if (!Array.isArray(data))
-                        throw new Error("not a directory");
-                } catch (e) {
-                    ul.innerHTML = "";
-                    const li = document.createElement("li");
-                    li.textContent = "error loading directory";
-                    ul.appendChild(li);
-                    status.textContent = "";
+                    if (!Array.isArray(data)) throw 0;
+                } catch {
+                    ul.innerHTML = "<li>error loading directory</li>";
                     return;
                 }
-                if (p !== "") {
+
+                if (path !== "") {
                     const li = document.createElement("li");
+
                     const img = document.createElement("img");
                     img.src = ICONS + "dirback.png";
                     li.appendChild(img);
+
                     const a = document.createElement("a");
                     a.textContent = "..";
-                    a.href = "../.html";
+                    a.href = "../e.html";
                     li.appendChild(a);
+
                     ul.appendChild(li);
                 }
-                data.sort(function (a, b) {
+
+                data.sort((a, b) => {
                     if (a.type === b.type) return a.name.localeCompare(b.name);
                     return a.type === "dir" ? -1 : 1;
                 });
+
                 for (const item of data) {
                     const li = document.createElement("li");
+
                     const img = document.createElement("img");
-                    img.src = ICONS + iconFor(item.name, item.type, p);
+                    img.src = ICONS + iconFor(item.name, item.type, path);
                     li.appendChild(img);
+
                     const a = document.createElement("a");
                     a.textContent = item.name;
+
                     if (item.type === "dir") {
-                        a.href = item.name + "/.html";
+                        a.href = item.name + "/e.html";
                     } else {
                         a.href = item.download_url;
                     }
+
                     li.appendChild(a);
                     ul.appendChild(li);
                 }
-                status.textContent = data.length + " item(s)";
             }
 
             loadDir(path);
