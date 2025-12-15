@@ -22,8 +22,12 @@ Adding the repo to your existing system to enjoy updates and error.os apps nativ
 ``` 
 curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyrings/error.gpg && echo "deb [signed-by=/usr/share/keyrings/error.gpg] https://zynomon.github.io/error stable main" | sudo tee /etc/apt/sources.list.d/erroros.list && sudo apt update
  ```
-the repo structure :- 
-```
+ 
+<details>
+  <summary>repo structure</summary>
+
+<pre>
+
 .
 ├── conf
 │   ├── apt-ftparchive.conf
@@ -86,10 +90,15 @@ the repo structure :-
 ├── README.md
 ├── splash.js
 └── style.css
- ```
+  
+</pre>
+
+</details>
 
 e.html is supposed to work as an index viewer every e.html is hardlinked 
 
 so adding e after any zynomon.gtihub.io/error/ turns on index viewer you could try out here is the link,
-https://zynomon.github.io/error/e
+https://zynomon.github.io/error/e.html
+
+
 ---
