@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8" />
         <title>Directory Index</title>
-
         <style>
             body {
                 font-family: monospace;
@@ -23,8 +22,8 @@
 
             #viewer-box {
                 position: relative;
-                width: 90%;
-                max-width: 900px;
+                width: 92%;
+                max-width: 980px;
                 border-radius: 14px;
                 overflow: hidden;
                 box-shadow:
@@ -51,7 +50,7 @@
             #content-layer {
                 position: relative;
                 z-index: 1;
-                padding: 20px;
+                padding: 16px 18px 18px 18px;
                 background: linear-gradient(
                     145deg,
                     rgba(10, 10, 10, 0.96),
@@ -67,24 +66,104 @@
                 );
             }
 
-            #darkToggle {
-                padding: 6px 12px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                cursor: pointer;
-                background: #222;
-                color: #eee;
-                margin-bottom: 12px;
+            #top-bar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 10px;
             }
-            body.light #darkToggle {
+            #top-left-label {
+                font-size: 13px;
+                opacity: 0.8;
+            }
+            #menu-button {
+                width: 26px;
+                height: 26px;
+                border-radius: 999px;
+                border: 1px solid rgba(160, 160, 160, 0.6);
+                background: rgba(15, 15, 15, 0.9);
+                color: #e0e0e0;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                padding: 0;
+            }
+            #menu-button span {
+                transform: translateY(-1px);
+            }
+            body.light #menu-button {
                 background: #e0e0e0;
                 color: #111;
-                border-color: #888;
+                border-color: rgba(90, 90, 90, 0.7);
+            }
+
+            #menu-panel {
+                position: absolute;
+                right: 14px;
+                top: 38px;
+                background: rgba(8, 8, 8, 0.96);
+                border-radius: 8px;
+                border: 1px solid rgba(130, 130, 130, 0.6);
+                padding: 8px 0;
+                min-width: 190px;
+                font-size: 12px;
+                display: none;
+                z-index: 5;
+            }
+            body.light #menu-panel {
+                background: rgba(245, 245, 245, 0.98);
+                border-color: rgba(120, 120, 120, 0.8);
+            }
+            .menu-section-title {
+                padding: 4px 12px 2px 12px;
+                opacity: 0.7;
+                font-size: 11px;
+            }
+            .menu-item {
+                padding: 5px 12px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .menu-item:hover {
+                background: rgba(255, 255, 255, 0.06);
+            }
+            body.light .menu-item:hover {
+                background: rgba(0, 0, 0, 0.06);
+            }
+            .menu-item-label {
+                margin-right: 8px;
+            }
+            .menu-item-toggle {
+                font-size: 11px;
+                opacity: 0.8;
             }
 
             #breadcrumbs {
-                margin-bottom: 12px;
+                margin-bottom: 10px;
                 font-size: 14px;
+                white-space: nowrap;
+                overflow-x: auto;
+                overflow-y: hidden;
+                max-width: 100%;
+                padding-bottom: 4px;
+                scrollbar-width: thin;
+            }
+            #breadcrumbs::-webkit-scrollbar {
+                height: 6px;
+            }
+            #breadcrumbs::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            #breadcrumbs::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.25);
+                border-radius: 3px;
+            }
+            body.light #breadcrumbs::-webkit-scrollbar-thumb {
+                background: rgba(0, 0, 0, 0.25);
             }
             #breadcrumbs .crumb {
                 cursor: pointer;
@@ -112,6 +191,7 @@
                 border-radius: 8px;
                 background: rgba(5, 5, 5, 0.7);
                 border: 1px solid rgba(90, 90, 90, 0.4);
+                overflow: hidden;
             }
             body.light #listing {
                 background: rgba(255, 255, 255, 0.8);
@@ -125,9 +205,26 @@
                 padding: 6px 10px;
                 border-bottom: 1px solid rgba(70, 70, 70, 0.35);
                 font-size: 13px;
+                transition:
+                    background 0.15s ease,
+                    box-shadow 0.15s ease,
+                    transform 0.15s ease;
             }
             body.light #listing li {
                 border-bottom-color: rgba(180, 180, 180, 0.5);
+            }
+            #listing li:last-child {
+                border-bottom: none;
+            }
+
+            .hover-glow #listing li:hover {
+                background: rgba(120, 200, 255, 0.08);
+                box-shadow: 0 0 8px rgba(120, 200, 255, 0.5);
+                transform: translateY(-1px);
+            }
+            body.light.hover-glow #listing li:hover {
+                background: rgba(0, 80, 170, 0.06);
+                box-shadow: 0 0 6px rgba(0, 80, 170, 0.4);
             }
 
             #listing li img {
@@ -146,7 +243,15 @@
             .meta {
                 margin-left: auto;
                 opacity: 0.7;
-                font-size: 12px;
+                font-size: 11px;
+                display: flex;
+                gap: 10px;
+            }
+            .meta span {
+                white-space: nowrap;
+            }
+            .meta.hidden {
+                display: none;
             }
         </style>
     </head>
@@ -177,7 +282,63 @@
             </div>
 
             <div id="content-layer">
-                <button id="darkToggle">light</button>
+                <div id="top-bar">
+                    <div id="top-left-label">bredcom</div>
+                    <button id="menu-button"><span>⋮</span></button>
+                    <div id="menu-panel">
+                        <div class="menu-section-title">sorting</div>
+                        <div class="menu-item" data-sort="name">
+                            <div class="menu-item-label">sort by name</div>
+                            <div
+                                class="menu-item-toggle"
+                                id="sort-name-indicator"
+                            >
+                                active
+                            </div>
+                        </div>
+                        <div class="menu-item" data-sort="size">
+                            <div class="menu-item-label">sort by size</div>
+                            <div
+                                class="menu-item-toggle"
+                                id="sort-size-indicator"
+                            ></div>
+                        </div>
+                        <div class="menu-item" data-sort="date">
+                            <div class="menu-item-label">sort by date</div>
+                            <div
+                                class="menu-item-toggle"
+                                id="sort-date-indicator"
+                            ></div>
+                        </div>
+                        <div class="menu-section-title">view</div>
+                        <div class="menu-item" id="toggle-sizes">
+                            <div class="menu-item-label">file sizes</div>
+                            <div class="menu-item-toggle" id="sizes-indicator">
+                                on
+                            </div>
+                        </div>
+                        <div class="menu-item" id="toggle-dates">
+                            <div class="menu-item-label">timestamps</div>
+                            <div class="menu-item-toggle" id="dates-indicator">
+                                on
+                            </div>
+                        </div>
+                        <div class="menu-item" id="toggle-hover">
+                            <div class="menu-item-label">hover glow</div>
+                            <div class="menu-item-toggle" id="hover-indicator">
+                                on
+                            </div>
+                        </div>
+                        <div class="menu-section-title">theme</div>
+                        <div class="menu-item" id="toggle-theme">
+                            <div class="menu-item-label">light mode</div>
+                            <div class="menu-item-toggle" id="theme-indicator">
+                                off
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div id="breadcrumbs"></div>
                 <ul id="listing"></ul>
             </div>
@@ -190,11 +351,86 @@
             const repoName = "error";
             const branch = "web-side";
 
-            document.getElementById("darkToggle").onclick = function () {
+            let currentSort = "name";
+            let showSizes = true;
+            let showDates = true;
+            let hoverGlow = true;
+            let currentEntries = [];
+
+            document.body.classList.add("hover-glow");
+
+            const menuButton = document.getElementById("menu-button");
+            const menuPanel = document.getElementById("menu-panel");
+
+            menuButton.onclick = function (e) {
+                e.stopPropagation();
+                menuPanel.style.display =
+                    menuPanel.style.display === "block" ? "none" : "block";
+            };
+            document.addEventListener("click", function () {
+                menuPanel.style.display = "none";
+            });
+
+            function setSortIndicators() {
+                document.getElementById("sort-name-indicator").textContent =
+                    currentSort === "name" ? "active" : "";
+                document.getElementById("sort-size-indicator").textContent =
+                    currentSort === "size" ? "active" : "";
+                document.getElementById("sort-date-indicator").textContent =
+                    currentSort === "date" ? "active" : "";
+            }
+            function setViewIndicators() {
+                document.getElementById("sizes-indicator").textContent =
+                    showSizes ? "on" : "off";
+                document.getElementById("dates-indicator").textContent =
+                    showDates ? "on" : "off";
+                document.getElementById("hover-indicator").textContent =
+                    hoverGlow ? "on" : "off";
+            }
+            function setThemeIndicator() {
+                const light = document.body.classList.contains("light");
+                document.getElementById("theme-indicator").textContent = light
+                    ? "on"
+                    : "off";
+            }
+
+            document
+                .querySelectorAll(".menu-item[data-sort]")
+                .forEach(function (el) {
+                    el.onclick = function (e) {
+                        e.stopPropagation();
+                        currentSort = this.getAttribute("data-sort");
+                        setSortIndicators();
+                        renderEntries();
+                    };
+                });
+
+            document.getElementById("toggle-sizes").onclick = function (e) {
+                e.stopPropagation();
+                showSizes = !showSizes;
+                setViewIndicators();
+                renderEntries();
+            };
+            document.getElementById("toggle-dates").onclick = function (e) {
+                e.stopPropagation();
+                showDates = !showDates;
+                setViewIndicators();
+                renderEntries();
+            };
+            document.getElementById("toggle-hover").onclick = function (e) {
+                e.stopPropagation();
+                hoverGlow = !hoverGlow;
+                if (hoverGlow) {
+                    document.body.classList.add("hover-glow");
+                } else {
+                    document.body.classList.remove("hover-glow");
+                }
+                setViewIndicators();
+            };
+            document.getElementById("toggle-theme").onclick = function (e) {
+                e.stopPropagation();
                 document.body.classList.toggle("light");
-                this.textContent = document.body.classList.contains("light")
-                    ? "dark"
-                    : "light";
+                setThemeIndicator();
             };
 
             let path = window.location.pathname;
@@ -209,16 +445,12 @@
                 let cur = "";
                 parts.forEach((p, i) => {
                     if (p !== "root") cur += (i ? "/" : "") + p;
-
                     const span = document.createElement("span");
                     span.className = "crumb";
-
                     const img = document.createElement("img");
                     img.src = ICONS + "dir.png";
-
                     span.appendChild(img);
                     span.appendChild(document.createTextNode(p));
-
                     span.onclick = () => {
                         if (p === "root") {
                             window.location.href = "/error/e.html";
@@ -227,7 +459,6 @@
                             window.location.href = up + "e.html";
                         }
                     };
-
                     bc.appendChild(span);
                     if (i < parts.length - 1)
                         bc.appendChild(document.createTextNode(" / "));
@@ -237,6 +468,9 @@
             function iconFor(name, type, path) {
                 if (name === "..") return "dirback.png";
                 if (type === "dir") return "dir.png";
+                if (name.endsWith(".css")) return "css.png";
+                if (name.endsWith(".js")) return "js.png";
+                if (name.endsWith(".html")) return "html.png";
                 if (name.endsWith(".deb")) return "deb.png";
                 if (name.includes("Packages")) return "pac.png";
                 if (
@@ -253,20 +487,59 @@
                 return "other.png";
             }
 
-            async function loadDir(path) {
-                breadcrumbs(path);
+            function formatSize(bytes) {
+                if (bytes == null || isNaN(bytes)) return "-";
+                if (bytes < 1024) return bytes + " B";
+                const kb = bytes / 1024;
+                if (kb < 1024) return kb.toFixed(1) + " KB";
+                const mb = kb / 1024;
+                if (mb < 1024) return mb.toFixed(2) + " MB";
+                const gb = mb / 1024;
+                return gb.toFixed(2) + " GB";
+            }
+
+            function formatDate(iso) {
+                if (!iso) return "-";
+                const d = new Date(iso);
+                if (isNaN(d.getTime())) return "-";
+                const yyyy = d.getFullYear();
+                const mm = String(d.getMonth() + 1).padStart(2, "0");
+                const dd = String(d.getDate()).padStart(2, "0");
+                const hh = String(d.getHours()).padStart(2, "0");
+                const mi = String(d.getMinutes()).padStart(2, "0");
+                return yyyy + "-" + mm + "-" + dd + " " + hh + ":" + mi;
+            }
+
+            function sortEntries(entries) {
+                const dirs = entries.filter((e) => e.type === "dir");
+                const files = entries.filter((e) => e.type !== "dir");
+
+                function cmp(a, b) {
+                    if (currentSort === "size") {
+                        const sa = a.size || 0;
+                        const sb = b.size || 0;
+                        if (sa === sb) return a.name.localeCompare(b.name);
+                        return sa - sb;
+                    } else if (currentSort === "date") {
+                        const ta = a.mtime || 0;
+                        const tb = b.mtime || 0;
+                        if (ta === tb) return a.name.localeCompare(b.name);
+                        return ta - tb;
+                    } else {
+                        return a.name.localeCompare(b.name);
+                    }
+                }
+
+                dirs.sort(cmp);
+                files.sort(cmp);
+
+                return dirs.concat(files);
+            }
+
+            function renderEntries() {
                 const ul = document.getElementById("listing");
                 ul.innerHTML = "";
-                const api = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}?ref=${branch}`;
-                let data;
-                try {
-                    const res = await fetch(api);
-                    data = await res.json();
-                    if (!Array.isArray(data)) throw 0;
-                } catch {
-                    ul.innerHTML = "<li>error loading directory</li>";
-                    return;
-                }
+
                 if (path !== "") {
                     const li = document.createElement("li");
                     const img = document.createElement("img");
@@ -278,15 +551,15 @@
                     li.appendChild(a);
                     ul.appendChild(li);
                 }
-                data.sort((a, b) => {
-                    if (a.type === b.type) return a.name.localeCompare(b.name);
-                    return a.type === "dir" ? -1 : 1;
-                });
-                for (const item of data) {
+
+                const entries = sortEntries(currentEntries);
+
+                entries.forEach((item) => {
                     const li = document.createElement("li");
                     const img = document.createElement("img");
                     img.src = ICONS + iconFor(item.name, item.type, path);
                     li.appendChild(img);
+
                     const a = document.createElement("a");
                     a.textContent = item.name;
                     if (item.type === "dir") {
@@ -295,8 +568,76 @@
                         a.href = item.download_url;
                     }
                     li.appendChild(a);
+
+                    const meta = document.createElement("div");
+                    meta.className = "meta";
+                    if (!showSizes && !showDates) meta.classList.add("hidden");
+
+                    const sizeSpan = document.createElement("span");
+                    sizeSpan.textContent = showSizes
+                        ? formatSize(item.size)
+                        : "";
+                    const dateSpan = document.createElement("span");
+                    dateSpan.textContent = showDates
+                        ? formatDate(item.mtime_iso)
+                        : "";
+
+                    meta.appendChild(sizeSpan);
+                    meta.appendChild(dateSpan);
+                    li.appendChild(meta);
+
                     ul.appendChild(li);
+                });
+            }
+
+            async function loadDir(path) {
+                breadcrumbs(path);
+                const api = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}?ref=${branch}`;
+                let data;
+                try {
+                    const res = await fetch(api);
+                    data = await res.json();
+                    if (!Array.isArray(data)) throw 0;
+                } catch {
+                    const ul = document.getElementById("listing");
+                    ul.innerHTML = "<li>error loading directory</li>";
+                    return;
                 }
+
+                const commitApi = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?path=${path}&sha=${branch}`;
+                let commitMap = {};
+                try {
+                    const res = await fetch(commitApi);
+                    const commits = await res.json();
+                    if (Array.isArray(commits)) {
+                        commits.forEach((c) => {
+                            if (c.files) {
+                                c.files.forEach((f) => {
+                                    commitMap[f.filename] =
+                                        c.commit.author.date;
+                                });
+                            }
+                        });
+                    }
+                } catch {}
+
+                currentEntries = data.map((item) => {
+                    const fullName = (path ? path + "/" : "") + item.name;
+                    const mtime_iso = commitMap[fullName] || null;
+                    return {
+                        name: item.name,
+                        type: item.type,
+                        size: item.size,
+                        mtime_iso: mtime_iso,
+                        mtime: mtime_iso ? new Date(mtime_iso).getTime() : 0,
+                        download_url: item.download_url,
+                    };
+                });
+
+                setSortIndicators();
+                setViewIndicators();
+                setThemeIndicator();
+                renderEntries();
             }
 
             loadDir(path);
