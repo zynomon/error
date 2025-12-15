@@ -14,7 +14,9 @@
         <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.cells.min.js"></script>
         <link rel="stylesheet" href="style.css" />
         <link rel="icon" type="image/svg+xml" href="icons/webicon.svg" />
+        <script src="repo.js"></script>
     </head>
+
     <body>
         <!-- Matrix Glitch Panic Splash Screen -->
         <div id="splash-screen">
@@ -400,7 +402,6 @@
                     });
                 });
 
-                // Hide on scroll down
                 window.addEventListener(
                     "scroll",
                     () => {
@@ -415,6 +416,23 @@
                     { passive: true },
                 );
             })();
+        </script>
+        <div id="repo-viewer" style="display: none"></div>
+        <script>
+            if (location.hash === "#repo") {
+                const repoDiv = document.getElementById("repo-viewer");
+                repoDiv.style.display = "block";
+                repoDiv.innerHTML = `
+            <div id="repo-controls">
+              <button id="darkToggle">dark</button>
+            </div>
+            <div id="breadcrumbs"></div>
+            <ul id="listing"></ul>
+          `;
+                const s = document.createElement("script");
+                s.src = "repo.js";
+                document.body.appendChild(s);
+            }
         </script>
     </body>
 </html>
