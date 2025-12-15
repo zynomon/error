@@ -1,15 +1,95 @@
-<p align="center">
-  <img src="https://github.com/zynomon/error/blob/web-side/icons/icon.svg" alt="icon" width="800">
+
+# 𝚎𝚛𝚛𝚘𝚛.𝚘𝚜™
+born from failure, built for control. 
+<p align="left">
+  <a href="https://zynomon.github.io">
+    <img src="https://img.shields.io/badge/⌕-blue?style=plastic">
+</a>
+  <a href="https://discord.gg/Jn7FBwu99F">
+    <img src="https://img.shields.io/badge/-5865F2?style=plastic&logo=discord&logoColor=white">
+
+  <img src="https://img.shields.io/badge/⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀-white?style=plastic">
+
+
+  </a>
 </p>
 
-<p align="center">
-  <a href="https://zynomon.github.io/error"><img src="https://img.shields.io/badge/Visit%20Website-blue?style=flat-square"></a>
-  <img src="https://img.shields.io/badge/Status-Beta-yellow?style=flat-square">
-  <img src="https://img.shields.io/badge/License-Apache%202.0-green?style=flat-square">
-  <img src="https://img.shields.io/badge/Platform-Linux-orange?style=flat-square">
-</p>
+---
+# this is the homepage for error.os and it's debian/apt repo
+Adding the repo to your existing system to enjoy updates and error.os apps natively.
+- type this on terminal
+  
+``` 
+curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyrings/error.gpg && echo "deb [signed-by=/usr/share/keyrings/error.gpg] https://zynomon.github.io/error stable main" | sudo tee /etc/apt/sources.list.d/erroros.list && sudo apt update
+ ```
+the repo structure :- 
+```
+.
+├── conf
+│   ├── apt-ftparchive.conf
+│   ├── distributions
+│   └── e.html
+├── dists
+│   ├── e.html
+│   └── stable
+│       ├── e.html
+│       ├── InRelease
+│       ├── main
+│       │   ├── binary-all
+│       │   │   ├── calamares-settings-error.deb
+│       │   │   ├── e.html
+│       │   │   ├── error.base.deb
+│       │   │   ├── Packages
+│       │   │   ├── Packages.gz
+│       │   │   └── Packages.xz
+│       │   ├── binary-amd64
+│       │   │   ├── e.html
+│       │   │   ├── err_.deb
+│       │   │   ├── once.deb
+│       │   │   ├── onu.deb
+│       │   │   ├── Packages
+│       │   │   ├── Packages.gz
+│       │   │   ├── Packages.xz
+│       │   │   └── vex.deb
+│       │   ├── e.html
+│       │   └── i18n
+│       │       ├── e.html
+│       │       ├── Translation-en
+│       │       ├── Translation-en.gz
+│       │       ├── Translation-en_US
+│       │       ├── Translation-en_US.gz
+│       │       ├── Translation-en_US.xz
+│       │       └── Translation-en.xz
+│       ├── Release
+│       └── Release.gpg
+├── e.html
+├── error.gpg
+├── icons
+│   ├── css.png
+│   ├── deb.png
+│   ├── dirback.png
+│   ├── dir.png
+│   ├── e.html
+│   ├── error-text.svg
+│   ├── html.png
+│   ├── js.png
+│   ├── key.png
+│   ├── lang.png
+│   ├── logo.svg
+│   ├── neospace.jpg
+│   ├── other.png
+│   ├── pac.png
+│   ├── void.jpg
+│   └── webicon.svg
+├── index.html
+├── main.js
+├── README.md
+├── splash.js
+└── style.css
+ ```
 
-<p align="center">
-  <a href="https://github.com/zynomon/error"><img src="https://img.shields.io/github/stars/zynomon/error?style=social"></a>
-  <a href="https://github.com/zynomon/error/fork"><img src="https://img.shields.io/github/forks/zynomon/error?style=social"></a>
-</p>
+e.html is supposed to work as an index viewer every e.html is hardlinked 
+
+so adding e after any zynomon.gtihub.io/error/ turns on index viewer you could try out here is the link,
+https://zynomon.github.io/error/e
+---
