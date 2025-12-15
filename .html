@@ -7,17 +7,21 @@
             body {
                 font-family: "Courier New", monospace;
                 margin: 0;
-                padding: 20px;
+                padding: 0;
                 background: #000;
                 color: #e0e0e0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
             }
-            body.dark {
-                background: #050505;
-                color: #f0f0f0;
+            body.light {
+                background: #f5f5f5;
+                color: #111;
             }
             #viewer-shell {
+                width: 90%;
                 max-width: 960px;
-                margin: 0 auto;
             }
             #viewer-box {
                 position: relative;
@@ -26,6 +30,11 @@
                 box-shadow:
                     0 18px 40px rgba(0, 0, 0, 0.7),
                     0 0 60px rgba(136, 136, 136, 0.45);
+            }
+            body.light #viewer-box {
+                box-shadow:
+                    0 18px 40px rgba(0, 0, 0, 0.25),
+                    0 0 40px rgba(50, 50, 50, 0.25);
             }
             #noise-layer {
                 position: absolute;
@@ -40,7 +49,7 @@
             #content-layer {
                 position: relative;
                 z-index: 1;
-                padding: 18px 20px 16px 20px;
+                padding: 20px;
                 background: linear-gradient(
                     145deg,
                     rgba(10, 10, 10, 0.96),
@@ -48,17 +57,24 @@
                 );
                 backdrop-filter: blur(10px);
             }
+            body.light #content-layer {
+                background: linear-gradient(
+                    145deg,
+                    rgba(245, 245, 245, 0.96),
+                    rgba(255, 255, 255, 0.98)
+                );
+            }
             #top-bar {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                margin-bottom: 10px;
+                margin-bottom: 12px;
             }
             #path-label {
                 font-size: 12px;
                 opacity: 0.7;
             }
-            #darkToggle {
+            #themeToggle {
                 padding: 4px 10px;
                 border-radius: 999px;
                 border: 1px solid rgba(136, 136, 136, 0.5);
@@ -67,10 +83,10 @@
                 color: #e0e0e0;
                 font-size: 12px;
             }
-            body.dark #darkToggle {
-                background: #f0f0f0;
+            body.light #themeToggle {
+                background: #e0e0e0;
                 color: #111;
-                border-color: rgba(220, 220, 220, 0.9);
+                border-color: rgba(80, 80, 80, 0.5);
             }
             #breadcrumbs {
                 font-size: 13px;
@@ -80,9 +96,14 @@
                 cursor: pointer;
                 color: #9ed0ff;
             }
+            body.light #breadcrumbs .crumb {
+                color: #0050aa;
+            }
             #breadcrumbs .crumb:hover {
-                color: #ffffff;
                 text-shadow: 0 0 8px rgba(158, 208, 255, 0.6);
+            }
+            body.light #breadcrumbs .crumb:hover {
+                text-shadow: none;
             }
             #listing {
                 list-style: none;
@@ -92,6 +113,10 @@
                 background: rgba(5, 5, 5, 0.7);
                 border: 1px solid rgba(90, 90, 90, 0.4);
             }
+            body.light #listing {
+                background: rgba(255, 255, 255, 0.8);
+                border-color: rgba(150, 150, 150, 0.4);
+            }
             #listing li {
                 display: flex;
                 align-items: center;
@@ -99,6 +124,9 @@
                 padding: 6px 10px;
                 border-bottom: 1px solid rgba(70, 70, 70, 0.35);
                 font-size: 13px;
+            }
+            body.light #listing li {
+                border-bottom-color: rgba(180, 180, 180, 0.5);
             }
             #listing li:last-child {
                 border-bottom: none;
@@ -108,7 +136,7 @@
                 height: 16px;
             }
             #listing li a {
-                color: #e0e0e0;
+                color: inherit;
                 text-decoration: none;
             }
             #listing li a:hover {
@@ -123,18 +151,6 @@
                 margin-top: 10px;
                 font-size: 11px;
                 opacity: 0.7;
-            }
-            body.dark #listing {
-                background: rgba(8, 8, 8, 0.9);
-                border-color: rgba(130, 130, 130, 0.5);
-            }
-            body.dark #listing li {
-                border-bottom-color: rgba(110, 110, 110, 0.5);
-            }
-            body.dark #viewer-box {
-                box-shadow:
-                    0 18px 40px rgba(0, 0, 0, 0.85),
-                    0 0 70px rgba(180, 180, 180, 0.6);
             }
         </style>
     </head>
@@ -166,7 +182,7 @@
                 <div id="content-layer">
                     <div id="top-bar">
                         <div id="path-label"></div>
-                        <button id="darkToggle">dark</button>
+                        <button id="themeToggle">light</button>
                     </div>
                     <div id="breadcrumbs"></div>
                     <ul id="listing"></ul>
@@ -175,19 +191,22 @@
             </div>
         </div>
         <script>
-            const ICONS = "../icons/";
+            const ICONS = "/error/icons/";
             const repoOwner = "zynomon";
             const repoName = "error";
             const branch = "web-side";
 
-            document.getElementById("darkToggle").onclick = function () {
-                document.body.classList.toggle("dark");
+            document.getElementById("themeToggle").onclick = function () {
+                document.body.classList.toggle("light");
+                this.textContent = document.body.classList.contains("light")
+                    ? "dark"
+                    : "light";
             };
 
             let rawPath = window.location.pathname;
             rawPath = rawPath.replace(/^\/+/, "");
             rawPath = rawPath.replace(/^error\//, "");
-            rawPath = rawPath.replace(/repo\.html$/, "");
+            rawPath = rawPath.replace(/\.html$/, "");
             if (rawPath.endsWith("/")) rawPath = rawPath.slice(0, -1);
             const path = rawPath;
 
@@ -206,12 +225,11 @@
                     span.className = "crumb";
                     span.onclick = function () {
                         if (seg === "root") {
-                            window.location.href = "/error/repo.html";
+                            window.location.href = "/error/.html";
                         } else {
                             const upCount = parts.length - i - 1;
-                            if (upCount <= 0) return;
                             const up = "../".repeat(upCount);
-                            window.location.href = up + "repo.html";
+                            window.location.href = up + ".html";
                         }
                     };
                     bc.appendChild(span);
@@ -247,7 +265,7 @@
                 const ul = document.getElementById("listing");
                 const status = document.getElementById("status");
                 ul.innerHTML = "";
-                status.textContent = "loading listing…";
+                status.textContent = "loading…";
                 const api =
                     "https://api.github.com/repos/" +
                     repoOwner +
@@ -278,7 +296,7 @@
                     li.appendChild(img);
                     const a = document.createElement("a");
                     a.textContent = "..";
-                    a.href = "../repo.html";
+                    a.href = "../.html";
                     li.appendChild(a);
                     ul.appendChild(li);
                 }
@@ -294,7 +312,7 @@
                     const a = document.createElement("a");
                     a.textContent = item.name;
                     if (item.type === "dir") {
-                        a.href = item.name + "/repo.html";
+                        a.href = item.name + "/.html";
                     } else {
                         a.href = item.download_url;
                     }
