@@ -1,0 +1,63 @@
+Package: err_
+Architecture: amd64
+Version: 2.1.6
+Priority: optional
+Section: devel
+Maintainer: Zynomon Aelius
+Installed-Size: 1456
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libqt6core6t64 (>= 6.8.2), libqt6gui6 (>= 6.4.0), libqt6widgets6 (>= 6.1.2), libstdc++6 (>= 5)
+Filename: dists/stable/main/binary-amd64/err_.deb
+Size: 1232806
+MD5sum: 9282ad3dc770f804b6dc035200158569
+SHA1: 089c60df0410b98357d4409f07e181f511994199
+SHA256: de24cd8cf830fc196c98ae24a2d021bfea56decf5df4b69ef1c9ca33049d629a
+SHA512: c5a32dc039d5618ce9ee23f54c7cbaa9aec97336ad9fa6534382a8591a3c077e79bc4484b88c5401a2e4c9256b0191bc94e9188379c9f301876c9cd42006785b
+Description: error.os dashboard — a system manager
+
+Package: Once
+Architecture: all
+Version: 0.1
+Priority: optional
+Maintainer:  Zynomon aelius
+Installed-Size: 225
+Depends: libqt6core6, libqt6gui6, libqt6widgets6, libqt6network6, systemd
+Filename: dists/stable/main/binary-amd64/once.deb
+Size: 83196
+MD5sum: 24ae391965e0f4665702776a10b99904
+SHA1: 63ee12eb2cc0ac7596165e2c8de5bdbbc2ac7c1f
+SHA256: 9aed28c76f07f544dc1f1a5a58c2d24caa8ddd92690a93ee287eb8d6e2a9e31d
+SHA512: b6bc073d9d1b669a13dfcb4bf21f47cc3c4dee2dd08301651712ea7f8715c8a64f40a3d978abe434725cb585032e5266d7e1246ac02b2be0ec53bdb84627c82f
+Description: A package that has only one purpose then fades away
+
+Package: onu
+Architecture: amd64
+Version: 0.4
+Priority: optional
+Section: devel
+Maintainer: Zynomon Aelius
+Installed-Size: 880
+Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6, libqt6webenginewidgets6, libqt6webenginecore6, libqt6network6, libqt6multimedia6
+Filename: dists/stable/main/binary-amd64/onu.deb
+Size: 235822
+MD5sum: 1c6f9c7f6e29ee32f42e392635069cf1
+SHA1: eed37d9b5104019b5a43442edaa58a6afb29da21
+SHA256: cf9538dd9b0b63bbc951311d29be505b50eba48dfb8138f5a71b8c54466bfe72
+SHA512: f410f55b1391fb886cf561e682e7e1793bdafb3b63ef71ff473425fef0869584efb7f5128b63d42ea9c2374092f9eea6c96ada4f4aa5987c81ba2a964fd08ddb
+Description: Onu is a lightweight Qt-based browser/editor hybrid with WebEngine integration.     It supports HTML rendering, multimedia playback, and system integration with minimal footprint.     Designed for clarity, performance, and survivability in error.os environments.
+
+Package: vex
+Architecture: amd64
+Version: 3.0.0
+Priority: optional
+Section: devel
+Maintainer: Zynomon Aelius
+Installed-Size: 804
+Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6
+Filename: dists/stable/main/binary-amd64/vex.deb
+Size: 193526
+MD5sum: 30d8822212ccc83f8d8d7cb383e071ea
+SHA1: f04d778666ff68f376f286353924afe409571b3d
+SHA256: f4bca01edc26e922ef33cb2e26cbc6e0870e553c65a15900ccca7f9c0c9c15f2
+SHA512: 6305ef9b4fb790d55230052f8d21f61e03183c21d97439f07df64daacbc023826dcb33a81d887f6def2aaabdace8e937d1e89574d80245719215f41e54a5051e
+Description:  ♦️ Vex is a modular, MIME-aware editor designed for expressive system integration and branded desktop environments.     Built with performance and clarity in mind, it aligns with error.os principles of transparency, user empowerment, and visual polish.     Vex supports multilingual UI, scalable icon logic, and clean packaging for Linux distributions.     Its install footprint is minimal, its launch behavior is predictable, and its desktop entry is fully localized.     Ideal for developers, system architects, and themed distributions seeking a lightweight yet intentional editing experience.
+
