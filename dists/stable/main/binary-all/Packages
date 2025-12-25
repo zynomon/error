@@ -7,7 +7,7 @@ Maintainer: Zynomon aelius
 Installed-Size: 225
 Provides: calamares-settings
 Depends: calamares, rsync, cryptsetup, libglib2.0-bin, keyutils, pkexec, qml-module-qtquick-window2, qml-module-qtquick2, dconf-gsettings-backend | gsettings-backend
-Filename: dists/stable/main/binary-all/calamares-settings-error.deb
+Filename: /media/Documents/GitHub/error/dists/stable/main/binary-all/calamares-settings-error.deb
 Size: 3171008
 MD5sum: 799e97d54c29bc449c254d69320baf30
 SHA1: 4164fa5023089d8b5940be21e991665edc3a61a3
@@ -24,7 +24,7 @@ Essential: yes
 Maintainer: Zynomon Aelius
 Provides: bibata-cursor-theme, errpaper
 Depends: plasma-workspace, yakuake, kde-cli-tools, plasma-desktop, qt6-style-kvantum, plymouth, sddm
-Filename: dists/stable/main/binary-all/error.base.deb
+Filename: /media/Documents/GitHub/error/dists/stable/main/binary-all/error.base.deb
 Size: 53036712
 MD5sum: 2053a0c07119da0d942cea5f7e1cae2d
 SHA1: 9f5015d5c1ccd447ccf447bd47c565aaf77fd076
