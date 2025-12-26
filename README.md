@@ -18,67 +18,12 @@
 </p>
 
 ---
-# this is the homepage for error.os and it's debian/apt repo
-Adding the repo to your existing system to enjoy updates and error.os apps natively.
-- type this on terminal
-  
-``` 
-curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyrings/error.gpg && echo "deb [signed-by=/usr/share/keyrings/error.gpg] https://zynomon.github.io/error stable main" | sudo tee /etc/apt/sources.list.d/erroros.list && sudo apt update
- ```
-won't work for now because there is a major bug to fix
-
-```
-├── conf
-│   └── distributions
-├── dists
-│   └── stable
-│       ├── InRelease
-│       ├── main
-│       │   ├── binary-all
-│       │   │   ├── calamares-settings-error.deb
-│       │   │   ├── error.base.deb
-│       │   │   ├── Packages
-│       │   │   ├── Packages.gz
-│       │   │   └── Packages.xz
-│       │   ├── binary-amd64
-│       │   │   ├── err_.deb
-│       │   │   ├── once.deb
-│       │   │   ├── onu.deb
-│       │   │   ├── Packages
-│       │   │   ├── Packages.gz
-│       │   │   ├── Packages.xz
-│       │   │   └── vex.deb
-│       │   └── i18n
-│       │       ├── Translation-en
-│       │       ├── Translation-en.gz
-│       │       ├── Translation-en_US
-│       │       ├── Translation-en_US.gz
-│       │       ├── Translation-en_US.xz
-│       │       └── Translation-en.xz
-│       ├── Release
-│       └── Release.gpg
-├── error.gpg
-├── index.html
-└── README.md
-```
----
-# 𝚎𝚛𝚛𝚘𝚛.𝚘𝚜™
-born from failure, built for control. 
-<p align="left">
-  <a href="https://zynomon.github.io">
-    <img src="https://img.shields.io/badge/⌕-blue?style=plastic">
-</a>
-  <a href="https://discord.gg/Jn7FBwu99F">
-    <img src="https://img.shields.io/badge/-5865F2?style=plastic&logo=discord&logoColor=white">
-
-  <img src="https://img.shields.io/badge/⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀-white?style=plastic">
 
 
-  </a>
-</p>
+Making of error.os , - it was a long boring session of building a distro seeing ***errors*** fixing them seeing another , fixing them . by default it wasn't so flexible 
 
-Making of error.os , - it was a long boring session of building a distro seeings ***errors*** fixing them seeing another , fixing them . by default it wasn't so flexible 
 i mean the debian live build command wasn't so much helpful at all , 
+
 <img width="1345" height="697" alt="image" src="https://github.com/user-attachments/assets/7d19e7ad-2c88-4bd8-924c-54fe4d65212d" />
 By the way you can live without the struggle or make your own distro like mine  you will see some  .7z files here those are the config directory just drag and drop then use some live build command to make your own error.os Fork 🍽. 
 # Tutorial on making error.os
