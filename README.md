@@ -76,3 +76,58 @@ born from failure, built for control.
 
   </a>
 </p>
+
+Making of error.os , - it was a long boring session of building a distro seeings ***errors*** fixing them seeing another , fixing them . by default it wasn't so flexible 
+i mean the debian live build command wasn't so much helpful at all , 
+<img width="1345" height="697" alt="image" src="https://github.com/user-attachments/assets/7d19e7ad-2c88-4bd8-924c-54fe4d65212d" />
+By the way you can live without the struggle or make your own distro like mine  you will see some  .7z files here those are the config directory just drag and drop then use some live build command to make your own error.os Fork 🍽. 
+```
+# create e directory
+
+mkdir -p ~/e
+cd e
+
+# install the knife of the chief
+
+sudo apt-get update
+sudo apt-get install live-build live-tools \
+  debootstrap squashfs-tools xorriso isolinux \
+  ca-certificates gnupg dirmngr
+
+# enable our repo
+curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyrings/error.gpg && echo "deb [signed-by=/usr/share/keyrings/error.gpg] https://zynomon.github.io/error stable main" | sudo tee /etc/apt/sources.list.d/erroros.list && sudo apt update
+
+# now lets begin
+# exact config built for error.os yes exact
+
+sudo lb config \
+  --distribution trixie \
+  --mirror-bootstrap http://mirror.xeonbd.com/debian \        # bangladeshi fast mirror jump from 1 kbps to 59 mbps
+  --mirror-chroot http://mirror.xeonbd.com/debian \
+  --mirror-chroot-security http://security.debian.org/debian-security \
+  --mirror-binary http://mirror.xeonbd.com/debian \
+  --mirror-binary-security http://security.debian.org/debian-security \
+  --debootstrap-options "--include=ca-certificates,gnupg,dirmngr --keyring=/usr/share/keyrings/debian-archive-keyring.gpg" \
+  --bootloader grub-efi \
+  --bootappend-live "boot=live components quiet splash plymouth.theme=err" \
+  --memtest memtest86+ \
+  --firmware-binary true \
+  --firmware-chroot true \
+  --initramfs live-boot \
+  --linux-packages linux-image \
+  --architectures amd64 \
+  --binary-images iso-hybrid \
+  --checksums sha256 \
+  --win32-loader false \
+  --source false \
+  --iso-application "error.os Installer 2025" \
+  --iso-publisher "Zynomon Aelius" \
+  --iso-preparer "Zynomon Aelius" \
+  --iso-volume "error.os Neospace" \
+  --hdd-label "ERROR_OS" \
+  --apt-recommends false \
+
+sudo lb build && ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/dialog-error.oga || ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/bell.oga
+# if build fails - error sound if passes bell sound no need to install them though they are there in every freedesktop linux devices 
+```
+<img width="872" height="563" alt="image" src="https://github.com/user-attachments/assets/cf36342c-af76-421e-96f9-c9e543e876a1" />
