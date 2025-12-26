@@ -1,4 +1,4 @@
-
+![bitmap](https://github.com/user-attachments/assets/103bacc5-afe7-4322-be20-5084c722d030)
 <img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="error-text" style="width:1000px;">
 
 
@@ -18,8 +18,11 @@
 </p>
 
 ---
+The file name hierarchy
+---
+![bitmap](https://github.com/user-attachments/assets/1c7d5c20-ad07-4b0f-8d0e-debe0edb1bf4)
 
-
+---
 Making of error.os , - it was a long boring session of building a distro seeing ***errors*** fixing them seeing another , fixing them . by default it wasn't so flexible 
 
 i mean the debian live build command wasn't so much helpful at all , 
