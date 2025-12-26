@@ -1,4 +1,4 @@
-![bitmap](https://github.com/user-attachments/assets/103bacc5-afe7-4322-be20-5084c722d030)
+
 <img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="error-text" style="width:1000px;">
 
 
