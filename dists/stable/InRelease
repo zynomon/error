@@ -4,96 +4,96 @@ Hash: SHA512
 Architectures: amd64 all
 Codename: stable
 Components: main
-Date: Fri, 26 Dec 2025 10:06:55 +0000
+Date: Fri, 26 Dec 2025 10:12:22 +0000
 Description: error.os stable repository
 Label: error.os
 Origin: error.os
 Suite: stable
 MD5Sum:
- 1eab3b2636af0addabe65fbc7743afae              184 Release
+ 0742fbe324809e761415a94712805165              184 Release
  5d57976b5cbb9e161d8da49fb674d291             2044 main/binary-all/Packages
- c47607419da3375fb912fc279fa6c1e4             1174 main/binary-all/Packages.gz
+ 3989a85218ff74107872cbea92227013             1174 main/binary-all/Packages.gz
  4dcbbfa5e3dc92537cb572fe146f2df5             1248 main/binary-all/Packages.xz
  4de7f7c79f1179cd06956c4ddcab9627             4470 main/binary-amd64/Packages
- 3aa6505d22a900672153249929c70db9             2057 main/binary-amd64/Packages.gz
+ de7d5ddf05d7df5b119c0506716a3fbf             2057 main/binary-amd64/Packages.gz
  558050ef0108a3b0626d353444af4d78             2048 main/binary-amd64/Packages.xz
  d41d8cd98f00b204e9800998ecf8427e                0 main/i18n/Index
  d41d8cd98f00b204e9800998ecf8427e                0 main/i18n/Translation-bn
- 2f52e8d7f83e00b2626638930b133a31               35 main/i18n/Translation-bn.gz
+ 3b1da6ade21ac52c468e38bfdf6e2314               35 main/i18n/Translation-bn.gz
  8dc5aea5b03dff8595f096f9e368e888               32 main/i18n/Translation-bn.xz
  d41d8cd98f00b204e9800998ecf8427e                0 main/i18n/Translation-en
- 70d788065dc157e28311fb924fd8b684               35 main/i18n/Translation-en.gz
+ f0d9643e6b47af4c8b00991c4bba78d2               35 main/i18n/Translation-en.gz
  8dc5aea5b03dff8595f096f9e368e888               32 main/i18n/Translation-en.xz
  d41d8cd98f00b204e9800998ecf8427e                0 main/i18n/Translation-en_US
- bbb6171b8b3623e095e6b375ccbcda9f               38 main/i18n/Translation-en_US.gz
+ e2ec4a1a0d05edb7970a493709ca3acb               38 main/i18n/Translation-en_US.gz
  8dc5aea5b03dff8595f096f9e368e888               32 main/i18n/Translation-en_US.xz
 SHA1:
- ff91e346d45aadc7b1d9d5c74de77b0329137c1b              184 Release
+ ef69ce1e62021bf3f8c851176c8b8f83fa5e622a              184 Release
  0fc107a2876869548e654cc9f253c038537d2099             2044 main/binary-all/Packages
- c81a82b4aafadf975bb164edc38fc7ba2ed17d54             1174 main/binary-all/Packages.gz
+ dfec89af2dd34666e93667f51e6b3dab64649319             1174 main/binary-all/Packages.gz
  b522223416f2129252a974ee1d9bdae3cc441d76             1248 main/binary-all/Packages.xz
  892b53144278164b7fbfcdcb2c117e71281adbb6             4470 main/binary-amd64/Packages
- c1a965607eae6cf675c51ecee380033a45c6b14c             2057 main/binary-amd64/Packages.gz
+ f3746b115828f9c9c22ea09f080216919b4f28d6             2057 main/binary-amd64/Packages.gz
  57213e2add31fb4f29b98ba836ed2b342868962d             2048 main/binary-amd64/Packages.xz
  da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/i18n/Index
  da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/i18n/Translation-bn
- 80870f1c807e085ee5ef4312f76d3b8317df562e               35 main/i18n/Translation-bn.gz
+ bc8d7adc946958d96674fcdee1ec9acc7d426c57               35 main/i18n/Translation-bn.gz
  9746882f4236fa1c3a8f86be2f1d9c46680c0b10               32 main/i18n/Translation-bn.xz
  da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/i18n/Translation-en
- f829208454131bb8ba25312cf008c2c658361c9d               35 main/i18n/Translation-en.gz
+ 7827d5257ea55eec593ccd49f754895abfa152c6               35 main/i18n/Translation-en.gz
  9746882f4236fa1c3a8f86be2f1d9c46680c0b10               32 main/i18n/Translation-en.xz
  da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/i18n/Translation-en_US
- 3346fb8ca87adfbbf8e7e7f2559fd76a7f92e26a               38 main/i18n/Translation-en_US.gz
+ 7c1ea0dd70dc0c2b4e5d80a8baa03132094648c1               38 main/i18n/Translation-en_US.gz
  9746882f4236fa1c3a8f86be2f1d9c46680c0b10               32 main/i18n/Translation-en_US.xz
 SHA256:
- 65267dad2e727994b3da33730a902681d6d1facd1480b2ecaef5700f4d637128              184 Release
+ 4bb6acf44a86837a44f2123b9da198ae461ea1563e105c52125e40fa7713c75f              184 Release
  28569e7e21405d223d470dfe5721a6ac1c965471dfc41d7d541869f39e370998             2044 main/binary-all/Packages
- 6c7f0b5cec2142dd5e2d16187cfb1174841b669e7d5849321699c0048ec771eb             1174 main/binary-all/Packages.gz
+ ee727d9f5dec743f7fa8647f86a32b8313edfc964cd8665ebde79a4a92adde77             1174 main/binary-all/Packages.gz
  bacac6e5dd2b9819f38d8f67572b18bc0c58808cb674f7969b3761894ebaadc5             1248 main/binary-all/Packages.xz
  a589680144d7919e8bd71211dd08b9b575897bccb9f0f6efb81a0374abcd9ae5             4470 main/binary-amd64/Packages
- ed8208f93f4d7410f63b7eb37b2fcffd16912bd20f90e9541bc17e981d971b14             2057 main/binary-amd64/Packages.gz
+ c287cd452933a9f4bd14a14532f9949a602b01469a0ae97e0025af05e45a4cc6             2057 main/binary-amd64/Packages.gz
  185c0b25f8d933f947722a964bb5ddff086f2267d9bd1fb5f4b4c1e1f0e3a2c4             2048 main/binary-amd64/Packages.xz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/i18n/Index
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/i18n/Translation-bn
- bfdb05c7d4297ba99ad97a408a88a438271bd49f37c75f7edd5adfdb18dd3525               35 main/i18n/Translation-bn.gz
+ ed73f44fbb1004975fdbdfd1f6f6086608c1c01b686d5bd0543b2698a9bba4b2               35 main/i18n/Translation-bn.gz
  0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275               32 main/i18n/Translation-bn.xz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/i18n/Translation-en
- 67b0ecde72c8a5e66990db92c794c2ba59169ddc2dd3c4b474e899e73ab1f837               35 main/i18n/Translation-en.gz
+ 7d958652706e65985edf9133f44e9e9bb9e9d29b8b81d7be789d1f1b92585bc9               35 main/i18n/Translation-en.gz
  0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275               32 main/i18n/Translation-en.xz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/i18n/Translation-en_US
- d41aa48f6c823677bee281e7c81865d7ce5813686082de4cdf4e09b5c14b6d48               38 main/i18n/Translation-en_US.gz
+ 8573e8bf48349dac9ea189935206f23233fa9411bbd57492cf935123027f7ab7               38 main/i18n/Translation-en_US.gz
  0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275               32 main/i18n/Translation-en_US.xz
 SHA512:
- fc2e58c0374fd07782838c5972d7fd73d765b592207bb51ae8a885588468ee9ba17cc07038e68076fdb4debc52d0a3d4ddfd81fde13416ecd76b364761ea2220              184 Release
+ fb50d2186591bb6c4a0270497129b19814ed8a096bf8dbcc93206ab694f643c9c4c1f4976e752855b2dd5504972930846ac09bb6a2fe388f678a4861a3be566f              184 Release
  ec8c446f78b6c1d1322756b55e8becbf180bb2dfff1cfd048c8ccfdf22bb147bd85eaaf11cbd0ef9ecacd76420c8129aab3b4925ad68e972c309c0c9bd85faa0             2044 main/binary-all/Packages
- be27d8fafc152d2fda4f7eb6e1c34a7661ae1ed155448004b140e431e67e813274c37c734c534388e3d2170cabfe8fb840f2985cacfe163018628eca5276ce60             1174 main/binary-all/Packages.gz
+ 4ee7efbc27dddcdc54ae6975702d5ded3d06d617f943e6e632934a32540700d8fac0914c7f5d44e6772738442e2bf0fdacda4844c990e8afccdb7a48d9b9b7d9             1174 main/binary-all/Packages.gz
  f229b3210fc8c2e1707176a9a3a0d78ba156e7a0d4b4cc61f7f89ca6c65fe9c226ad9c98ad221af7851f34d0d20d61d05f8d431ff66be0b31fd557d469b55b65             1248 main/binary-all/Packages.xz
  fc68bb17734f7d8d5d935378a7a063b59d97725428ecb4d584c353226fc6b59a0932592e7565e77549fa25d3f2b6215f027df062cc2e60783078ec9f86228dea             4470 main/binary-amd64/Packages
- 4c58f91b171b3e11b7ca4f377226e030236bc4458d899d4052150ba4b0f2aa254c894944840b64f49c2722495f4e7046b459ce18fc837314cd8607ca8a2e8818             2057 main/binary-amd64/Packages.gz
+ 3c7a253da9cdd50ea49d6ff7d90ecb4ac073d14db8c74a0ff98375e11d9c035f2bc721667d3ee66cc5bf19286eaaee67da63d71219377dfb19158c0e5b09384d             2057 main/binary-amd64/Packages.gz
  0e9c8deb8a31a022663550dd45f44f372d80cee38fab0e4c624d4a27227feecb5776a8cbf3b6ac937e35b9d3d4b4d24d28365a30e6d89177f0234c30576df4fa             2048 main/binary-amd64/Packages.xz
  cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/i18n/Index
  cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/i18n/Translation-bn
- f12f0771bb46b7b91b7f89cabdf8b0ef7afc7ae82bd7752c210dc67e6fc3f7521959a09e800d49d3bd5c6fef3f03e6a2246f1457037d0fd2fd89cd7a97f1d86e               35 main/i18n/Translation-bn.gz
+ cd9870095a201e2a47387e540485cdd8a199462b2f62cb359644b30eb6d51151c1bc3d8d1a4c52423aa36060942b38d2d894742e66b9150485ff34f14ca8f208               35 main/i18n/Translation-bn.gz
  034b32f1138322638c7a5b7949a3b184c6a4cdfd003360a496c08c56c2cc645c94fbe9cdf9d84c963af6dda6c442717cd61d7e1cecf7024bd463f6f5196c5527               32 main/i18n/Translation-bn.xz
  cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/i18n/Translation-en
- 369d1bd5001730dd78f101abdcf94377cba499faa6aa79e1a8d0df0fcf8ec1fbab04dcaba467fccb873a9b67d773f2d089b52ec331de4f50503e2de09acba064               35 main/i18n/Translation-en.gz
+ c1092936f3f7632d72a7a58c107a415abfa7ccdbc1ac9630d494d5c0e54391f563f485df5fee42da5bb31df21cd0be4393a7c8c1878bb48160092c6b735542d8               35 main/i18n/Translation-en.gz
  034b32f1138322638c7a5b7949a3b184c6a4cdfd003360a496c08c56c2cc645c94fbe9cdf9d84c963af6dda6c442717cd61d7e1cecf7024bd463f6f5196c5527               32 main/i18n/Translation-en.xz
  cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/i18n/Translation-en_US
- 1aa5795bd5c96405f3383042b6409c3babcfc606a20c7373a2e06c608ec43b78a90e5a0ed7b2442c9cb9f275bfc25ab45951b766da96716817946ad68b5f6a56               38 main/i18n/Translation-en_US.gz
+ f4b1cff35485efa19714b04cb4350cf8023d78464e9fab78ed1f747b554ed4f2824d903f9d8bf8c9e28a6a290b505edf9528f3d2e29d0cba6ced25ce661bc16f               38 main/i18n/Translation-en_US.gz
  034b32f1138322638c7a5b7949a3b184c6a4cdfd003360a496c08c56c2cc645c94fbe9cdf9d84c963af6dda6c442717cd61d7e1cecf7024bd463f6f5196c5527               32 main/i18n/Translation-en_US.xz
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEnH9aGOwwIhTQwM+zQmWNTtfcDn0FAmlOXkYACgkQQmWNTtfc
-Dn3HsQ//cCqwRct6BB9TarnAzjKJ+lwxb9xJhDIbuFhayC+jW97tSyI/fLlvOkf4
-73P1448AZtrQXHSBRgqYipeQjYPrlB1Ivl91+hn+NMkLy2ARaE0Uey3wUc5/wsc3
-Mm2C5q1WpGc8osoha5onkxnMk+3gZ+bUV7kEhParAAAWoDwCJy99I/QH6jLxn3jv
-Gq6Vv3TXgVWQuG7FJZgxWVuxJmmVwepX8dGfnMmamYu67KQGDjiuAoS9pdGbGEgl
-EJR/pYlWtFyiHB0qU/Jq6Aq5qg884CtF/d66bCSuJa+wSnBOLr0n7DB8NI6+fZ15
-6SJiyJOrTW98Y8fbbCcjnF69b4LYXkEFZ9ZqiLzTyLPy5pGuHX8FTdETQlQZe030
-7SpKzOVIR0bDnEH2+8+osqqFrogBV3tDmSPpH8ACaXMYQjgpG6rkQuhG2ceZ9oMY
-DIF+3zMVjYjiQr/yt4PkwNeqpL3PATYEO2QYMHdCkjKqE+YiV5ugCA3zAdeerZ3t
-nsb6I/Uy4sNiRWW/OdPkn4DDmBUYJQt39zcG6pe/spI19fqHeEfIbGvnUztdGN4P
-MFfvkKteV3VvwtKRwE/OU+bDAbGKCE/Yo5FQwQTy7p6xOlEMCGWl+yoXPFgvKm16
-FWploIwa+XAZ4Usiq9YLaUhT0hUI9W733ec+ba5uOKTqR/v+Yog=
-=yUka
+iQIzBAEBCgAdFiEEnH9aGOwwIhTQwM+zQmWNTtfcDn0FAmlOX4YACgkQQmWNTtfc
+Dn2l9A/+M/CCAIkhqrKjEcGBTQW1Y8nfKNqNtpV+YnmNz+Txh8D7BlDYmXFjDrUP
+zxkR8G5f0hGcuxyJkNJCXVKBy6TylKFwwjOOHyxQ21uYpx+Qb1ulSdcHXMQjr6U8
+XGPGdqJ85GJoLigK1H7s/ChKL3kPiupjSRRp+NCd95LYAgiW6S4RFKWDcNBLKJOJ
+NIZL+tdRoOXF9QYenuMYb67zKpS80yrNOshD6JpS9bcHl9idSwZEQbBnkgGF7mts
+cbjk7nlKTA2aWw7Ml44KfT43BenPrhs0Ls7lumc8njBlOYkLGeA8XJ+NuWcyarhT
+TWjoPdD/LvFnya/z4MKx1vYdn1GtXAfk8Q+O0tZG2jihM4fB8z1+9b5Kbw+Nqezn
+fUlDyjNvex7BT+OCfPqd2k4UPJQtNqwGzLsbIr0t6il7yom5GuZUFM1f8miLj29E
+eyoY6PV6PbtCEPKbXBXlnh3CaD8X/KlUr1mLh+R0mDIX92T8XATVLpoq4HG2Dty5
+dDUSm7cmE7W9Mog0otpMXkxdRfhcSDDC84bacwG0LcrHvMyet6B8leN5h4eSKTvQ
+lhNvW6wtUlsR15bUPw4f+o4s7oczm8AK1bALJV81mE/CyeJfk0+C009DWR/XHeQI
+tK3mYVpqST7qcJ4TVNWIHd3YDu6++Ar13ztvnVw/aNJ0qM0LhMA=
+=1HZr
 -----END PGP SIGNATURE-----
