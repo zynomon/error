@@ -6,7 +6,7 @@ Section: devel
 Maintainer: Zynomon Aelius
 Installed-Size: 1456
 Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libqt6core6t64 (>= 6.8.2), libqt6gui6 (>= 6.4.0), libqt6widgets6 (>= 6.1.2), libstdc++6 (>= 5)
-Filename: /media/Documents/GitHub/error/dists/stable/main/binary-amd64/err_.deb
+Filename: /media/Documents/Github/error/dists/stable/main/binary-amd64/err_.deb
 Size: 1232806
 MD5sum: 9282ad3dc770f804b6dc035200158569
 SHA1: 089c60df0410b98357d4409f07e181f511994199
@@ -21,7 +21,7 @@ Priority: optional
 Maintainer:  Zynomon aelius
 Installed-Size: 225
 Depends: libqt6core6, libqt6gui6, libqt6widgets6, libqt6network6, systemd
-Filename: /media/Documents/GitHub/error/dists/stable/main/binary-amd64/once.deb
+Filename: /media/Documents/Github/error/dists/stable/main/binary-amd64/once.deb
 Size: 83196
 MD5sum: 24ae391965e0f4665702776a10b99904
 SHA1: 63ee12eb2cc0ac7596165e2c8de5bdbbc2ac7c1f
@@ -37,7 +37,7 @@ Section: devel
 Maintainer: Zynomon Aelius
 Installed-Size: 880
 Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6, libqt6webenginewidgets6, libqt6webenginecore6, libqt6network6, libqt6multimedia6
-Filename: /media/Documents/GitHub/error/dists/stable/main/binary-amd64/onu.deb
+Filename: /media/Documents/Github/error/dists/stable/main/binary-amd64/onu.deb
 Size: 235822
 MD5sum: 1c6f9c7f6e29ee32f42e392635069cf1
 SHA1: eed37d9b5104019b5a43442edaa58a6afb29da21
@@ -53,7 +53,7 @@ Section: devel
 Maintainer: Zynomon Aelius
 Installed-Size: 804
 Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6
-Filename: /media/Documents/GitHub/error/dists/stable/main/binary-amd64/vex.deb
+Filename: /media/Documents/Github/error/dists/stable/main/binary-amd64/vex.deb
 Size: 193526
 MD5sum: 30d8822212ccc83f8d8d7cb383e071ea
 SHA1: f04d778666ff68f376f286353924afe409571b3d
