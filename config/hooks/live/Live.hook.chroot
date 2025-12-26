@@ -1,0 +1,65 @@
+#!/bin/bash
+echo "I: running $0"
+
+# Generate locales
+locale-gen --keep-existing || true
+
+# Purge unnecessary locales (might not exist)
+if command -v localepurge &> /dev/null; then
+    sed -i 's/^USE_DPKG/#USE_DPKG/' /etc/locale.nopurge 2>/dev/null || true
+    localepurge 2>/dev/null || true
+    sed -i 's/^#USE_DPKG/USE_DPKG/' /etc/locale.nopurge 2>/dev/null || true
+fi
+
+# Remove firmware packages (ignore if not installed)
+apt-get -y purge \
+    firmware-netronome \
+    firmware-qcom-soc \
+    firmware-nvidia-gsp \
+    nvidia-tesla-470-kernel-support \
+    firmware-nvidia-tesla-gsp \
+    firmware-nvidia-graphics \
+    firmware-amd-graphics \
+    firmware-sof-signed \
+    firmware-atheros \
+    firmware-libertas \
+    raspi-firmware 2>/dev/null || true
+
+cat >/etc/motd <<'EOF' 2>/dev/null || true
+
+   welcome to                                      ▀██▀       ██                   
+     ▄▄▄▄  ▄▄▄ ▄▄  ▄▄▄ ▄▄    ▄▄▄   ▄▄▄ ▄▄           ██       ▄▄▄  ▄▄▄▄ ▄▄▄   ▄▄▄▄  
+   ▄█▄▄▄██  ██▀ ▀▀  ██▀ ▀▀ ▄█  ▀█▄  ██▀ ▀▀          ██        ██   ▀█▄  █  ▄█▄▄▄██ 
+   ██       ██      ██     ██   ██  ██              ██        ██    ▀█▄█   ██      
+    ▀█▄▄▄▀ ▄██▄    ▄██▄     ▀█▄▄█▀ ▄██▄            ▄██▄▄▄▄▄█ ▄██▄    ▀█     ▀█▄▄▄▀ 
+                                            ██                                     
+
+------------------------------------------------------------------------------------
+error.os Live TTY;
+
+For cli installation For now there is no  cli command but congrats you did make it 
+into this rare moment, however there are some stuffs you should be helpful after 
+knowing, 
+
+root password (su): toor
+documentation     : https://zynomon.github.io/error.doc 
+OR                /
+get realtime help : https://discord.gg/Jn7FBwu99F 
+
+EOF
+
+
+cat >/etc/issue <<'EOF' 2>/dev/null || true
+\e[37m████████████████████████████████████████████████████████████████████████
+
+\e[1m \e[34m<\e[31m ! \e[34m>\e[37m error.os - \e[31m LIVE \e[37mTeletypewriter ( Session : \l )
+
+████████████████████████████████████████████████████████████████████████
+
+\e[32mKernel : \r
+Host : \n
+Username : error.user
+Password : user \e[0m
+EOF
+
+echo "I: error.os Live setup complete"

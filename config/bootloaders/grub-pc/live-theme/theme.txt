@@ -1,0 +1,49 @@
+desktop-image: "../splash.png"
+title-color: "#dfe2ec"
+title-font: "Unifont Regular 16"
+title-text: " "  
+message-font: "Unifont Regular 16"
+terminal-font: "Unifont Regular 16"
+
++ label {
+    top = 100%-40        
+    left = 10%          
+    width = 80%         
+    height = 20
+    text = "@KEYMAP_SHORT@"
+    align = "center"
+    color = "#dfe2ec"
+    font = "Unifont Regular 14"
+}
+
+
++ boot_menu {
+    left = 15%         
+    width = 70%         
+    top = 35%            
+    height = 40%        
+    item_color = "#a8a8a8"
+    item_font = "Unifont Regular 14"
+    selected_item_color = "#dfe2ec"
+    selected_item_font = "Unifont Regular 14"
+    item_height = 18
+    item_padding = 2
+    item_spacing = 4
+    icon_width = 0
+    icon_heigh = 0
+    item_icon_space = 0
+}
+
++ progress_bar {
+    id = "__timeout__"
+    left = 20%          
+    top = 100%-70       
+    height = 16
+    width = 60%
+    font = "Unifont Regular 14"
+    text_color = "#000000"
+    fg_color = "#dfe2ec"
+    bg_color = "#626262"
+    border_color = "#626262"
+    text = "@TIMEOUT_NOTIFICATION_LONG@"
+}
