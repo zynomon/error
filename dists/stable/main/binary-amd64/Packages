@@ -14,6 +14,22 @@ SHA256: de24cd8cf830fc196c98ae24a2d021bfea56decf5df4b69ef1c9ca33049d629a
 SHA512: c5a32dc039d5618ce9ee23f54c7cbaa9aec97336ad9fa6534382a8591a3c077e79bc4484b88c5401a2e4c9256b0191bc94e9188379c9f301876c9cd42006785b
 Description: error.os dashboard — a system manager
 
+Package: error_doc
+Architecture: amd64
+Version: 0.1
+Priority: optional
+Section: devel
+Maintainer: Zynomon Aelius
+Installed-Size: 186
+Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6, libqt6webenginewidgets6
+Filename: /media/Documents/Github/error/dists/stable/main/binary-amd64/error.doc.deb
+Size: 42874
+MD5sum: d3e71f0d15e4b783e3c3804a5c120fd8
+SHA1: 7c434fe0d78db3c10d45fe44c87f8c1a6bf70b95
+SHA256: 1b0e2ebec7cb48844c45faa30adcb80d8042bfa76793ef163cc6aadcbe1c5033
+SHA512: 14d49e64393c8eaaf2f28dc66b6cc404a48b2addc8d9b8f6fd055bbc63f51524c90683df464f62d3d819d41aca1d08a5389e9587eab4d380547f3336a54cee48
+Description: Error Doc is a Qt-based documentation viewer and system manager.     It integrates error.os principles of clarity, survivability, and mythic branding.     Error Doc provides a clean tabbed interface for CSS/QSS theme editing,     restricted web documentation access, manpage placeholders, and bookmarks.     Designed for minimal footprint and reproducible builds.
+
 Package: Once
 Architecture: all
 Version: 0.1
