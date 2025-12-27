@@ -61,7 +61,7 @@ curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyri
 
 sudo lb config \
   --distribution trixie \
-  --mirror-bootstrap http://mirror.xeonbd.com/debian \        # bangladeshi fast mirror jump from 1 kbps to 59 mbps
+  --mirror-bootstrap http://mirror.xeonbd.com/debian \
   --mirror-chroot http://mirror.xeonbd.com/debian \
   --mirror-chroot-security http://security.debian.org/debian-security \
   --mirror-binary http://mirror.xeonbd.com/debian \
@@ -84,7 +84,8 @@ sudo lb config \
   --iso-preparer "Zynomon Aelius" \
   --iso-volume "error.os Neospace" \
   --hdd-label "ERROR_OS" \
-  --apt-recommends false \
+  --apt-recommends false
+
 
 # clone the config
 cd ~
