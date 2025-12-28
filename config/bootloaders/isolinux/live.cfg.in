@@ -1,7 +1,7 @@
 menu hshift 0
 menu width 82
 
-menu title .        # single dot, avoids printing "" and keeps title defined
+menu title        
 include stdmenu.cfg
 
 label live-@FLAVOUR@-english
@@ -23,8 +23,16 @@ label installgui
     initrd /install/gtk/initrd.gz
     append video=vesa:ywrap,mtrr vga=788 @APPEND_INSTALL@ --- quiet
 
+    label hdt
+        menu label ^Hardware Detection Tool (HDT)
+        com32 hdt.c32
+
+    label memtest
+        menu label ^Memory Diagnostic Tool (memtest86+)
+        linux /live/memtest
+
 menu begin advanced
-    menu title .    # again, single dot for submenu title
+    menu title Advanced Options
     include stdmenu.cfg
 
     label live-@FLAVOUR@-failsafe
@@ -39,13 +47,6 @@ menu begin advanced
         initrd /install/initrd.gz
         append vga=788 @APPEND_INSTALL@ --- quiet
 
-    label hdt
-        menu label ^Hardware Detection Tool (HDT)
-        com32 hdt.c32
-
-    label memtest
-        menu label ^Memory Diagnostic Tool (memtest86+)
-        linux /live/memtest
 
     label mainmenu
         menu label ^Back..
