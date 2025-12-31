@@ -1,15 +1,68 @@
 #!/bin/bash
+set -e
+DEBUG=${DEBUG:-true}
+COLOR=${COLOR:-true}
+
+log() {
+    if [ "$COLOR" = true ]; then
+        printf "\033[1;34m[locale-hook]\033[0m %s\n" "$1"
+    else
+        echo "[locale-hook] $1"
+    fi
+}
 echo "I: running $0"
 
-# Generate locales
-locale-gen --keep-existing || true
 
-# Purge unnecessary locales (might not exist)
-if command -v localepurge &> /dev/null; then
-    sed -i 's/^USE_DPKG/#USE_DPKG/' /etc/locale.nopurge 2>/dev/null || true
-    localepurge 2>/dev/null || true
-    sed -i 's/^#USE_DPKG/USE_DPKG/' /etc/locale.nopurge 2>/dev/null || true
+
+
+log "Installing locales..."
+apt-get update
+apt-get install --yes locales || {
+    log "Failed to install locales package"
+    exit 1
+}
+
+cat <<EOF > /etc/locale.gen
+en_US.UTF-8 UTF-8
+bn_BD.UTF-8 UTF-8
+EOF
+echo 'LANG="en_US.UTF-8"' > /etc/default/locale
+
+if command -v locale-gen >/dev/null 2>&1; then
+    log "Running locale-gen..."
+    if locale-gen; then
+        log "locale-gen succeeded"
+        exit 0
+    else
+        log "locale-gen failed"
+    fi
+else
+    log "locale-gen not found"
 fi
+
+log "Trying localedef..."
+if localedef -i en_US -f UTF-8 en_US.UTF-8 && \
+   localedef -i bn_BD -f UTF-8 bn_BD.UTF-8; then
+    log "localedef succeeded"
+    exit 0
+else
+    log "localedef failed"
+fi
+
+log "Trying manual locale build..."
+if [ -d /usr/share/i18n/locales ]; then
+    mkdir -p /usr/lib/locale
+    localedef -f UTF-8 -i en_US /usr/lib/locale/en_US.UTF-8 || true
+    localedef -f UTF-8 -i bn_BD /usr/lib/locale/bn_BD.UTF-8 || true
+    if locale -a | grep -q "en_US.utf8"; then
+        log "Manual locale build succeeded"
+        exit 0
+    fi
+fi
+locale-gen --keep-existing || true
+log "Skipping......."
+
+
 
 # Remove firmware packages (ignore if not installed)
 apt-get -y purge \
@@ -19,12 +72,17 @@ apt-get -y purge \
     nvidia-tesla-470-kernel-support \
     firmware-nvidia-tesla-gsp \
     firmware-nvidia-graphics \
-    firmware-amd-graphics \
     firmware-sof-signed \
     firmware-atheros \
     firmware-libertas \
     raspi-firmware 2>/dev/null || true
 
+
+echo "root:toor" | chpasswd
+
+usermod -aG sudo error.user || true
+
+# MOTD
 cat >/etc/motd <<'EOF' 2>/dev/null || true
 
    welcome to                                      ▀██▀       ██                   
@@ -37,18 +95,14 @@ cat >/etc/motd <<'EOF' 2>/dev/null || true
 ------------------------------------------------------------------------------------
 error.os Live TTY;
 
-For cli installation For now there is no  cli command but congrats you did make it 
-into this rare moment, however there are some stuffs you should be helpful after 
-knowing, 
-
 root password (su): toor
+user account      : error.user / user
 documentation     : https://zynomon.github.io/error.doc 
-OR                /
 get realtime help : https://discord.gg/Jn7FBwu99F 
 
 EOF
 
-
+# ISSUE banner
 cat >/etc/issue <<'EOF' 2>/dev/null || true
 \e[37m████████████████████████████████████████████████████████████████████████
 

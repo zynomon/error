@@ -1,0 +1,151 @@
+#!/bin/bash
+set -e
+
+# --- Configuration ---
+LIVE_USER="error.user"
+LIVE_PASS="user"
+ROOT_PASS="toor"
+COLOR=${COLOR:-true}
+
+log() {
+    if [ "$COLOR" = true ]; then
+        printf "\033[1;34m[error.os]\033[0m %s\n" "$1"
+    else
+        echo "[error-os-setup] $1"
+    fi
+}
+
+echo "I: Running error.os Neospace 25 Customization Hook"
+
+log "Creating Live User: $LIVE_USER"
+if ! id "$LIVE_USER" &>/dev/null; then
+    useradd -m -u 1000 -s /bin/bash "$LIVE_USER" || true
+fi
+
+log "Assigning groups safely..."
+for grp in sudo video audio cdrom netdev render lpadmin plugdev dip; do
+    if getent group "$grp" >/dev/null; then
+        usermod -aG "$grp" "$LIVE_USER" || true
+    else
+        echo "   -> Skipping group '$grp' (does not exist in this stage)"
+    fi
+done
+
+log "Setting credentials..."
+echo "root:$ROOT_PASS" | chpasswd
+echo "$LIVE_USER:$LIVE_PASS" | chpasswd
+
+echo "error.os" > /etc/hostname
+
+log "Configuring Locales..."
+apt-get update
+apt-get install --yes locales
+
+cat <<EOF > /etc/locale.gen
+en_US.UTF-8 UTF-8
+bn_BD.UTF-8 UTF-8
+EOF
+
+echo 'LANG="en_US.UTF-8"' > /etc/default/locale
+locale-gen --keep-existing || true
+
+
+if [ -d "/usr/share/plymouth/themes/err" ]; then
+    log "Setting Plymouth theme to 'err' in config files..."
+    
+    if command -v plymouth-set-default-theme >/dev/null 2>&1; then
+        plymouth-set-default-theme err || true
+    fi
+
+    mkdir -p /etc/plymouth
+    cat <<EOF > /etc/plymouth/plymouthd.conf
+[Daemon]
+Theme=err
+ShowDelay=0
+DeviceTimeout=8
+EOF
+fi
+
+log "Purging unnecessary firmware..."
+apt-get -y purge \
+    firmware-netronome firmware-qcom-soc firmware-nvidia-gsp \
+    nvidia-tesla-470-kernel-support firmware-nvidia-tesla-gsp \
+    firmware-nvidia-graphics firmware-sof-signed firmware-atheros \
+    firmware-libertas raspi-firmware 2>/dev/null || true
+
+cat >/etc/motd <<'EOF'
+
+   welcome to                                      ▀██▀       ██                   
+     ▄▄▄▄  ▄▄▄ ▄▄  ▄▄▄ ▄▄    ▄▄▄   ▄▄▄ ▄▄           ██       ▄▄▄  ▄▄▄▄ ▄▄▄   ▄▄▄▄  
+   ▄█▄▄▄██  ██▀ ▀▀  ██▀ ▀▀ ▄█  ▀█▄  ██▀ ▀▀          ██        ██   ▀█▄  █  ▄█▄▄▄██ 
+   ██       ██      ██     ██   ██  ██              ██        ██    ▀█▄█   ██      
+    ▀█▄▄▄▀ ▄██▄    ▄██▄     ▀█▄▄█▀ ▄██▄            ▄██▄▄▄▄▄█ ▄██▄    ▀█     ▀█▄▄▄▀ 
+                                            ██                                     
+
+------------------------------------------------------------------------------------
+error.os Live TTY;
+
+here are some stuffs that might be helpful,
+
+root password (su): toor
+Live user account : error.user:user
+documentation     : https://zynomon.github.io/error.doc 
+get realtime help : https://discord.gg/Jn7FBwu99F 
+
+EOF
+log "\e[32m   Hey Builder wsp making some\e[31m                     ▀██▀       ██                   
+     ▄▄▄▄  ▄▄▄ ▄▄  ▄▄▄ ▄▄    ▄▄▄   ▄▄▄ ▄▄           ██       ▄▄▄  ▄▄▄▄ ▄▄▄   ▄▄▄▄  
+   ▄█▄▄▄██  ██▀ ▀▀  ██▀ ▀▀ ▄█  ▀█▄  ██▀ ▀▀          ██        ██   ▀█▄  █  ▄█▄▄▄██ 
+   ██       ██      ██     ██   ██  ██              ██        ██    ▀█▄█   ██      
+    ▀█▄▄▄▀ ▄██▄    ▄██▄     ▀█▄▄█▀ ▄██▄            ▄██▄▄▄▄▄█ ▄██▄    ▀█     ▀█▄▄▄▀ \e[37m?
+                                            ██                                     
+"
+cat >/etc/issue <<'EOF'
+\e[37m████████████████████████████████████████████████████████████████████████
+
+\e[1m \e[34m<\e[31m ! \e[34m>\e[37m error.os - \e[31m LIVE \e[37mTeletypewriter ( Session : \l )
+
+████████████████████████████████████████████████████████████████████████
+
+\e[32mKernel : \r
+Host : \n
+Username : error.user
+Password : user \e[0m
+EOF
+
+chown -R 1000:1000 "/home/$LIVE_USER" || true
+
+rm -rf /home/$LIVE_USER/.config/autostart/once.desktop
+log "rm -rf /home/$LIVE_USER/.config/autostart/once.desktop For Once execution removal"
+
+mkdir -p /etc/live/config.conf.d/
+cat <<EOF > /etc/live/config.conf.d/error.conf
+export LIVE_USERNAME="error.user"
+export LIVE_HOSTNAME="error.os"
+export LIVE_NOCONFIG="autologin,user-setup,sudo"
+EOF
+log "error.user stuff"
+mkdir -p /etc/systemd/system-generators/
+
+cat <<'EOF' > /etc/systemd/system-generators/live-config-getty-generator
+#!/bin/sh
+set -e
+SYSTEMD_DIR=$1
+# Configure TTY 1-6 for manual login only
+for NUMBER in $(seq 1 6); do
+    GETTY_SERVICE_D=$SYSTEMD_DIR/getty@tty${NUMBER}.service.d
+    mkdir -p $GETTY_SERVICE_D
+    cat > $GETTY_SERVICE_D/manual.conf <<INNER
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty -o '-- \\u' --noclear %I \$TERM
+Type=idle
+INNER
+done
+exit 0
+EOF
+
+chmod +x /etc/systemd/system-generators/live-config-getty-generator
+log "geT_Ty generated."
+
+log "error.os customization hook execution finished.."
