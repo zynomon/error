@@ -1,9 +1,9 @@
 
-<img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="error-text" style="width:1000px;">
-
+<p align="center">
+  <img src="https://github.com/zynomon/error/blob/web-side/icons/logo.svg" alt="error.os Logo" width="800">
+</p>
 
 <p align="center">
-
   <img src="https://img.shields.io/badge/Status-Beta-yellow?style=plastic&logo=progress">
   <img src="https://img.shields.io/badge/License-Apache%202.0-green?style=plastic&logo=open-source-initiative&logoColor=white">
   <img src="https://img.shields.io/badge/Platform-Linux-orange?style=plastic&logo=linux&logoColor=white">
@@ -14,93 +14,129 @@
   <a href="https://github.com/zynomon/error/fork">
     <img src="https://img.shields.io/github/forks/zynomon/error?style=plastic&logo=github">
   </a>
-  
 </p>
 
----
-The file name hierarchy
----
-![bitmap](https://github.com/user-attachments/assets/1c7d5c20-ad07-4b0f-8d0e-debe0edb1bf4)
+## Quick Start
 
----
-Making of error.os , - it was a long boring session of building a distro seeing ***errors*** fixing them seeing another , fixing them . by default it wasn't so flexible 
+```bash
+git clone https://github.com/zynomon/error.git
+cd error
+sudo ./.sh
+```
 
-i mean the debian live build command wasn't so much helpful at all , 
-
-<img width="1345" height="697" alt="image" src="https://github.com/user-attachments/assets/7d19e7ad-2c88-4bd8-924c-54fe4d65212d" />
-By the way you can live without the struggle or make your own distro like mine  you will see some  .7z files here those are the config directory just drag and drop then use some live build command to make your own error.os Fork 🍽. 
-# Tutorial on making error.os
-<img width="693" height="500" alt="image" src="https://github.com/user-attachments/assets/722005a2-0425-4e2b-bfb8-06df7175e534" />
-the lb build structure ( Will automatically be created nothing to do here )
-<img width="523" height="262" alt="image" src="https://github.com/user-attachments/assets/0c70dff4-ad49-4b96-ae9d-0c932c626a67" 
-The main thing is the config directory everything else is automated which is why we need config examples and its 
-what usually people doesnt share or "Make your own" without any clue 
-
-.
---
+## File Structure
 
 ```
-# create e directory
+error/
+├── .sh
+├── errapp.list
+├── error.list
+├── error.gpg
+├── Live.hook
+├── bootloaders/
+│   ├── grub-pc/
+│   │   ├── grub.cfg
+│   │   ├── splash.png
+│   │   └── live-theme/
+│   └── isolinux/
+│       ├── isolinux.cfg
+│       ├── live.cfg.in
+│       └── menu.cfg
+└── usr/share/fonts/opentype/error.os/
+    ├── NimbusMonoPS-Bold.otf
+    └── NimbusMonoPS-Regular.otf
+```
 
-mkdir -p ~/e
-cd e
+![File Structure](https://github.com/user-attachments/assets/1c7d5c20-ad07-4b0f-8d0e-debe0edb1bf4)
 
-# install the knife of the chief
+## Features
 
-sudo apt-get update
+- Interactive menu system
+- Auto dependency check and installation
+- File validation before building
+- Safe config recovery with backup
+- ISO checksum verification
+- Automatic config backups
+
+## Builder Menu
+
+```
+> Start Building the ISO
+  Verify ISO (Checksums)
+  Recover Configs (Git Clone)
+  Open Config Folder
+  Exit
+```
+
+## Manual Build
+
+```bash
+mkdir -p ~/build-area
+cd ~/build-area
+
 sudo apt-get install live-build live-tools \
   debootstrap squashfs-tools xorriso isolinux \
-  ca-certificates gnupg dirmngr \
-  ffmpeg sound-theme-freedesktop # usually already installed but to make sure assumption doesn't gets over vibes.
+  ca-certificates gnupg dirmngr
 
-# enable our repo
-curl -fsSL https://zynomon.github.io/error/error.gpg | sudo tee /usr/share/keyrings/error.gpg && echo "deb [signed-by=/usr/share/keyrings/error.gpg] https://zynomon.github.io/error stable main" | sudo tee /etc/apt/sources.list.d/erroros.list && sudo apt update
-
-# now lets begin
-# exact config built for error.os yes exact
-
-sudo lb config \
-  --distribution trixie \
-  --mirror-bootstrap http://mirror.xeonbd.com/debian \
-  --mirror-chroot http://mirror.xeonbd.com/debian \
-  --mirror-chroot-security http://security.debian.org/debian-security \
-  --mirror-binary http://mirror.xeonbd.com/debian \
-  --mirror-binary-security http://security.debian.org/debian-security \
-  --debootstrap-options "--include=ca-certificates,gnupg,dirmngr --keyring=/usr/share/keyrings/debian-archive-keyring.gpg" \
-  --bootloader grub-efi \
-  --bootappend-live "boot=live components quiet splash plymouth.theme=err" \
-  --memtest memtest86+ \
-  --firmware-binary true \
-  --firmware-chroot true \
-  --initramfs live-boot \
-  --linux-packages linux-image \
-  --architectures amd64 \
-  --binary-images iso-hybrid \
-  --checksums sha256 \
-  --win32-loader false \
-  --source false \
-  --iso-application "error.os Installer 2025" \
-  --iso-publisher "Zynomon Aelius" \
-  --iso-preparer "Zynomon Aelius" \
-  --iso-volume "error.os Neospace" \
-  --hdd-label "ERROR_OS" \
-  --apt-recommends false
-
-
-# clone the config
-cd ~
-git clone https://github.com/zynomon/error
+git clone https://github.com/zynomon/error.git
 cd error
-ls error
-sudo rm -rf ~/e/config
-sudo mv ~/error/config ~/e/config
-ls error
-rm -rf ~/error
-cd ~/e
-ls
-
-sudo lb build && ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/dialog-error.oga || ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/bell.oga
-# if build fails - error sound if passes bell sound no need to install them though they are there in every freedesktop linux devices good luck!
-
+sudo ./.sh
 ```
-<img width="872" height="563" alt="image" src="https://github.com/user-attachments/assets/cf36342c-af76-421e-96f9-c9e543e876a1" />
+
+## Screenshots
+
+![Build Interface](https://github.com/user-attachments/assets/722005a2-0425-4e2b-bfb8-06df7175e534)
+
+![Live-Build Structure](https://github.com/user-attachments/assets/0c70dff4-ad49-4b96-ae9d-0c932c626a67)
+
+![ISO Generation](https://github.com/user-attachments/assets/7d19e7ad-2c88-4bd8-924c-54fe4d65212d)
+
+## Recovering Configurations
+
+```bash
+# Select "Recover Configs (Git Clone)" from menu
+# Creates config_backup_YYYYMMDD_HHMMSS.7z before cloning
+```
+
+## Troubleshooting
+
+**"Tool Missing: lb"**
+```bash
+sudo apt install live-build
+```
+
+**"Permission denied"**
+```bash
+sudo ./.sh
+```
+
+**"Build failed"**
+- Check build.log
+- Verify 10GB+ free space
+- Check internet connection
+
+**"Missing config files"**
+Use "Recover Configs" menu option
+
+## Customization
+
+Edit these files:
+- `errapp.list` - Application packages
+- `bootloaders/grub-pc/grub.cfg` - Bootloader settings
+- `bootloaders/grub-pc/live-theme/theme.txt` - GRUB theme
+- `bootloaders/grub-pc/splash.png` - Boot splash
+
+## Contributing
+
+1. Check existing issues
+2. Fork repository
+3. Create feature branch
+4. Submit pull request
+
+## License
+
+Apache 2.0 - See LICENSE file.
+
+---
+
+The `.sh` script validates and guides through common issues.
