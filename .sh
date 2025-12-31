@@ -4,6 +4,7 @@ export PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
 export DEBIAN_FRONTEND=noninteractive
 SOURCE_DIR="$(pwd)"
 WORK_DIR="$SOURCE_DIR/Workspace"
+LOG_FILE="$SOURCE_DIR/build.log"
 
 if [[ -t 1 ]] && [ "$(tput colors 2>/dev/null || echo 0)" -ge 8 ]; then
 
@@ -19,6 +20,22 @@ else
 
     RED='' GREEN='' YELLOW='' BLUE='' CYAN='' BOLD='' NC='' CLEAR_LINE=''
 fi
+
+log_start() {
+    echo "Build started: $(date)" | tee -a "$LOG_FILE"
+}
+
+log_end() {
+    echo "Build ended: $(date)" | tee -a "$LOG_FILE"
+}
+
+log_info() {
+    echo "[$(date '+%H:%M:%S')] $1" | tee -a "$LOG_FILE"
+}
+
+log_command() {
+    echo "[$(date '+%H:%M:%S')] $ $1" | tee -a "$LOG_FILE"
+}
 
 check_dependencies() {
     local MISSING_COUNT=0
@@ -84,6 +101,7 @@ check_dependencies() {
 }
 
 start_build() {
+  log_start
     if [ -d "$WORK_DIR" ]; then
     echo "I: Cleaning old workspace..."
     cd "$WORK_DIR"
@@ -157,7 +175,10 @@ cp "$SOURCE_DIR/bootloaders/grub-pc/splash.png" config/includes.binary/boot/grub
 
 
 echo "I: Starting lb build..."
-lb build
+log_command "lb build"
+lb build 2>&1 | tee -a "$LOG_FILE"
+log_info "Checking for generated ISO..."
+
 # error.os neospace 2025 forked-script iso change the name of your liking
     if ls *.iso 1> /dev/null 2>&1; then
         count=1
@@ -179,13 +200,16 @@ lb build
 
         "
         echo -e "  █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒    █▒▒▒   █▒▒▒ ${NC}"
+        log_info "ISO created: $NEW_NAME"
     else
         echo -e "${RED}${BOLD}ERROR: Looks like the Build failed.
                  If you haven't changed any files then report at
 
                         > https://github.com/zynomon/error/issues ${NC}
                         ( open a new issue )"
+       log_info "Build failed - no ISO generated"
     fi
+    log_end
     read -p "Press Enter to return to menu..."
 
 }
@@ -218,12 +242,187 @@ options=(
     "Verify ISO (Checksums)"
     "Recover Configs (Git Clone)"
     "Open Config Folder"
+    "View Build Log"
     "Exit"
 )
 
 selected=0
 
-# Helper to hide/show cursor
+view_logs() {
+    clear
+
+    # Check if log file exists
+    if [ ! -f "$LOG_FILE" ]; then
+        echo -e "${YELLOW}No build.log found${NC}"
+        echo ""
+        read -n 1 -s -r -p "Press any key to return..."
+        return
+    fi
+
+    # Get total lines
+    local total_lines=$(wc -l < "$LOG_FILE")
+    local start_line=1
+    local lines_per_page=20
+
+    # If file is small, show all and exit
+    if [ "$total_lines" -le $lines_per_page ]; then
+        echo -e "${CYAN}${BOLD}Build Log (full) - $total_lines lines${NC}"
+        echo "─────────────────────────────────────────────────────"
+        cat "$LOG_FILE"
+        echo ""
+        echo -e "${DIM}Press any key to return...${NC}"
+        read -n 1 -s -r
+        return
+    fi
+
+    # Interactive viewer
+    while true; do
+        clear
+
+        # Calculate current page
+        local current_page=$(( (start_line - 1) / lines_per_page + 1 ))
+        local total_pages=$(( (total_lines - 1) / lines_per_page + 1 ))
+
+        # Header
+        echo -e "${CYAN}${BOLD}Build Log - Page $current_page/$total_pages${NC}"
+        echo -e "${DIM}Line $start_line-$((start_line + lines_per_page - 1)) of $total_lines${NC}"
+        echo "─────────────────────────────────────────────────────"
+
+        # Display page
+        sed -n "${start_line},$((start_line + lines_per_page - 1))p" "$LOG_FILE"
+
+        # Footer with controls
+        echo ""
+        echo "─────────────────────────────────────────────────────"
+        echo -e "${DIM}Controls: ↑/k=up  ↓/j=down  q=quit  d=delete  g=top  G=end${NC}"
+        echo -e "${DIM}         Ctrl+R=remove log  /=search  n=next match${NC}"
+
+        # Read input
+        read -rsn1 key
+
+        case "$key" in
+            # Arrow keys
+            $'\x1b')
+                read -rsn2 -t 0.1 key2
+                case "$key2" in
+                    '[A') # Up arrow
+                        if [ $start_line -gt 1 ]; then
+                            start_line=$((start_line - lines_per_page))
+                            [ $start_line -lt 1 ] && start_line=1
+                        fi
+                        ;;
+                    '[B') # Down arrow
+                        if [ $((start_line + lines_per_page)) -le $total_lines ]; then
+                            start_line=$((start_line + lines_per_page))
+                        fi
+                        ;;
+                esac
+                ;;
+
+            # Vim keys
+            'k') # Up
+                if [ $start_line -gt 1 ]; then
+                    start_line=$((start_line - lines_per_page))
+                    [ $start_line -lt 1 ] && start_line=1
+                fi
+                ;;
+
+            'j') # Down
+                if [ $((start_line + lines_per_page)) -le $total_lines ]; then
+                    start_line=$((start_line + lines_per_page))
+                fi
+                ;;
+
+            'g') # Go to top
+                start_line=1
+                ;;
+
+            'G') # Go to end
+                start_line=$((total_lines - lines_per_page + 1))
+                [ $start_line -lt 1 ] && start_line=1
+                ;;
+
+            'd') # Delete confirmation
+                echo ""
+                echo -e "${YELLOW}Delete current log file? (y/N): ${NC}"
+                read -n1 confirm
+                if [[ "$confirm" == "y" || "$confirm" == "Y" ]]; then
+                    rm "$LOG_FILE"
+                    echo -e "${GREEN}Log file removed${NC}"
+                    sleep 1
+                    return
+                fi
+                ;;
+
+            'q') # Quit
+                return
+                ;;
+
+            '/') # Search
+                echo ""
+                echo -e "${CYAN}Search pattern: ${NC}"
+                read pattern
+                if [ -n "$pattern" ]; then
+                    grep -n "$pattern" "$LOG_FILE" | head -20
+                    echo ""
+                    read -n 1 -s -r -p "Press any key to continue..."
+                fi
+                ;;
+
+            'n') # Next search match (simple implementation)
+                echo ""
+                echo -e "${CYAN}Next search (enter pattern): ${NC}"
+                read pattern
+                if [ -n "$pattern" ]; then
+                    # Find line with pattern
+                    local match_line=$(grep -n "$pattern" "$LOG_FILE" | head -1 | cut -d: -f1)
+                    if [ -n "$match_line" ]; then
+                        start_line=$((match_line - 5))
+                        [ $start_line -lt 1 ] && start_line=1
+                    else
+                        echo -e "${YELLOW}Pattern not found${NC}"
+                        sleep 1
+                    fi
+                fi
+                ;;
+
+            # Ctrl+R handler
+            $'\x12') # Ctrl+R
+                echo ""
+                echo -e "${RED}${BOLD}⚠  REMOVE LOG FILE CONFIRMATION ⚠${NC}"
+                echo -e "${RED}This will permanently delete:${NC}"
+                echo "  $LOG_FILE"
+                echo -e "${RED}Size: $(du -h "$LOG_FILE" | cut -f1)${NC}"
+                echo ""
+                echo -e "${YELLOW}Type 'DELETE' to confirm: ${NC}"
+                read confirmation
+                if [ "$confirmation" == "DELETE" ]; then
+                    rm "$LOG_FILE"
+                    echo -e "${GREEN}✓ Log file removed${NC}"
+                    sleep 1
+                    return
+                else
+                    echo -e "${YELLOW}Cancelled${NC}"
+                    sleep 1
+                fi
+                ;;
+
+            # Page up/down
+            ' ') # Space = page down
+                if [ $((start_line + lines_per_page)) -le $total_lines ]; then
+                    start_line=$((start_line + lines_per_page))
+                fi
+                ;;
+
+            'b') # Page up
+                if [ $start_line -gt 1 ]; then
+                    start_line=$((start_line - lines_per_page))
+                    [ $start_line -lt 1 ] && start_line=1
+                fi
+                ;;
+        esac
+    done
+}
 cursor_off() { printf "\033[?25l"; }
 cursor_on()  { printf "\033[?25h"; }
 
@@ -338,7 +537,8 @@ echo "
                 1) cursor_on; verify_iso; break ;;
                 2) cursor_on; git_clone; break ;;
                 3) cursor_on; open_folder; break ;;
-                4) cursor_on; exit 0 ;;
+                4) cursor_on; view_logs; break ;;
+                5) cursor_on; exit 0 ;;
             esac
         fi
         # Reset cursor position to redraw menu
