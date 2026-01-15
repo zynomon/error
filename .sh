@@ -50,7 +50,7 @@ check_dependencies() {
     local tools=("lb" "git" "sha256sum" "xdg-open")
     for tool in "${tools[@]}"; do
         if ! command -v "$tool" &> /dev/null; then
-            echo -e "${YELLOW}[!] Tool Missing:${NC} $tool"
+            echo -e "${YELLOW}[!] Tool Missing:${NC} $tool,Make sure to check our docs or edit the  .sh  file for fixing the issue"
             ((MISSING_COUNT++))
         fi
     done
@@ -541,7 +541,7 @@ echo "
                 5) cursor_on; exit 0 ;;
             esac
         fi
-        # Reset cursor position to redraw menu
+        # Reset cursor position to remake menu
         printf "\033[%dA" "${#options[@]}"
     done
     cursor_on
