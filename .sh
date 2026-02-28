@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-#!/bin/bash
 
 export PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
 export DEBIAN_FRONTEND=noninteractive
