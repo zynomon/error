@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+#!/bin/bash
+
 export PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
 export DEBIAN_FRONTEND=noninteractive
 SOURCE_DIR="$(pwd)"
@@ -172,14 +175,11 @@ mkdir -p config/includes.binary/boot/grub/live-theme
 cp -r "$SOURCE_DIR/bootloaders/grub-pc/live-theme/"* config/includes.binary/boot/grub/live-theme/
 cp "$SOURCE_DIR/bootloaders/grub-pc/splash.png" config/includes.binary/boot/grub/
 
-
-
 echo "I: Starting lb build..."
 log_command "lb build"
 lb build 2>&1 | tee -a "$LOG_FILE"
 log_info "Checking for generated ISO..."
 
-# error.os neospace 2025 forked-script iso change the name of your liking
     if ls *.iso 1> /dev/null 2>&1; then
         count=1
         while [ -f "$SOURCE_DIR/error.os-NS25FS$(printf "%02d" $count).iso" ]; do
@@ -232,10 +232,10 @@ open_folder() {
         xdg-open "$SOURCE_DIR" &>/dev/null
     else
         echo -e "${YELLOW}No GUI detected. Direct Path:${NC} $SOURCE_DIR"
-    fi # add an option to change directory like enter to change directory and otherkeys to return
+    fi 
+
     read -n 1 -s -r -p "Press any key to return..."
 }
-
 
 options=(
     "Start Building the ISO"
@@ -251,7 +251,6 @@ selected=0
 view_logs() {
     clear
 
-    # Check if log file exists
     if [ ! -f "$LOG_FILE" ]; then
         echo -e "${YELLOW}No build.log found${NC}"
         echo ""
@@ -259,12 +258,10 @@ view_logs() {
         return
     fi
 
-    # Get total lines
     local total_lines=$(wc -l < "$LOG_FILE")
     local start_line=1
     local lines_per_page=20
 
-    # If file is small, show all and exit
     if [ "$total_lines" -le $lines_per_page ]; then
         echo -e "${CYAN}${BOLD}Build Log (full) - $total_lines lines${NC}"
         echo "─────────────────────────────────────────────────────"
@@ -275,43 +272,39 @@ view_logs() {
         return
     fi
 
-    # Interactive viewer
     while true; do
         clear
 
-        # Calculate current page
         local current_page=$(( (start_line - 1) / lines_per_page + 1 ))
         local total_pages=$(( (total_lines - 1) / lines_per_page + 1 ))
 
-        # Header
         echo -e "${CYAN}${BOLD}Build Log - Page $current_page/$total_pages${NC}"
         echo -e "${DIM}Line $start_line-$((start_line + lines_per_page - 1)) of $total_lines${NC}"
         echo "─────────────────────────────────────────────────────"
 
-        # Display page
         sed -n "${start_line},$((start_line + lines_per_page - 1))p" "$LOG_FILE"
 
-        # Footer with controls
         echo ""
         echo "─────────────────────────────────────────────────────"
         echo -e "${DIM}Controls: ↑/k=up  ↓/j=down  q=quit  d=delete  g=top  G=end${NC}"
         echo -e "${DIM}         Ctrl+R=remove log  /=search  n=next match${NC}"
 
-        # Read input
         read -rsn1 key
 
         case "$key" in
-            # Arrow keys
+
             $'\x1b')
                 read -rsn2 -t 0.1 key2
                 case "$key2" in
-                    '[A') # Up arrow
+                    '[A') 
+
                         if [ $start_line -gt 1 ]; then
                             start_line=$((start_line - lines_per_page))
                             [ $start_line -lt 1 ] && start_line=1
                         fi
                         ;;
-                    '[B') # Down arrow
+                    '[B') 
+
                         if [ $((start_line + lines_per_page)) -le $total_lines ]; then
                             start_line=$((start_line + lines_per_page))
                         fi
@@ -319,30 +312,34 @@ view_logs() {
                 esac
                 ;;
 
-            # Vim keys
-            'k') # Up
+            'k') 
+
                 if [ $start_line -gt 1 ]; then
                     start_line=$((start_line - lines_per_page))
                     [ $start_line -lt 1 ] && start_line=1
                 fi
                 ;;
 
-            'j') # Down
+            'j') 
+
                 if [ $((start_line + lines_per_page)) -le $total_lines ]; then
                     start_line=$((start_line + lines_per_page))
                 fi
                 ;;
 
-            'g') # Go to top
+            'g') 
+
                 start_line=1
                 ;;
 
-            'G') # Go to end
+            'G') 
+
                 start_line=$((total_lines - lines_per_page + 1))
                 [ $start_line -lt 1 ] && start_line=1
                 ;;
 
-            'd') # Delete confirmation
+            'd') 
+
                 echo ""
                 echo -e "${YELLOW}Delete current log file? (y/N): ${NC}"
                 read -n1 confirm
@@ -354,11 +351,13 @@ view_logs() {
                 fi
                 ;;
 
-            'q') # Quit
+            'q') 
+
                 return
                 ;;
 
-            '/') # Search
+            '/') 
+
                 echo ""
                 echo -e "${CYAN}Search pattern: ${NC}"
                 read pattern
@@ -369,12 +368,13 @@ view_logs() {
                 fi
                 ;;
 
-            'n') # Next search match (simple implementation)
+            'n') 
+
                 echo ""
                 echo -e "${CYAN}Next search (enter pattern): ${NC}"
                 read pattern
                 if [ -n "$pattern" ]; then
-                    # Find line with pattern
+
                     local match_line=$(grep -n "$pattern" "$LOG_FILE" | head -1 | cut -d: -f1)
                     if [ -n "$match_line" ]; then
                         start_line=$((match_line - 5))
@@ -386,8 +386,8 @@ view_logs() {
                 fi
                 ;;
 
-            # Ctrl+R handler
-            $'\x12') # Ctrl+R
+            $'\x12') 
+
                 echo ""
                 echo -e "${RED}${BOLD}⚠  REMOVE LOG FILE CONFIRMATION ⚠${NC}"
                 echo -e "${RED}This will permanently delete:${NC}"
@@ -407,14 +407,15 @@ view_logs() {
                 fi
                 ;;
 
-            # Page up/down
-            ' ') # Space = page down
+            ' ') 
+
                 if [ $((start_line + lines_per_page)) -le $total_lines ]; then
                     start_line=$((start_line + lines_per_page))
                 fi
                 ;;
 
-            'b') # Page up
+            'b') 
+
                 if [ $start_line -gt 1 ]; then
                     start_line=$((start_line - lines_per_page))
                     [ $start_line -lt 1 ] && start_line=1
@@ -497,23 +498,18 @@ main_menu() {
     clear
 echo "
 
-
         ▄▄▄▄  ▄▄▄ ▄▄  ▄▄▄ ▄▄    ▄▄▄   ▄▄▄ ▄▄        ▄▄▄    ▄▄▄▄
       ▄█▄▄▄██  ██▀ ▀▀  ██▀ ▀▀ ▄█  ▀█▄  ██▀ ▀▀     ▄█  ▀█▄ ██▄ ▀
       ██       ██      ██     ██   ██  ██         ██   ██ ▄ ▀█▄▄
        ▀█▄▄▄▀ ▄██▄    ▄██▄     ▀█▄▄█▀ ▄██▄    ██   ▀█▄▄█▀ █▀▄▄█▀
 
-
-
-
   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒    █▒▒▒   █▒▒▒
-
 
                 ██▄ █ █ █ █   █▀▄   ▄▀▀ ▄▀▀ █▀▄ █ █▀▄ ▀█▀
                 █▄█ ▀▄█ █ █▄▄ █▄▀   ▄██ ▀▄▄ █▀▄ █ █▀   █ ft. lb build
 
 "
-    # If terminal isn't interactive, fallback to a simple choose a b c d
+
     if [[ ! -t 0 ]]; then
         echo "Non-interactive shell detected. Defaulting to build..."
         start_build
@@ -531,7 +527,8 @@ echo "
                 '[A') ((selected--)); [ $selected -lt 0 ] && selected=$((${#options[@]} - 1)) ;;
                 '[B') ((selected++)); [ $selected -ge ${#options[@]} ] && selected=0 ;;
             esac
-        elif [[ $key == "" ]]; then # Enter
+        elif [[ $key == "" ]]; then 
+
             case $selected in
                 0) cursor_on; start_build; break ;;
                 1) cursor_on; verify_iso; break ;;
@@ -541,7 +538,7 @@ echo "
                 5) cursor_on; exit 0 ;;
             esac
         fi
-        # Reset cursor position to remake menu
+
         printf "\033[%dA" "${#options[@]}"
     done
     cursor_on
