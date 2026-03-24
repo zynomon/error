@@ -126,17 +126,10 @@ Edit these files:
 - `bootloaders/grub-pc/live-theme/theme.txt` - GRUB theme
 - `bootloaders/grub-pc/splash.png` - Boot splash
 
-## Contributing
+# If you wonder how it looks,
+<img width="1398" height="766" alt="image" src="https://github.com/user-attachments/assets/56c588f9-1995-4f05-8c88-26540ee6d153" />
+<img width="1398" height="766" alt="image" src="https://github.com/user-attachments/assets/a9125c59-8830-4250-974f-64750338deec" />
 
-1. Check existing issues
-2. Fork repository
-3. Create feature branch
-4. Submit pull request
+<img width="1398" height="766" alt="image" src="https://github.com/user-attachments/assets/2f89178a-afd1-4ecc-aa72-099c00715820" />
 
-## License
-
-Apache 2.0 - See LICENSE file.
-
----
-
-The `.sh` script validates and guides through common issues.
+> this is not an exact fresh error.os system there are some additions
