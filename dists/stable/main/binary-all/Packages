@@ -7,7 +7,7 @@ Maintainer: Zynomon aelius
 Installed-Size: 225
 Provides: calamares-settings
 Depends: calamares, rsync, cryptsetup, libglib2.0-bin, keyutils, pkexec, qml-module-qtquick-window2, qml-module-qtquick2, dconf-gsettings-backend | gsettings-backend
-Filename: dists/stable/main/binary-all/calamares-settings-error.deb
+Filename: ./calamares-settings-error.deb
 Size: 3171048
 MD5sum: 407621647e77fcf4fa0d1805d69b3afb
 SHA1: 66dd07d1b124cc5c35dfce7a5cbdda73296c775c
@@ -24,11 +24,11 @@ Essential: yes
 Maintainer: Zynomon Aelius
 Provides: bibata-cursor-theme, errpaper
 Depends: plasma-workspace, yakuake, kde-cli-tools, plasma-desktop, qt6-style-kvantum, plymouth, sddm
-Filename: dists/stable/main/binary-all/error.base.deb
-Size: 53000908
-MD5sum: eda3b92f176eafb05a5a1a59e2f5160c
-SHA1: 4d287a3612875270e2a1218079bbb3de57077031
-SHA256: 0c44196f37d92eb90a585e30f93bd2db719d1e4e6b0361bda8c673ea564604b8
-SHA512: 9a17c8dcc97740c4de2983bb66d4711e3fe4c1826a6a8a92f3f493ac88e70a4a4c0695c04d53f99ff8833f7a83e3be756d56aae0034ceba2db491be6fcc9d5a2
+Filename: ./error.base.deb
+Size: 52995528
+MD5sum: cc1b945242e0c715dfedb86d7f46bba5
+SHA1: 889ea2e0fdcbd5cb0e37086dbe7489e0d6789e0a
+SHA256: cea93954b8a77da8d22477074c05d941978697a9dd65e2d04e715d6475ab667f
+SHA512: d73156826936ddd62d66f78aa96a243bed886392b022ce35b215e50408dd67d049647843156bdcd91614d3e2eb4e2b8a5687879d669a48153dc47c7f299d5349
 Description: Monochrome KDE base for error.os A full-fledged dark and grey themed KDE desktop foundation. This package forms the expressive core of error.os, combining visual minimalism with modular intent. it contains Bash configuration, Monochrome KDE Plasma 6 theme, Pre-configured yakuake terminal, Kvantum Qt6 styling,Custom Plymouth boot splash,SDDM display manager configuration, a minimal version of Bibata cursor theme, GTK3 integration - so in conclusion Removal is strongly discouraged, as it may destabilize the operating system.
 

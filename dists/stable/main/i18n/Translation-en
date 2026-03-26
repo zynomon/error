@@ -1,0 +1,12 @@
+Package: doc
+Description: doc is a Qt-based documentation viewer check project at github.com/zynomon/error.doc
+Package: err_
+Description: error.os dashboard a system manager
+Package: libtrigonometry
+Description: Contains COS (CXX) + COSEC (Qt) crash handling libraries
+Package: Once
+Description: A package that has only one purpose then fades away
+Package: onu
+Description: A  web browser built with Qt and C++ it's tend to be faster
+Package: vex
+Description: An extensive Qt text editor

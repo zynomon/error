@@ -1,34 +1,52 @@
+Package: doc
+Architecture: amd64
+Version: 1.4
+Priority: optional
+Section: devel
+Maintainer: Zynomon Aelius
+Installed-Size: 564
+Depends: libqt6core6, libqt6gui6, libqt6widgets6, libqt6texttospeech6
+Recommends: speech-dispatcher
+Suggests: espeak, espeak-ng, festival, mbrola
+Filename: ./doc.deb
+Size: 227172
+MD5sum: e55fc24b95c98e33bb272b18a6667490
+SHA1: 312121abedd481e644e1659efcb018b3aacc4178
+SHA256: a521c6172f7794edd869d69488d9a3a714065dc033ead5c32338e0b5f0cff2c2
+SHA512: 62c34a75db1a95fb45a369bc83e777703addf91beb06cd344a2b27d58111c80d88fa77cb352c96fa53b56b96a214549bc1e5221be3253ccc12eff80672b4cd25
+Description: doc is a Qt-based documentation viewer check project at github.com/zynomon/error.doc
+
 Package: err_
 Architecture: amd64
-Version: 2.1.6
+Version: 3.0
 Priority: optional
 Section: devel
 Maintainer: Zynomon Aelius
-Installed-Size: 1456
+Installed-Size: 1418
 Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libqt6core6t64 (>= 6.8.2), libqt6gui6 (>= 6.4.0), libqt6widgets6 (>= 6.1.2), libstdc++6 (>= 5)
-Filename: dists/stable/main/binary-amd64/err_.deb
-Size: 1232806
-MD5sum: 9282ad3dc770f804b6dc035200158569
-SHA1: 089c60df0410b98357d4409f07e181f511994199
-SHA256: de24cd8cf830fc196c98ae24a2d021bfea56decf5df4b69ef1c9ca33049d629a
-SHA512: c5a32dc039d5618ce9ee23f54c7cbaa9aec97336ad9fa6534382a8591a3c077e79bc4484b88c5401a2e4c9256b0191bc94e9188379c9f301876c9cd42006785b
-Description: error.os dashboard — a system manager
+Filename: ./err_.deb
+Size: 1216956
+MD5sum: 5b490a76338c7aaa7190d05940aff02f
+SHA1: 46d08ecc38df2f8e860d029d07c0ff7e8e8803f1
+SHA256: 84e3f523f797c7179634a9abb41e19584d54c6062b726bf6fbb6e147af522148
+SHA512: fb29d24707ebc44fa569a9e20de7d338b0c710e79d455afa81499ec69c4a7e9cab46dee019b2985e158bbc88562550363171985ad8b392303bcf1dfb300900c3
+Description: error.os dashboard a system manager
 
-Package: error.doc
+Package: libtrigonometry
 Architecture: amd64
-Version: 0.1
+Version: 1.0.0
 Priority: optional
 Section: devel
 Maintainer: Zynomon Aelius
-Installed-Size: 186
-Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6, libqt6webenginewidgets6
-Filename: dists/stable/main/binary-amd64/error.doc.deb
-Size: 32440
-MD5sum: cae67b7776169a8d29856aa1f4eb2931
-SHA1: e36f3d45dbae1adef40d0379577171f10848f8da
-SHA256: 25040619b998a6e483d9a4854c79648d208312a0df398bb6258356926bbea4db
-SHA512: dc30b437f5bba734bbfc0fa9a5bb964e06ed7f8154deb2030e40d16af4d80bcb54a7226238f5d9a6879fe8dc3a9124227f7b2fb11a556be877cd0f75a0b3420b
-Description: Error Doc is a Qt-based documentation viewer and system manager.     It integrates error.os principles of clarity, survivability, and mythic branding.     Error Doc provides a clean tabbed interface for CSS/QSS theme editing,     restricted web documentation access, manpage placeholders, and bookmarks.     Designed for minimal footprint and reproducible builds.
+Installed-Size: 44
+Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6
+Filename: ./libtrigonometry.deb
+Size: 10692
+MD5sum: 47fdb5d0d0de16f57248b0874d686e16
+SHA1: c601c54dd49e7a448f00fabd00b419792de8f211
+SHA256: e0b1dc1eb878e5ad372485c4bf6601c8ef25f93fc00bf9ce7059552ddea2f983
+SHA512: 376d582d98e66977006aca51c6ad2f8226123c3ded02343bb839c7d5ef361e8fa925a87b9912b19502de532e34a796fee5fd51e7b039d1440bba5683602e9431
+Description: Contains COS (CXX) + COSEC (Qt) crash handling libraries
 
 Package: Once
 Architecture: all
@@ -37,7 +55,7 @@ Priority: optional
 Maintainer:  Zynomon aelius
 Installed-Size: 225
 Depends: libqt6core6, libqt6gui6, libqt6widgets6, libqt6network6, systemd
-Filename: dists/stable/main/binary-amd64/once.deb
+Filename: ./once.deb
 Size: 83196
 MD5sum: 24ae391965e0f4665702776a10b99904
 SHA1: 63ee12eb2cc0ac7596165e2c8de5bdbbc2ac7c1f
@@ -47,33 +65,31 @@ Description: A package that has only one purpose then fades away
 
 Package: onu
 Architecture: amd64
-Version: 0.4
+Version: 0.6-LTS
 Priority: optional
-Section: devel
-Maintainer: Zynomon Aelius
-Installed-Size: 880
-Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6, libqt6webenginewidgets6, libqt6webenginecore6, libqt6network6, libqt6multimedia6
-Filename: dists/stable/main/binary-amd64/onu.deb
-Size: 235822
-MD5sum: 1c6f9c7f6e29ee32f42e392635069cf1
-SHA1: eed37d9b5104019b5a43442edaa58a6afb29da21
-SHA256: cf9538dd9b0b63bbc951311d29be505b50eba48dfb8138f5a71b8c54466bfe72
-SHA512: f410f55b1391fb886cf561e682e7e1793bdafb3b63ef71ff473425fef0869584efb7f5128b63d42ea9c2374092f9eea6c96ada4f4aa5987c81ba2a964fd08ddb
-Description: Onu is a lightweight Qt-based browser/editor hybrid with WebEngine integration.     It supports HTML rendering, multimedia playback, and system integration with minimal footprint.     Designed for clarity, performance, and survivability in error.os environments.
+Section: utils
+Maintainer: Zynomon Aelius <zynomon@proton.me>
+Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6, libqt6webenginewidgets6, libqt6network6, libqt6multimedia6
+Filename: ./onu.deb
+Size: 298636
+MD5sum: 10b27758702a44bcaf10d0d6f07e1019
+SHA1: 95178743e07ce52c6bc12e45ee5ebb5832bda4a9
+SHA256: b67f78893d4cc7267f3581f26b35aa0ed67e06f10614da4634edfa193c31b55f
+SHA512: 214ddc3b2bbfe680162816b20b92f139796928da122b06bb0c902f93da82590a39f65cfa44056595e28c08ea7943562decf3a6d20648781231f11f83034484c6
+Description: A  web browser built with Qt and C++ it's tend to be faster
 
 Package: vex
 Architecture: amd64
-Version: 3.0.0
+Version: 4.1-Cytoplasm
 Priority: optional
-Section: devel
-Maintainer: Zynomon Aelius
-Installed-Size: 804
+Section: utils
+Maintainer: Zynomon Aelius <zynomon@proton.me>
 Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6
-Filename: dists/stable/main/binary-amd64/vex.deb
-Size: 193526
-MD5sum: 30d8822212ccc83f8d8d7cb383e071ea
-SHA1: f04d778666ff68f376f286353924afe409571b3d
-SHA256: f4bca01edc26e922ef33cb2e26cbc6e0870e553c65a15900ccca7f9c0c9c15f2
-SHA512: 6305ef9b4fb790d55230052f8d21f61e03183c21d97439f07df64daacbc023826dcb33a81d887f6def2aaabdace8e937d1e89574d80245719215f41e54a5051e
-Description:  ♦️ Vex is a modular, MIME-aware editor designed for expressive system integration and branded desktop environments.     Built with performance and clarity in mind, it aligns with error.os principles of transparency, user empowerment, and visual polish.     Vex supports multilingual UI, scalable icon logic, and clean packaging for Linux distributions.     Its install footprint is minimal, its launch behavior is predictable, and its desktop entry is fully localized.     Ideal for developers, system architects, and themed distributions seeking a lightweight yet intentional editing experience.
+Filename: ./vex.deb
+Size: 137080
+MD5sum: 91777c0a967317bcba224a57a2c95379
+SHA1: 8b97af7db5a8e53033c9ad5b52834b9d3cd97286
+SHA256: 00e3116bb5c0ff981a6c2a64c71c6289a2d31be2a93a43c3f014a1313cdf4ca6
+SHA512: 6579a3c230e470903fbc63dbed2c6f50c95f6b9c07aac4860931d0ba2cbe11963f1b6e43582e8144c35e80cd24492f85b8c93d83a865dc11d17892170d6dba19
+Description: An extensive Qt text editor
 
