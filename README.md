@@ -58,15 +58,6 @@ error/
 - ISO checksum verification
 - Automatic config backups
 
-## Builder Menu
-
-```
-> Start Building the ISO
-  Verify ISO (Checksums)
-  Recover Configs (Git Clone)
-  Open Config Folder
-  Exit
-```
 
 ## Manual Build
 
@@ -77,10 +68,8 @@ cd ~/build-area
 sudo apt-get install live-build live-tools \
   debootstrap squashfs-tools xorriso isolinux \
   ca-certificates gnupg dirmngr
+lb confg && lb build
 
-git clone https://github.com/zynomon/error.git
-cd error
-sudo ./.sh
 ```
 
 ## Screenshots

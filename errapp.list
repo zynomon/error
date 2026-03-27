@@ -62,11 +62,12 @@ kde-config-updates
 kde-spectacle
 calamares
 calamares-settings-error
+libtrigonometry
 onu
 once
 vex
 err_
-error.doc
+doc
 error.base
 intel-microcode
 amd64-microcode
@@ -74,3 +75,5 @@ qt6-style-kvantum
 media-player-info
 plasma-discover-backend-fwupd
 kdeconnect
+squashfs-tools
+partitionmanager

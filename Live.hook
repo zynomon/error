@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-# --- Configuration ---
 LIVE_USER="error.user"
 LIVE_PASS="user"
 ROOT_PASS="toor"
@@ -131,7 +130,7 @@ cat <<'EOF' > /etc/systemd/system-generators/live-config-getty-generator
 #!/bin/sh
 set -e
 SYSTEMD_DIR=$1
-# Configure TTY 1-6 for manual login only
+
 for NUMBER in $(seq 1 6); do
     GETTY_SERVICE_D=$SYSTEMD_DIR/getty@tty${NUMBER}.service.d
     mkdir -p $GETTY_SERVICE_D
