@@ -8,11 +8,11 @@ Installed-Size: 225
 Provides: calamares-settings
 Depends: calamares, rsync, cryptsetup, libglib2.0-bin, keyutils, pkexec, qml-module-qtquick-window2, qml-module-qtquick2, dconf-gsettings-backend | gsettings-backend
 Filename: dists/stable/main/binary-all/calamares-settings-error.deb
-Size: 3170848
-MD5sum: dbbd0959f4e8363c17a526d395072932
-SHA1: 430066a4ab2a8ca1feba37746d183a3bd09a507b
-SHA256: b101ec4c9e6a498c9711b19378091ff15c8f663f187fa1957ea4928765fa82f1
-SHA512: 05f42ac1b6c3f7726cf4fd30f9018f886096671ea680479baa5fda35deda063c2443218579b9276057a34650b95258d701ee4f86703f6fa4933baabdc4a86352
+Size: 3170752
+MD5sum: 318939059df01c76279f6ca84f88b6df
+SHA1: 9ce6c2a27e01e2af0b3029a750bda1000d4ecab4
+SHA256: 564c843c69a6b974d8141f1493ca90fa84ae7bba7e09a30d0d72a26ae618a35c
+SHA512: 413a7a0de77d0d23aad82f70d8f47e1577e79860a441fba08fb19490bb7e7594504f98a9cc6794a33fbeb8a766615ed1a5ee2fdec5e3319f9a94da5c02551120
 Homepage: https://github.com/zynomon/error
 Description: error.os calamares theme for neospace 2025
 
