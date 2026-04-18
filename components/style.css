@@ -337,6 +337,9 @@ header.expanded .header-nav a {
 .header-nav a:nth-child(6) {
     transition-delay: 0.3s;
 }
+.header-nav a:nth-child(7) {
+    transition-delay: 0.35s;
+}
 
 .header-nav a::after {
     content: "";
