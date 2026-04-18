@@ -47,7 +47,7 @@ error/
     └── NimbusMonoPS-Regular.otf
 ```
 
-![File Structure](https://github.com/user-attachments/assets/1c7d5c20-ad07-4b0f-8d0e-debe0edb1bf4)
+<img align=center width="1400" height="700" alt="NSbeta" src="https://github.com/user-attachments/assets/e13eb000-3fd4-440a-af80-2844fd6c79fb" />
 
 ## Features
 
