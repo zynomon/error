@@ -594,12 +594,12 @@
         function iconFor(name, type, path) {
             if (name === "..") return "dirback.png";
             if (type === "dir") return "dir.png";
-            if (name.endsWith(".css")) return "css.png";
+           if (name.endsWith(".png") || name.endsWith(".svg") || name.endsWith(".jpg") || name.endsWith(".css"))   return "css.png";
             if (name.endsWith(".js"))  return "js.png";
-            if (name.endsWith(".html")) return "html.png";
+            if (name.endsWith(".html") || name.endsWith(".md")) return "html.png";
             if (name.endsWith(".deb")) return "deb.png";
             if (name.includes("Packages")) return "pac.png";
-            if (["Release","InRelease","Release.gpg","error.gpg"].includes(name)) return "key.png";
+            if (["Release","InRelease","Release.gpg","error.gpg","LICENSE"].includes(name) || name.endsWith(".conf")) return "key.png";
             if (path.includes("/i18n/") || name.includes("Translation")) return "lang.png";
             return "other.png";
         }
