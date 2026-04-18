@@ -2,8 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>index.</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/zynomon/error/web-side/icons/dir.png">
+ <link rel="icon" href="https://raw.githubusercontent.com/zynomon/error/web-side/icons/dir.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkeley+Mono&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -43,10 +42,8 @@
             --border-mid: rgba(255,255,255,0.08);
             --border-hi:  rgba(255,255,255,0.13);
 
-            --text:   #c8c8cc;
-            --text2:  #686870;
-            --text3:  #3e3e46;
-            --link:   #9898a8;
+            --txt-1: #505058;
+            --txt-2: #c8c8cc;
 
             --font:  'IBM Plex Sans', monospace;
             --mono:  'Berkeley Mono', 'Courier New', monospace;
@@ -83,10 +80,8 @@
             --border-mid: rgba(0,0,0,0.1);
             --border-hi:  rgba(0,0,0,0.18);
 
-            --text:   #1a1a1e;
-            --text2:  #606068;
-            --text3:  #9898a0;
-            --link:   #3a3a50;
+            --txt-1: #888890;
+            --txt-2: #1a1a1e;
         }
 
         body {
@@ -94,7 +89,7 @@
             margin: 0;
             padding: 40px 16px 72px;
             background: var(--bg-page);
-            color: var(--text);
+            color: var(--txt-1);
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -118,7 +113,7 @@
         #top-left-label {
             font-family: var(--mono);
             font-size: 12px;
-            color: var(--text3);
+            color: var(--txt-1);
             letter-spacing: 0.06em;
         }
 
@@ -131,7 +126,7 @@
             border: 1px solid var(--border-mid);
             background: var(--bg-raised);
             box-shadow: var(--shadow-btn);
-            color: var(--text2);
+            color: var(--txt-1);
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -164,7 +159,7 @@
             font-size: 9.5px;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: var(--text3);
+            color: var(--txt-1);
             padding: 8px 9px 3px;
         }
 
@@ -175,21 +170,21 @@
             align-items: center;
             justify-content: space-between;
             border-radius: 7px;
-            color: var(--text2);
+            color: var(--txt-1);
             transition: background 0.1s, color 0.1s;
         }
         .menu-item:hover {
             background: var(--bg-hover);
-            color: var(--text);
+            color: var(--txt-2);
             box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 -1px 0 rgba(0,0,0,0.25) inset;
         }
 
         .menu-item-toggle {
             font-family: var(--mono);
             font-size: 10px;
-            color: var(--text3);
+            color: var(--txt-1);
         }
-        .menu-item-toggle.on { color: var(--text); }
+        .menu-item-toggle.on { color: var(--txt-2); }
 
         .menu-divider {
             height: 1px;
@@ -217,7 +212,7 @@
         }
         #breadcrumbs .crumb {
             cursor: pointer;
-            color: var(--link);
+            color: var(--txt-1);
             display: inline-flex;
             align-items: center;
             gap: 4px;
@@ -227,7 +222,7 @@
         }
         #breadcrumbs .crumb:hover { background: var(--bg-raised); }
         #breadcrumbs .sep {
-            color: var(--text3);
+            color: var(--txt-1);
             font-size: 11px;
             user-select: none;
             padding: 0 1px;
@@ -258,7 +253,7 @@
             font-size: 9.5px;
             text-transform: uppercase;
             letter-spacing: 0.09em;
-            color: var(--text3);
+            color: var(--txt-1);
         }
         .ch-name { flex: 1; }
         .ch-size { width: 72px; text-align: right; }
@@ -289,18 +284,18 @@
             flex-shrink: 0;
         }
         #listing li a {
-            color: var(--text);
+            color: var(--txt-2);
             text-decoration: none;
             flex: 1;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        #listing li a:hover { color: var(--link); text-decoration: underline; }
+        #listing li a:hover { color: var(--txt-2); text-decoration: underline; }
 
         .meta { display: flex; flex-shrink: 0; }
-        .meta .sz { width: 72px;  text-align: right; color: var(--text3); font-size: 11px; }
-        .meta .dt { width: 136px; text-align: right; color: var(--text3); font-size: 11px; }
+        .meta .sz { width: 72px;  text-align: right; color: var(--txt-2); font-size: 11px; }
+        .meta .dt { width: 136px; text-align: right; color: var(--txt-2); font-size: 11px; }
         .meta.hidden { display: none; }
 
         #cookie-banner {
@@ -325,12 +320,12 @@
             font-family: var(--mono);
             font-size: 12px;
             letter-spacing: 0.04em;
-            color: var(--text);
+            color: var(--txt-2);
             margin-bottom: 6px;
         }
         #cookie-banner p {
             font-size: 12px;
-            color: var(--text2);
+            color: var(--txt-1);
             line-height: 1.6;
             margin-bottom: 14px;
         }
@@ -345,16 +340,16 @@
             border: 1px solid var(--border-hi);
             background: var(--bg-raised);
             box-shadow: var(--shadow-btn);
-            color: var(--text2);
+            color: var(--txt-1);
             font-family: var(--mono);
             font-size: 11px;
             letter-spacing: 0.04em;
             cursor: pointer;
             transition: background 0.1s, color 0.1s, box-shadow 0.1s;
         }
-        .cbtn:hover { background: var(--bg-hover); color: var(--text); }
+        .cbtn:hover { background: var(--bg-hover); color: var(--txt-2); }
         .cbtn:active { box-shadow: var(--shadow-btn-active); }
-        .cbtn.primary { color: var(--text); }
+        .cbtn.primary { color: var(--txt-2); }
     </style>
 </head>
 
@@ -668,7 +663,11 @@
                 ul.appendChild(li);
             }
 
-            sortEntries(currentEntries).forEach(item => {
+            sortEntries(currentEntries).filter(item => {
+                if (item.name === "e.html") return false;
+                if (item.type === "dir" && (item.name.startsWith(".") || item.name.startsWith("_"))) return false;
+                return true;
+            }).forEach(item => {
                 const li  = document.createElement("li");
                 const img = document.createElement("img");
                 img.src = ICONS + iconFor(item.name, item.type, path);
