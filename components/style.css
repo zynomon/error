@@ -398,7 +398,7 @@ header.expanded .header-nav a {
 
 main {
     flex: 1;
-    width: 70%;
+    width: 80%;
     margin: 120px auto 2rem auto;
     padding: 2rem;
     border: 1px solid var(--line);

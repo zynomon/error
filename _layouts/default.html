@@ -41,6 +41,7 @@
       <a href="{{ '/' | relative_url }}" {% if page.url == '/' or page.url == '/index.html' %}class="active"{% endif %} data-icon="home">Start</a>
       <a href="{{ '/download/' | relative_url }}" {% if page.url contains '/download' %}class="active"{% endif %} data-icon="download">Download</a>
       <a href="{{ '/faq/' | relative_url }}" {% if page.url contains '/faq' %}class="active"{% endif %} data-icon="about">FAQ</a>
+      <a href="https://zynomon.github.io/error/e.html" data-icon="repo">Repo</a>
       <a href="https://zynomon.github.io/error.doc" data-icon="wiki">Wiki</a>
       <a href="https://github.com/zynomon/error" data-icon="github">Github</a>
       <a href="https://discord.gg/Jn7FBwu99F" data-icon="discord">Discord</a>
@@ -323,6 +324,7 @@
         download: "{{ '/icons/doc/downloader.svg' | relative_url }}",
         wiki:     "{{ '/icons/doc/doc.svg' | relative_url }}",
         about:    "{{ '/icons/webicon.svg' | relative_url }}",
+        repo:     'https://api.iconify.design/logos:linux-tux.svg',
         github:   'https://api.iconify.design/logos:github-octocat.svg',
         discord:  'https://api.iconify.design/logos:discord-icon.svg'
       };
