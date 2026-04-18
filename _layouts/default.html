@@ -8,6 +8,19 @@
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ page.description }}">
   <meta property="og:image" content="{{ '/components/thumb.png' | relative_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:site_name" content="error.os">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:image" content="{{ '/components/thumb.png' | relative_url }}">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:image:alt" content="{{ page.title }}">
+  <meta name="twitter:image:alt" content="{{ page.title }}">
+  
   {% if page.icon %}
     <link rel="icon" type="image/svg+xml" href="{{ '/icons/' | append: page.icon | relative_url }}">
   {% endif %}
@@ -24,6 +37,7 @@
   </div>
   <script src="{{ '/components/splash.js' | relative_url }}"></script>
   {% endif %}
+  
 
   <div id="vanta-bg"></div>
 
