@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1280mm"
+   height="640mm"
+   viewBox="0 0 4837.7954 2418.8977"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter5"
+       x="-0.36633427"
+       y="-3.6410145"
+       width="1.7326685"
+       height="8.2820291">
+      <feGaussianBlur
+         stdDeviation="283.26018"
+         id="feGaussianBlur5" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter6"
+       x="-0.7137441"
+       y="-4.8708683"
+       width="2.4274882"
+       height="10.741737">
+      <feGaussianBlur
+         stdDeviation="92.283592"
+         id="feGaussianBlur6" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter7"
+       x="-0.6506894"
+       y="-1.7925103"
+       width="2.3013788"
+       height="4.5850207">
+      <feGaussianBlur
+         stdDeviation="239.90913"
+         id="feGaussianBlur7" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter8"
+       x="-0.19535793"
+       y="-0.31917276"
+       width="1.3907159"
+       height="1.6383455">
+      <feGaussianBlur
+         stdDeviation="548.2907"
+         id="feGaussianBlur8" />
+    </filter>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-19.221842,-61.784468)">
+    <rect
+       style="opacity:1;fill:#000000;stroke-width:29.7829"
+       id="rect1"
+       width="4837.7954"
+       height="2418.8977"
+       x="18.579041"
+       y="49.966862" />
+    <g
+       id="g7"
+       transform="matrix(1.1375172,0,0,1.1616169,-209.54359,-72.266069)">
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:395.029px;font-family:Monospace;-inkscape-font-specification:'Monospace Bold';writing-mode:lr-tb;direction:ltr;opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:51.2303"
+         x="1543.9264"
+         y="1248.755"
+         id="text1"
+         transform="scale(0.91310866,1.0951599)"><tspan
+           id="tspan1"
+           x="1543.9264"
+           y="1248.755"
+           style="stroke-width:51.2303">error.os</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:484.425px;font-family:Monospace;-inkscape-font-specification:'Monospace Bold';writing-mode:lr-tb;direction:ltr;opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:62.8238"
+         x="2260.251"
+         y="810.36786"
+         id="text2"
+         transform="scale(0.87644538,1.1409724)"><tspan
+           id="tspan2"
+           x="2260.251"
+           y="810.36786"
+           style="stroke-width:62.8238">&lt;!&gt;</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:454.261px;font-family:Monospace;-inkscape-font-specification:'Monospace Bold';writing-mode:lr-tb;direction:ltr;opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:58.9121"
+         x="2105.8938"
+         y="1704.3142"
+         id="text3"
+         transform="scale(1.0500208,0.95236209)"><tspan
+           id="tspan3"
+           x="2105.8938"
+           y="1704.3142"
+           style="stroke-width:58.9121">_</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:395.029px;font-family:Monospace;-inkscape-font-specification:'Monospace Bold';writing-mode:lr-tb;direction:ltr;opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:51.2303"
+         x="1543.9264"
+         y="1248.755"
+         id="text4"
+         transform="scale(0.91310866,1.0951599)"><tspan
+           id="tspan4"
+           x="1543.9264"
+           y="1248.755"
+           style="stroke-width:51.2303">error.os</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:395.029px;font-family:Monospace;-inkscape-font-specification:'Monospace Bold';writing-mode:lr-tb;direction:ltr;opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:51.2303;filter:url(#filter5)"
+         x="1543.9264"
+         y="1248.755"
+         id="text5"
+         transform="scale(0.91310866,1.0951599)"><tspan
+           id="tspan5"
+           x="1543.9264"
+           y="1248.755"
+           style="stroke-width:51.2303">error.os</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:454.261px;font-family:Monospace;-inkscape-font-specification:'Monospace Bold';writing-mode:lr-tb;direction:ltr;opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:58.9121;filter:url(#filter6)"
+         x="2105.8938"
+         y="1704.3142"
+         id="text6"
+         transform="scale(1.0500208,0.95236209)"><tspan
+           id="tspan6"
+           x="2105.8938"
+           y="1704.3142"
+           style="stroke-width:58.9121">_</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:484.425px;font-family:Monospace;-inkscape-font-specification:'Monospace Bold';writing-mode:lr-tb;direction:ltr;opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:62.8238;filter:url(#filter7)"
+         x="2260.251"
+         y="810.36786"
+         id="text7"
+         transform="scale(0.87644538,1.1409724)"><tspan
+           id="tspan7"
+           x="2260.251"
+           y="810.36786"
+           style="stroke-width:62.8238">&lt;!&gt;</tspan></text>
+    </g>
+    <path
+       style="opacity:1;fill:#686868;fill-opacity:1;stroke-width:8.3;filter:url(#filter8)"
+       d="M 4939.1006,51.866983 C 6070.6449,-931.80512 5079.0253,1129.0365 5079.0253,1129.0365 l 122.1553,-263.59835 c 0,0 -4750.0113,-485.89845 -4833.5913,-1463.14132 C 284.0093,-1574.946 -431.17424,1409.9408 -19.703567,2033.5761 391.76712,2657.2113 6291.3181,2112.0219 6291.3181,2112.0219 L -83.295797,2715.5192 -444.51139,-597.85141 5201.1806,-285.39392 4916.0657,3330.2987 Z"
+       id="path8"
+       transform="matrix(0.99773097,0,0,0.97293361,-158.89309,52.56305)" />
+  </g>
+</svg>

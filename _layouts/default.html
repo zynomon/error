@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:image" content="{{ '/components/thumb.png' | relative_url }}">
+  {% if page.icon %}
+    <link rel="icon" type="image/svg+xml" href="{{ '/icons/' | append: page.icon | relative_url }}">
+  {% endif %}
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/components/style.css' | relative_url }}">
+  <link href="https://fonts.cdnfonts.com/css/ocr-a-extended" rel="stylesheet">
+</head>
+<body>
+  <div id="nav-dim-overlay"></div>
+
+  {% if page.splash %}
+  <div id="splash-screen">
+    <span class="system-title">{{ page.title }}</span>
+  </div>
+  <script src="{{ '/components/splash.js' | relative_url }}"></script>
+  {% endif %}
+
+  <div id="vanta-bg"></div>
+
+  <header id="site-header">
+    <div class="header-bg"></div>
+    <div class="header-top">
+      <span class="header-title">error.os</span>
+      <div class="header-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+        <button class="theme-toggle anim-toggle" id="anim-toggle" aria-label="Toggle animation"></button>
+        <button class="header-dot" id="header-toggle" aria-label="Toggle navigation"></button>
+      </div>
+    </div>
+    <nav class="header-nav" aria-label="Site navigation">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' or page.url == '/index.html' %}class="active"{% endif %} data-icon="home">Start</a>
+      <a href="{{ '/download/' | relative_url }}" {% if page.url contains '/download' %}class="active"{% endif %} data-icon="download">Download</a>
+      <a href="{{ '/faq/' | relative_url }}" {% if page.url contains '/faq' %}class="active"{% endif %} data-icon="about">FAQ</a>
+      <a href="https://zynomon.github.io/error.doc" data-icon="wiki">Wiki</a>
+      <a href="https://github.com/zynomon/error" data-icon="github">Github</a>
+      <a href="https://discord.gg/Jn7FBwu99F" data-icon="discord">Discord</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    &lt;!&gt; error.os , Apache 2.0 ⓒ since 2025
+  </footer>
+
+  <script>
+  (function () {
+    var root        = document.documentElement;
+    var header      = document.getElementById('site-header');
+    var toggleBtn   = document.getElementById('header-toggle');
+    var animToggle  = document.getElementById('anim-toggle');
+    var themeToggle = document.getElementById('theme-toggle');
+    var vantaBg     = document.getElementById('vanta-bg');
+
+    var consentGiven = false;
+    try { consentGiven = localStorage.getItem('consentGiven') === 'true'; } catch (e) {}
+
+    function store(k, v)   { try { localStorage.setItem(k, v); } catch (e) {} }
+    function retrieve(k)   { try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+    function requestConsent(cb) {
+      if (consentGiven) { cb(true); return; }
+      if (confirm('Save preferences with cookies? OK to allow, Cancel to skip.')) {
+        consentGiven = true;
+        store('consentGiven', 'true');
+        cb(true);
+      } else {
+        cb(false);
+      }
+    }
+
+    var cores        = navigator.hardwareConcurrency || 1;
+    var ram          = navigator.deviceMemory || 1;
+    var isLowEnd     = cores <= 2 || ram <= 2;
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var animEnabled = (function () {
+      if (reducedMotion) return false;
+      if (consentGiven) {
+        var s = retrieve('animEnabled');
+        if (s !== null) return s !== 'false';
+      }
+      return !isLowEnd;
+    })();
+
+    (function applyTheme() {
+      var saved = consentGiven ? retrieve('theme') : null;
+      if (saved === 'light')     root.setAttribute('data-theme', 'light');
+      else if (saved === 'dark') root.removeAttribute('data-theme');
+      else if (window.matchMedia('(prefers-color-scheme: light)').matches)
+        root.setAttribute('data-theme', 'light');
+    })();
+
+    function loadScript(src) {
+      return new Promise(function (resolve, reject) {
+        var s = document.createElement('script');
+        s.src = src;
+        s.onload = resolve;
+        s.onerror = function () { reject(new Error('load failed: ' + src)); };
+        document.head.appendChild(s);
+      });
+    }
+
+    var vantaReady = loadScript(
+      'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'
+    ).then(function () {
+      return loadScript('https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js');
+    });
+
+    var vantaEffect  = null;
+    var fadeTimer    = null;
+
+    function setBodyTransparent(on) {
+      if (on) document.body.style.setProperty('background', 'transparent', 'important');
+      else    document.body.style.removeProperty('background');
+    }
+
+    function _hardDestroy() {
+      if (vantaEffect) {
+        try { vantaEffect.destroy(); } catch (e) {}
+        vantaEffect = null;
+      }
+      if (vantaBg) {
+        while (vantaBg.firstChild) vantaBg.removeChild(vantaBg.firstChild);
+        vantaBg.style.transition = '';
+        vantaBg.style.opacity    = '1';
+      }
+      setBodyTransparent(false);
+    }
+
+    function destroyVanta(onDone) {
+      clearTimeout(fadeTimer);
+      if (!vantaEffect) { setBodyTransparent(false); if (onDone) onDone(); return; }
+      if (vantaBg) {
+        vantaBg.style.transition = 'opacity 0.32s ease';
+        vantaBg.style.opacity    = '0';
+      }
+      fadeTimer = setTimeout(function () { _hardDestroy(); if (onDone) onDone(); }, 350);
+    }
+
+    function initVanta() {
+      if (!animEnabled || vantaEffect || reducedMotion || !vantaBg) return;
+      if (typeof VANTA === 'undefined') return;
+      var isLight = root.getAttribute('data-theme') === 'light';
+      setBodyTransparent(true);
+      vantaBg.style.opacity    = '0';
+      vantaBg.style.transition = 'opacity 0.4s ease';
+      if (isLight) {
+        vantaEffect = VANTA.FOG({
+          el: vantaBg, mouseControls: !isLowEnd, touchControls: !isLowEnd,
+          gyroControls: false, minHeight: 200, minWidth: 200,
+          highlightColor: 0xa0a0a0, midtoneColor: 0x7a7a7a,
+          lowlightColor: 0x393939, baseColor: 0xfcfcfc,
+          blurFactor: 0.60, speed: 3.5, zoom: 1.6
+        });
+      } else {
+        vantaEffect = VANTA.FOG({
+          el: vantaBg, mouseControls: !isLowEnd, touchControls: !isLowEnd,
+          gyroControls: false, minHeight: 200, minWidth: 200,
+          highlightColor: 0x373737, midtoneColor: 0x1e1e1e,
+          lowlightColor: 0x0d0c39, baseColor: 0x0f0f0f,
+          blurFactor: 0.60, speed: 3.5, zoom: 1.6
+        });
+      }
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          if (vantaBg) {
+            vantaBg.style.opacity = '1';
+            setTimeout(function () { if (vantaBg) vantaBg.style.transition = ''; }, 440);
+          }
+        });
+      });
+    }
+
+    function updateVantaTheme() {
+      if (!animEnabled) return;
+      destroyVanta(function () { initVanta(); });
+    }
+
+    var hoverTimeout = null;
+    var forced       = false;
+
+    function expandHeader()  { if (!forced) header.classList.add('expanded'); }
+    function collapseHeader() { if (!forced) header.classList.remove('expanded'); }
+
+    header.addEventListener('mouseenter', function () { clearTimeout(hoverTimeout); expandHeader(); });
+    header.addEventListener('mouseleave', function () { hoverTimeout = setTimeout(collapseHeader, 150); });
+
+    toggleBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      forced = !forced;
+      header.classList.toggle('expanded', forced);
+      requestConsent(function (ok) { if (ok) store('headerExpanded', forced); });
+    });
+
+    var scrollTick = false;
+    window.addEventListener('scroll', function () {
+      if (scrollTick) return;
+      scrollTick = true;
+      requestAnimationFrame(function () {
+        var scrolled = window.scrollY;
+        if (scrolled > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        scrollTick = false;
+      });
+    }, { passive: true });
+
+    function doEnableAnim() {
+      animEnabled = true;
+      vantaReady.then(initVanta);
+      updateAnimButton();
+      requestConsent(function (ok) { if (ok) store('animEnabled', 'true'); });
+    }
+
+    function doDisableAnim() {
+      animEnabled = false;
+      destroyVanta();
+      updateAnimButton();
+      requestConsent(function (ok) { if (ok) store('animEnabled', 'false'); });
+    }
+
+    animToggle.addEventListener('click', function () {
+      if (!animEnabled) {
+        if (isLowEnd) {
+          if (confirm('this device may struggle with animations. enable anyway?')) {
+            doEnableAnim();
+          }
+        } else {
+          doEnableAnim();
+        }
+      } else {
+        doDisableAnim();
+      }
+    });
+
+    themeToggle.addEventListener('click', function () {
+      var t = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      if (t === 'light') root.setAttribute('data-theme', 'light');
+      else               root.removeAttribute('data-theme');
+      updateThemeIcon();
+      if (animEnabled) updateVantaTheme();
+      requestConsent(function (ok) { if (ok) store('theme', t); });
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+      if (retrieve('theme') && consentGiven) return;
+      if (!e.matches) root.setAttribute('data-theme', 'light');
+      else            root.removeAttribute('data-theme');
+      updateThemeIcon();
+      if (animEnabled) updateVantaTheme();
+    });
+      var ICON_ANIM_ON = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><title xmlns="">lightbulb-alt-outline</title><path fill="currentColor" fill-rule="evenodd" d="M12 3.75c-3.476 0-6.25 2.717-6.25 6.016c0 2.005.82 3.733 2.285 4.81c.323.237.6.591.705 1.04c.087.369.186.818.284 1.294h2.226v-1.083a.75.75 0 0 1 .117-.403l.802-1.26l-1.799-1.412a.75.75 0 0 1-.17-.993l1.167-1.832a.75.75 0 0 1 1.266.806l-.802 1.259l1.799 1.413a.75.75 0 0 1 .17.992l-1.05 1.649v.864h2.226c.098-.476.197-.925.284-1.294c.106-.449.382-.803.705-1.04c1.464-1.077 2.285-2.806 2.285-4.81c0-3.299-2.774-6.016-6.25-6.016m2.689 14.66H9.31c.11.637.197 1.24.224 1.674c.027.457.368.866.871.974l.196.043c.92.199 1.875.199 2.796 0l.196-.043c.503-.108.844-.517.872-.974c.026-.433.112-1.037.223-1.674M4.25 9.766C4.25 5.59 7.744 2.25 12 2.25s7.75 3.341 7.75 7.516c0 2.424-1.004 4.627-2.897 6.018a.32.32 0 0 0-.133.176a51 51 0 0 0-.394 1.843c-.183.938-.332 1.848-.363 2.372c-.07 1.158-.922 2.105-2.052 2.35l-.196.042c-1.13.244-2.3.244-3.43 0l-.196-.042c-1.13-.244-1.982-1.192-2.052-2.35c-.031-.524-.18-1.434-.363-2.372a51 51 0 0 0-.394-1.843a.32.32 0 0 0-.133-.176C5.254 14.394 4.25 12.19 4.25 9.767" clip-rule="evenodd"/></svg>';
+      var ICON_ANIM_OFF = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><title xmlns="">lightbulb-off-solid</title><path fill="currentColor" d="M4.5 9.766C4.5 5.737 7.874 2.5 12 2.5c1.925 0 3.687.705 5.018 1.866a.29.29 0 0 1 .01.425L6.92 14.901a.29.29 0 0 1-.412.003C5.194 13.578 4.5 11.754 4.5 9.766m-.497 10.17l-.033.034a.75.75 0 1 0 1.06 1.06l4.121-4.12h6.858c.142 0 .264-.1.294-.238c.061-.28.12-.541.174-.77a.57.57 0 0 1 .228-.319c1.822-1.34 2.795-3.463 2.795-5.817a7 7 0 0 0-.526-2.68L21.03 5.03a.75.75 0 0 0-1.033-1.086L4.03 19.91z"/><path fill="currentColor" d="M8.281 18.41a.2.2 0 0 0-.198.235c.105.604.182 1.147.204 1.515c.063 1.041.83 1.899 1.855 2.12l.196.043a7.9 7.9 0 0 0 3.324 0l.196-.043c1.025-.221 1.792-1.079 1.855-2.12c.022-.368.1-.91.204-1.515a.2.2 0 0 0-.198-.235z"/></svg>';
+
+      var ICON_THEME = '<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><title xmlns="">brush-alt</title><path fill="currentColor" d="M19 8.001h-4V4.999a2.92 2.92 0 0 0-.874-2.108a2.94 2.94 0 0 0-2.39-.879C10.202 2.144 9 3.508 9 5.117V8H5c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-9.999c0-1.103-.897-2-2-2M5 10h6V5.117c0-.57.407-1.07 1.002-1.117c.266 0 .512.103.712.307a.96.96 0 0 1 .286.692V10h.995l.005.001h5V12H5zm0 10v-6h14l.002 6z"/></svg>';
+
+      var ICON_COPY = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3h7v18h-14v-18h7Z"/><path d="M14.5 3.5v3h-5v-3"/><path stroke-dasharray="12" stroke-dashoffset="0" d="M9 13l2 2l4 -4"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="0;12"/></path></g></svg>';
+      var ICON_CHECK = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3h7v18h-14v-18h7Z"/><path d="M14.5 3.5v3h-5v-3"/><path stroke-dasharray="12" stroke-dashoffset="12" d="M9 13l2 2l4 -4"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="12;0"/></path></g></svg>';
+
+    function updateAnimButton() {
+      if (!animToggle) return;
+      animToggle.classList.toggle('off', !animEnabled);
+      animToggle.innerHTML = animEnabled ? ICON_ANIM_ON : ICON_ANIM_OFF;
+    }
+
+    function updateThemeIcon() {
+      if (!themeToggle) return;
+      themeToggle.innerHTML = ICON_THEME;
+    }
+
+    document.querySelectorAll('img').forEach(function (img) {
+      img.addEventListener('click', function () { window.open(this.src, '_blank'); });
+      img.addEventListener('mousemove', function (e) {
+        var r = this.getBoundingClientRect();
+        this.style.setProperty('--mouse-x', (e.clientX - r.left) / r.width - 0.5);
+        this.style.setProperty('--mouse-y', (e.clientY - r.top)  / r.height - 0.5);
+      });
+      img.addEventListener('mouseleave', function () {
+        this.style.setProperty('--mouse-x', 0);
+        this.style.setProperty('--mouse-y', 0);
+      });
+    });
+
+    document.querySelectorAll('pre code').forEach(function (c) {
+      var pre = c.parentElement;
+      if (pre.parentElement.classList.contains('code-block-wrapper')) return;
+      var wrap = document.createElement('div');
+      wrap.className = 'code-block-wrapper';
+      pre.parentNode.insertBefore(wrap, pre);
+      wrap.appendChild(pre);
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.innerHTML = ICON_COPY;
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(c.textContent).then(function () {
+          btn.innerHTML = ICON_CHECK;
+          setTimeout(function () { btn.innerHTML = ICON_COPY; }, 2000);
+        });
+      });
+      wrap.appendChild(btn);
+    });
+
+    (function initNavEffects() {
+      var navLinks   = document.querySelectorAll('.header-nav a');
+      var dimOverlay = document.getElementById('nav-dim-overlay');
+      var iconMap = {
+        home:     "{{ '/icons/home.svg' | relative_url }}",
+        download: "{{ '/icons/doc/downloader.svg' | relative_url }}",
+        wiki:     "{{ '/icons/doc/doc.svg' | relative_url }}",
+        about:    "{{ '/icons/webicon.svg' | relative_url }}",
+        github:   'https://api.iconify.design/logos:github-octocat.svg',
+        discord:  'https://api.iconify.design/logos:discord-icon.svg'
+      };
+      navLinks.forEach(function (link) {
+        var favicon = document.createElement('img');
+        favicon.className = 'nav-favicon';
+        favicon.alt = '';
+        favicon.src = iconMap[link.getAttribute('data-icon')] || '';
+        var href = link.getAttribute('href') || '';
+        if (href.startsWith('http')) {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
+        }
+        link.insertBefore(favicon, link.firstChild);
+        link.addEventListener('mouseenter', function () {
+          dimOverlay.classList.add('active');
+          header.style.zIndex = '1001';
+        });
+        link.addEventListener('mouseleave', function () {
+          dimOverlay.classList.remove('active');
+          setTimeout(function () {
+            if (!dimOverlay.classList.contains('active')) header.style.zIndex = '1000';
+          }, 300);
+        });
+      });
+      dimOverlay.addEventListener('click', function () {
+        this.classList.remove('active');
+        header.style.zIndex = '1000';
+      });
+    })();
+
+    updateAnimButton();
+    updateThemeIcon();
+
+    if (animEnabled) {
+      vantaReady.then(function () { initVanta(); }).catch(function () {});
+    }
+  })();
+  </script>
+</body>
+</html>
