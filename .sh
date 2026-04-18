@@ -149,7 +149,7 @@ lb config \
   --memtest memtest86+ \
   --iso-application "Neospace" \
   --iso-preparer "Zynomon aelius" \
-  --iso-volume "Neospace 25"
+  --iso-volume "Neospace 26"
 
 mkdir -p config/archives
 echo "I: Moving package lists and repositories..."
@@ -181,11 +181,11 @@ log_info "Checking for generated ISO..."
 
     if ls *.iso 1> /dev/null 2>&1; then
         count=1
-        while [ -f "$SOURCE_DIR/error.os-NS25FS$(printf "%02d" $count).iso" ]; do
+        while [ -f "$SOURCE_DIR/error.os-NS26ƒ$(printf "%02d" $count).iso" ]; do
             ((count++))
         done
 
-        NEW_NAME="error.os-NS25FS$(printf "%02d" $count).iso"
+        NEW_NAME="error.os-NS26ƒ$(printf "%02d" $count).iso"
         mv *.iso "$SOURCE_DIR/$NEW_NAME"
 
         echo -e "\n${GREEN}${BOLD}  █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒   █▒▒▒    █▒▒▒   █▒▒▒ "
