@@ -7,12 +7,12 @@ Maintainer: Zynomon aelius
 Installed-Size: 225
 Provides: calamares-settings
 Depends: calamares, rsync, cryptsetup, libglib2.0-bin, keyutils, pkexec, qml-module-qtquick-window2, qml-module-qtquick2, dconf-gsettings-backend | gsettings-backend
-Filename: dists/stable/main/binary-all/calamares-settings-error.deb
-Size: 3170708
-MD5sum: de6a22dfa490271afdf6904344f8e858
-SHA1: 03500bbf8c052d7b48e3e8026876b0c1fc9201af
-SHA256: fffc35d7f7f2cec6bb58d0747febafddb6300c3b177ad3008771e1ad6002f334
-SHA512: 7041d7e8dd0c44e1cd800ffdf3ed4ce5b7e2a40168cf5ae2b3ad7fb8ee0a5a5bc3b74a995dd8f5d534051d13156507c30e5e24291d4dbc9894c8a565844bdfe8
+Filename: dists/stable/main/binary-all/calamares-settings.deb
+Size: 3169804
+MD5sum: c1f2b250956dcc264ce95e87ff6ee170
+SHA1: c70c7f5a3d8a9493e66f353ff3e8c98c6e1b6e12
+SHA256: da843bfb276c12558e7940fe8bf5cbb75283ff5186f3063a2d75766ce23d9dc6
+SHA512: 716cf7fefe8a271a719024d892e2fd3b88b64cbbf78b55ada18bbea35325501e70063ba975812db8582dcfa32f9bb724435a94aa368d2ded13b939f677bc871f
 Homepage: https://github.com/zynomon/error
 Description: error.os calamares theme for neospace 2026
 
