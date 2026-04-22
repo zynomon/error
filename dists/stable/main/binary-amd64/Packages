@@ -80,16 +80,16 @@ Description: A  web browser built with Qt and C++ it's tend to be faster
 
 Package: vex
 Architecture: amd64
-Version: 4.1-Cytoplasm
+Version: 4.2-Cytoplasm
 Priority: optional
 Section: utils
 Maintainer: Zynomon Aelius <zynomon@proton.me>
 Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6
 Filename: dists/stable/main/binary-amd64/vex.deb
-Size: 137080
-MD5sum: 91777c0a967317bcba224a57a2c95379
-SHA1: 8b97af7db5a8e53033c9ad5b52834b9d3cd97286
-SHA256: 00e3116bb5c0ff981a6c2a64c71c6289a2d31be2a93a43c3f014a1313cdf4ca6
-SHA512: 6579a3c230e470903fbc63dbed2c6f50c95f6b9c07aac4860931d0ba2cbe11963f1b6e43582e8144c35e80cd24492f85b8c93d83a865dc11d17892170d6dba19
+Size: 153500
+MD5sum: c8ae5dbc42f6b17894f329872cadcb7d
+SHA1: 923090b4548f75d2a6e078152dd88d6f8ba41f31
+SHA256: a0ae7c7b5255dba65b1fcaef2bf4f68f6441752543e7f435c096eeae089ff6df
+SHA512: 6bb26d47c23cedf16a310a23241faf1c254a776702a67ae2215908cdc8a426323dfd1e7cbb828a5027f68e14f317e664781d23829611cf5dbe46dd987839db77
 Description: An extensive Qt text editor
 
