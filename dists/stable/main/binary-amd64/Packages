@@ -86,10 +86,10 @@ Section: utils
 Maintainer: Zynomon Aelius <zynomon@proton.me>
 Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6
 Filename: dists/stable/main/binary-amd64/vex.deb
-Size: 153500
-MD5sum: c8ae5dbc42f6b17894f329872cadcb7d
-SHA1: 923090b4548f75d2a6e078152dd88d6f8ba41f31
-SHA256: a0ae7c7b5255dba65b1fcaef2bf4f68f6441752543e7f435c096eeae089ff6df
-SHA512: 6bb26d47c23cedf16a310a23241faf1c254a776702a67ae2215908cdc8a426323dfd1e7cbb828a5027f68e14f317e664781d23829611cf5dbe46dd987839db77
+Size: 152564
+MD5sum: 354fd46c9a2243798c682fdca9a083b4
+SHA1: 1e948a84354fd4a3199620b4736b0579ee6d1f34
+SHA256: 27bb4a6179f788312ef67f1abc14670f0df3d1e164fde1f8650e4a644f20c3a0
+SHA512: 40dd1d24fcbdd602cae9779d93bda05622941ea35f9cfcc5da8d7428a16833622c409953edadb4199b20312e0424ba8e774d9c4fa2bb47a135c8d063956a19e3
 Description: An extensive Qt text editor
 
