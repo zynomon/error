@@ -8,27 +8,34 @@ Installed-Size: 225
 Provides: calamares-settings
 Depends: calamares, rsync, cryptsetup, libglib2.0-bin, keyutils, pkexec, qml-module-qtquick-window2, qml-module-qtquick2, dconf-gsettings-backend | gsettings-backend
 Filename: dists/stable/main/binary-all/calamares-settings-error.deb
-Size: 3170252
-MD5sum: 50e8a89aef857a36ba1d1cfaa211cb69
-SHA1: 02b98416700e926b0d1e5c91feed640efb23674a
-SHA256: c178194bc453f63d592674b7e9029ce86e414949206a8f157f7abb35e1ab8989
-SHA512: 4676d6f9ec3ae8e95108bbfa56bc7cdacf203557326024cda6c15aeb591a216dad60bd7f45497ba5656cd4d79385d14f9a050265180f9532b3d50686e52ef355
+Size: 3170276
+MD5sum: 7a347053178e0e5be57f45264c8e8c42
+SHA1: 45c289dd7cab037e2c9e93f0627f367dbd7b57b9
+SHA256: 0f013197a28a3d4b128242c3e0b92091511dcdf23d10a154cab05d067cbafeea
+SHA512: 5096ccc14b7bf355fa363d88854032fbab46f78ca7a8b4640fa1d58288017567bfbdddb8a2eda3ceb22b937407cad9cab22913316f6c95985698bbf4e5868ccf
 Homepage: https://github.com/zynomon/error
 Description: error.os calamares theme for neospace 2026
 
 Package: error.base
 Architecture: all
-Version: 1.0
+Version: 26.rev2
 Priority: required
 Essential: yes
-Maintainer: Zynomon Aelius
-Provides: bibata-cursor-theme, errpaper
-Depends: plasma-workspace, yakuake, kde-cli-tools, plasma-desktop, qt6-style-kvantum, plymouth, sddm
+Maintainer: Zynomon Aelius <zynomon@error.os>
+Provides: bibata-cursor-theme
+Depends: plasma-workspace, yakuake, kde-cli-tools, plasma-desktop, qt6-style-kvantum, plymouth, sddm, fastfetch, gtk2-engines-murrine, gtk3-nocsd
 Filename: dists/stable/main/binary-all/error.base.deb
-Size: 52995528
-MD5sum: cc1b945242e0c715dfedb86d7f46bba5
-SHA1: 889ea2e0fdcbd5cb0e37086dbe7489e0d6789e0a
-SHA256: cea93954b8a77da8d22477074c05d941978697a9dd65e2d04e715d6475ab667f
-SHA512: d73156826936ddd62d66f78aa96a243bed886392b022ce35b215e50408dd67d049647843156bdcd91614d3e2eb4e2b8a5687879d669a48153dc47c7f299d5349
-Description: Monochrome KDE base for error.os A full-fledged dark and grey themed KDE desktop foundation. This package forms the expressive core of error.os, combining visual minimalism with modular intent. it contains Bash configuration, Monochrome KDE Plasma 6 theme, Pre-configured yakuake terminal, Kvantum Qt6 styling,Custom Plymouth boot splash,SDDM display manager configuration, a minimal version of Bibata cursor theme, GTK3 integration - so in conclusion Removal is strongly discouraged, as it may destabilize the operating system.
+Size: 53075460
+MD5sum: c83a1a900b31cb1b6af2ea9de382ba8f
+SHA1: 11eb1d426c1fc34b0cc3d8fa30f135dfd450af9e
+SHA256: f87b9a7a142121ed2924c0b48f3b45f0a79f01fddb323f11cafeaba449a8faba
+SHA512: 8acb47e0842654394d651bb32cda5b82c9badb0c02811916112d96abe9d3955fc95c48857c0678a85f2d6aa4119b15bc662f1acda07f8c6f778bedc82f1a8db4
+Description: Monochrome KDE base for error.os
+ A full-fledged dark and grey themed KDE desktop foundation. This package
+ forms the expressive core of error.os, combining visual minimalism with
+ modular intent. It contains Bash configuration, Monochrome KDE Plasma 6
+ theme, Pre-configured yakuake terminal, Kvantum Qt6 styling, Custom
+ Plymouth boot splash, SDDM display manager configuration, a minimal
+ version of Bibata cursor theme, GTK2/GTK3 integration, and essential
+ runtime dependencies.
 
