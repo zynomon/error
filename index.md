@@ -45,7 +45,7 @@ in simple terms.
 
 # Some Preview of error.os
 
-<sub> ( error.os uses KDE's minimal version and debian's patched linux kernel , glibc , systemd  for wide range application support. also some of the assets are originally made, you can see the source of wallpapers here 
+<sub> ( error.os NeoSpace uses KDE's minimal version and debian's patched linux kernel , glibc , systemd  for wide range application support. also some of the assets are originally made, you can see the source of wallpapers here 
 <a href=https://github.com/zynomon/errpaper>
         ERR_PAPERS
         </a> 

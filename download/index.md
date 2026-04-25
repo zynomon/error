@@ -291,6 +291,85 @@ border-radius: initial;
 
 <script>
 const ISO_DOWNLOADS = [
+{
+  branch: "neospace",
+  title: "Neospace 2026",
+  description: "Latest stable Neospace release. April 2026. GPG signed.",
+  downloadLinks: [
+    {
+      url: "https://archive.org/download/error.os_Neospace_2026/error.os_NeoSpace_26.iso",
+      shieldImg: "https://img.shields.io/badge/ISO-1a365d?style=for-the-badge&logo=sonarr&logoColor=white"
+    },
+    {
+      url: "https://archive.org/details/error.os_Neospace_2026",
+      shieldImg: "https://img.shields.io/badge/Ia-1a365d?style=for-the-badge&logo=internetarchive&logoColor=white"
+    },
+    {
+      url: "https://archive.org/download/error.os_Neospace_2026/sums.7z",
+      shieldImg: "https://img.shields.io/badge/sums.7z-1a365d?style=for-the-badge&logo=7-zip&logoColor=white"
+    },
+    {
+      url: "https://archive.org/download/error.os_Neospace_2026/error.os_Neospace_26.iso.asc",
+      shieldImg: "https://img.shields.io/badge/GPG-1a365d?style=for-the-badge&logo=apachemaven&logoColor=white"
+    },
+    {
+      url: "https://archive.org/download/error.os_Neospace_2026/NS26.sha512",
+      shieldImg: "https://img.shields.io/badge/SHA512-1a365d?style=for-the-badge&logo=apachemaven&logoColor=white"
+    },
+    {
+      url: "https://archive.org/download/error.os_Neospace_2026/NS26.sha256",
+      shieldImg: "https://img.shields.io/badge/SHA256-1a365d?style=for-the-badge&logo=apachemaven&logoColor=white"
+    },
+    {
+      url: "https://archive.org/download/error.os_Neospace_2026/NS26.md5",
+      shieldImg: "https://img.shields.io/badge/MD5-1a365d?style=for-the-badge&logo=apachemaven&logoColor=white"
+    }
+  ],
+  wcmd: `wget https://archive.org/download/error.os_Neospace_2026/error.os_NeoSpace_26.iso`,
+  fullDescription: `<h1>Neospace 26</h1>
+<hr>
+
+<h3>Basic specifications</h3>
+<p>The .iso file size is about 2.2GB, yet it contains KDE PLASMA 6+ in it. A fully usable setup, while removed few bloat that Debian contained.</p>
+
+<h2>What it Includes;</h2>
+
+<h3>Vex 4.2<sub>(rev3)</sub></h3>
+<p>Vex 4.2<sub>(rev3)</sub> is just the third revision of vex 4.2 (Derived from Vex 4.1.9 beta). Think of it like a quick patch. It has all the features of Vex 4.2 and everything else is the same, the plugin API, rest is unchanged.</p>
+
+<h3>Once, err_, error.base, doc, onu, calamares-settings-error</h3>
+<p>These few are the basic backbone of the Neospace branch. While onu and doc are the same from Void V3 (Neospace 26 beta 1), the other improvements are in usage of Once (3.0), error.base (26.rev2 - 2026 2nd revision). It includes err_ v4.0 (for NS26). There isn't much to say about it because the improvements are just code organization, performance, and UI improvements.</p>
+
+<h3>Unknown Issues</h3>
+<p>Yeah not everything is perfect and embracing it is the way of error.os. There might still be a few loopholes. Informing us at <a href="https://github.com/zynomon/error/issues/">error.os/issues</a> would help find them.</p>
+
+<h2>Requirements</h2>
+
+<details>
+  <summary><b>CPU:</b> 2 cores 64-bit processor</summary>
+  <p>Any modern 64-bit processor from AMD or Intel. Virtualization support recommended if using in a virtual machine.</p>
+</details>
+
+<details>
+  <summary><b>RAM:</b> 2 GB minimum</summary>
+  <p>At least 2GB of system memory is required to boot and run the desktop environment. But over time when daily driving, that isn't sufficient enough.</p>
+</details>
+
+<details>
+  <summary><b>Storage:</b> 8 GB+ recommended</summary>
+  <p>At least 8 GB of available disk space is recommended for installation and basic usage. 64 GB is a good spot.</p>
+</details>
+
+<details>
+  <summary><b>Graphics:</b> Anything</summary>
+  <p>Any graphics card or integrated graphics that can display a desktop environment.</p>
+</details>
+
+<details>
+  <summary><b>Motherboard:</b> Anything with modern support</summary>
+  <p>Any motherboard with standard UEFI or legacy BIOS support. But BIOS works best.</p>
+</details>`
+}
   {
     branch: "void",
     title: "Void v3",
@@ -616,3 +695,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </ul>
 
 <p>Remember that OLDER Void OR Neospace releases are preview builds and are expected to have issues. For the most stable experience, use the latest releases.</p>
+<sub>The more older this project gets more stable it will get</sub>

@@ -20,6 +20,7 @@ error.os is as safe as debian GNU/Linux because it uses Debian GNU/linux in it's
   <summary>
     Requirements for error.os?
   </summary>
+  Not that This is just standard Newer version may get more<br>
   1.5+ GB ram<br>
   10+ GB storage<br>
   Any core CPU ,<br>
@@ -42,7 +43,7 @@ Special? maybe some flashes or glitch. <br>
   It's more about testing for fun, it has potential as a 
   daily usable distro but at the end its same as a repainted distro? 
   <br> <b>WRONG.</b> 
-  It's not some pretty repaint of debian linux,it uses lesser sets of application but still provides complete KDE experience with our own sets of application served as the replacement for the KDE versions of them.
+  It's not some pretty repaint of debian linux, Some distribution specific packages are made.
 </details>
 
 <details>
