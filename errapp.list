@@ -12,6 +12,8 @@ sudo
 procps
 iproute2
 ca-certificates
+xdg-utils
+xserver-xorg
 plasma-desktop
 plasma-workspace
 kwin-x11
@@ -68,7 +70,6 @@ once
 vex
 err_
 doc
-error.base
 intel-microcode
 amd64-microcode
 qt6-style-kvantum
@@ -77,3 +78,4 @@ plasma-discover-backend-fwupd
 kdeconnect
 squashfs-tools
 partitionmanager
+error.base
