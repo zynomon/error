@@ -97,7 +97,8 @@ here are some stuffs that might be helpful,
 root password (su): toor
 Live user account : error.user:user
 documentation     : https://zynomon.github.io/error.doc 
-get realtime help : https://discord.gg/Jn7FBwu99F 
+get realtime help : https://discord.gg/Jn7FBwu99F
+Exact OS version        :   NS26+1rev_SEP26 { NeoSpace 2026 first patch (revision) }
 
 EOF
 log "\e[32m   Hey Builder wsp making some\e[31m                     ▀██▀       ██                   
