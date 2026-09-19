@@ -5,7 +5,7 @@ Description: error.os dashboard a system manager
 Package: libtrigonometry
 Description: Contains COS (CXX) + COSEC (Qt) crash handling libraries
 Package: Once
-Description: A package that has only one purpose then fades away
+Description: An Onboarder by error.os for new accounts.
 Package: onu
 Description: A  web browser built with Qt and C++ it's tend to be faster
 Package: vex

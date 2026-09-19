@@ -50,18 +50,18 @@ Description: Contains COS (CXX) + COSEC (Qt) crash handling libraries
 
 Package: Once
 Architecture: all
-Version: 0.1
+Version: 1.0
 Priority: optional
 Maintainer:  Zynomon aelius
 Installed-Size: 225
-Depends: libqt6core6, libqt6gui6, libqt6widgets6, libqt6network6, systemd
+Depends: libqt6core6, libqt6gui6, libqt6widgets6, systemd
 Filename: dists/stable/main/binary-amd64/once.deb
-Size: 79612
-MD5sum: a6ff5c7815d2becd423da88e4a282dfd
-SHA1: b23534c5d130f486f9eb3b4ae8ee4c3bd0a5fdb3
-SHA256: 725b5050a0f345c0de70e7b1cb7b5e1d6014bae9015d4e167813bf4302ea2a4f
-SHA512: f8c813dca0ba4f05a4f4545be489676abdc9399380b966a29ec6cff1c3c16cc63ceaa446a750a3dd4c3fbc8f331d19c1a526e6153fd461752626f9624a05d13d
-Description: A package that has only one purpose then fades away
+Size: 89880
+MD5sum: 911c2e0e2971477358c897f5f3c1f2da
+SHA1: f67955761b44fafc948869a38406c625288c7f03
+SHA256: 79d92a0c3d2b49f76a0a4a32b9a2d0b2a9ba23da6916772e54a00068cf4f3ed9
+SHA512: 60b8f813d5b1e866ba4f91ec945c6b0979409798c6dc42493c50f590c182a7139e2c89bf69d621b8ad74240cee801479beee625da6f16ab64b2dc94bb4de0c3e
+Description: An Onboarder by error.os for new accounts.
 
 Package: onu
 Architecture: amd64
@@ -80,16 +80,16 @@ Description: A  web browser built with Qt and C++ it's tend to be faster
 
 Package: vex
 Architecture: amd64
-Version: 4.2-Cytoplasm
+Version: 4.3-Cytoplasm
 Priority: optional
 Section: utils
 Maintainer: Zynomon Aelius <zynomon@proton.me>
-Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6
+Depends: libqt6core6, libqt6gui6, libqt6widgets6
 Filename: dists/stable/main/binary-amd64/vex.deb
-Size: 152564
-MD5sum: 354fd46c9a2243798c682fdca9a083b4
-SHA1: 1e948a84354fd4a3199620b4736b0579ee6d1f34
-SHA256: 27bb4a6179f788312ef67f1abc14670f0df3d1e164fde1f8650e4a644f20c3a0
-SHA512: 40dd1d24fcbdd602cae9779d93bda05622941ea35f9cfcc5da8d7428a16833622c409953edadb4199b20312e0424ba8e774d9c4fa2bb47a135c8d063956a19e3
+Size: 234144
+MD5sum: 87a3bee5bb7ee4b8389f690a069bdbac
+SHA1: 7218a057cf682f40e94dd214a796932ba58c134f
+SHA256: 2a63403fe32d3fb17b4e1192fd307ed4809046f4ddd0b901269b7b0e9ffe2b7c
+SHA512: df372ab1a38116bc3b7068889a4335fe0dfee70f66c9f3ffc0260ec9fd09fa0b9bf62c3c0c8f38e698341db93af849841666a1c3cf79e9e88716039d067b1cda
 Description: An extensive Qt text editor
 

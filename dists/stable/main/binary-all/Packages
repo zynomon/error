@@ -1,6 +1,6 @@
 Package: calamares-settings-error
 Architecture: all
-Version: 2.1
+Version: 26+1
 Priority: optional
 Section: utils
 Maintainer: Zynomon aelius
@@ -8,28 +8,28 @@ Installed-Size: 225
 Provides: calamares-settings
 Depends: calamares, rsync, cryptsetup, libglib2.0-bin, keyutils, pkexec, qml-module-qtquick-window2, qml-module-qtquick2, dconf-gsettings-backend | gsettings-backend
 Filename: dists/stable/main/binary-all/calamares-settings-error.deb
-Size: 3170276
-MD5sum: 7a347053178e0e5be57f45264c8e8c42
-SHA1: 45c289dd7cab037e2c9e93f0627f367dbd7b57b9
-SHA256: 0f013197a28a3d4b128242c3e0b92091511dcdf23d10a154cab05d067cbafeea
-SHA512: 5096ccc14b7bf355fa363d88854032fbab46f78ca7a8b4640fa1d58288017567bfbdddb8a2eda3ceb22b937407cad9cab22913316f6c95985698bbf4e5868ccf
+Size: 3170272
+MD5sum: b0448cf312be61b0a21f3f1ebeb973ea
+SHA1: fdf047122b006caaafab772f670263f9f78b8fc2
+SHA256: 4678cf3c9fe900fe9c85166a8f2af3e5a2fdce3d4bcddcecb2b0604fd55df675
+SHA512: 1f47039db002781dc9c67203096755b99f24d33b7a80215e324f01dc9db7e6b4eeced302c6ccce632823c517c3db54abb2898d542fcb39e8e4a4dffa57a3c5b2
 Homepage: https://github.com/zynomon/error
 Description: error.os calamares theme for neospace 2026
 
 Package: error.base
 Architecture: all
-Version: 26.rev2
+Version: 26.rev3
 Priority: required
 Essential: yes
 Maintainer: Zynomon Aelius <zynomon@error.os>
 Provides: bibata-cursor-theme
 Depends: plasma-workspace, yakuake, kde-cli-tools, plasma-desktop, qt6-style-kvantum, plymouth, sddm, fastfetch, gtk2-engines-murrine, gtk3-nocsd
 Filename: dists/stable/main/binary-all/error.base.deb
-Size: 53075460
-MD5sum: c83a1a900b31cb1b6af2ea9de382ba8f
-SHA1: 11eb1d426c1fc34b0cc3d8fa30f135dfd450af9e
-SHA256: f87b9a7a142121ed2924c0b48f3b45f0a79f01fddb323f11cafeaba449a8faba
-SHA512: 8acb47e0842654394d651bb32cda5b82c9badb0c02811916112d96abe9d3955fc95c48857c0678a85f2d6aa4119b15bc662f1acda07f8c6f778bedc82f1a8db4
+Size: 25808748
+MD5sum: b7dfcf4338945367b2ad14a533f67302
+SHA1: 82a3d89a223d53fcdd3374b103c3ed5081b9bdd0
+SHA256: dfdab8f9bbb642243a1e0d1a8d2db57d1b80a4b338921f8ed2e2d392ccfcfa2b
+SHA512: 3930f3d3241db12f7a560897e421b572625dd47ac0e517e708687bef1d2fafbc38009e96124f0a8f0e25103de7f1bfb859808de46a0bf61ce34aac140eb389ea
 Description: Monochrome KDE base for error.os
  A full-fledged dark and grey themed KDE desktop foundation. This package
  forms the expressive core of error.os, combining visual minimalism with
