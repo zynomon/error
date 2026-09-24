@@ -32,21 +32,47 @@ SHA256: 84e3f523f797c7179634a9abb41e19584d54c6062b726bf6fbb6e147af522148
 SHA512: fb29d24707ebc44fa569a9e20de7d338b0c710e79d455afa81499ec69c4a7e9cab46dee019b2985e158bbc88562550363171985ad8b392303bcf1dfb300900c3
 Description: error.os dashboard a system manager
 
+Package: libcrash
+Architecture: amd64
+Version: 1.2
+Priority: optional
+Section: libs
+Maintainer: Zynomon Aelius <zynomon@proton.me>
+Filename: dists/stable/main/binary-amd64/libcrash_1.2_amd64.deb
+Size: 1956
+MD5sum: 4b7ff8e0c6c6b8dbd312441ceb9e5c6d
+SHA1: e5f06dad428dbdbef3ee5e37e978a80647e3574c
+SHA256: c44a6c19711feac77ccb7fb6a200a243962b4006ddbaabf08da0b125d87c420e
+SHA512: 8bf0bd17d511bc6ecbc4c2dead3150b704e4bd231e06c9e04c2135e2517347f05ee78a611ce0a6ee823c03644b73c054a7981841e775de463408c3364242aa70
+Description: COS (CXX) + COSEC (Qt) crash handling libraries
+
+Package: libterm
+Architecture: amd64
+Version: 1.2
+Priority: optional
+Section: libs
+Maintainer: Zynomon Aelius <zynomon@proton.me>
+Filename: dists/stable/main/binary-amd64/libterm_1.2_amd64.deb
+Size: 4896
+MD5sum: 06e2cd741b50bbf8f3c6cec6d477355a
+SHA1: b7c3cbf013c9bcbeb2541bc06d31eafefee324e5
+SHA256: 14c368521dc38cd464662ca083400260c31e942638fc9153449f2eb1454f456c
+SHA512: a6f18f5da2335642ae84c6a17d0d0985eea5db82632398c76e11be55d9639d7eeb585729738f082eb3e60c8007933e76b9e10d654b0a65cfc001367d04472186
+Description: TERM library (TAN terminal launcher)
+
 Package: libtrigonometry
 Architecture: amd64
-Version: 1.0.0
+Version: 1.2
 Priority: optional
-Section: devel
-Maintainer: Zynomon Aelius
-Installed-Size: 44
-Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6
-Filename: dists/stable/main/binary-amd64/libtrigonometry.deb
-Size: 10692
-MD5sum: 47fdb5d0d0de16f57248b0874d686e16
-SHA1: c601c54dd49e7a448f00fabd00b419792de8f211
-SHA256: e0b1dc1eb878e5ad372485c4bf6601c8ef25f93fc00bf9ce7059552ddea2f983
-SHA512: 376d582d98e66977006aca51c6ad2f8226123c3ded02343bb839c7d5ef361e8fa925a87b9912b19502de532e34a796fee5fd51e7b039d1440bba5683602e9431
-Description: Contains COS (CXX) + COSEC (Qt) crash handling libraries
+Section: libs
+Maintainer: Zynomon Aelius <zynomon@proton.me>
+Filename: dists/stable/main/binary-amd64/libtrigonometry_1.2_amd64.deb
+Size: 796
+MD5sum: 9cdde37cb85f4b81925dfe04d246beaf
+SHA1: e0443eaea5cf4d0e685580b8a4bd45d9565dfd4d
+SHA256: f8a3cbf353cc918f96f13313316b4298d9066ab5611276366b05387ac0a43dcf
+SHA512: 97cef268ce4694d4c03129919083f4eb8b5986f09faed7f84694e2153cdd731e7747f4cfc3fc531552a870753c0ad2c6bbcd802b6007cdf588f334c471a11512
+Description: Metapackage for the trigonometry library set
 
 Package: Once
 Architecture: all
@@ -62,21 +88,6 @@ SHA1: f67955761b44fafc948869a38406c625288c7f03
 SHA256: 79d92a0c3d2b49f76a0a4a32b9a2d0b2a9ba23da6916772e54a00068cf4f3ed9
 SHA512: 60b8f813d5b1e866ba4f91ec945c6b0979409798c6dc42493c50f590c182a7139e2c89bf69d621b8ad74240cee801479beee625da6f16ab64b2dc94bb4de0c3e
 Description: An Onboarder by error.os for new accounts.
-
-Package: onu
-Architecture: amd64
-Version: 0.6-LTS
-Priority: optional
-Section: utils
-Maintainer: Zynomon Aelius <zynomon@proton.me>
-Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6, libqt6webenginewidgets6, libqt6network6, libqt6multimedia6
-Filename: dists/stable/main/binary-amd64/onu.deb
-Size: 298636
-MD5sum: 10b27758702a44bcaf10d0d6f07e1019
-SHA1: 95178743e07ce52c6bc12e45ee5ebb5832bda4a9
-SHA256: b67f78893d4cc7267f3581f26b35aa0ed67e06f10614da4634edfa193c31b55f
-SHA512: 214ddc3b2bbfe680162816b20b92f139796928da122b06bb0c902f93da82590a39f65cfa44056595e28c08ea7943562decf3a6d20648781231f11f83034484c6
-Description: A  web browser built with Qt and C++ it's tend to be faster
 
 Package: vex
 Architecture: amd64

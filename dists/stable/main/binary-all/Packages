@@ -39,3 +39,17 @@ Description: Monochrome KDE base for error.os
  version of Bibata cursor theme, GTK2/GTK3 integration, and essential
  runtime dependencies.
 
+Package: libtrigonometry-dev
+Architecture: all
+Version: 1.2
+Priority: optional
+Section: libdevel
+Maintainer: Zynomon Aelius <zynomon@proton.me>
+Filename: dists/stable/main/binary-all/libtrigonometry-dev_1.2_amd64.deb
+Size: 12272
+MD5sum: e70b3fcc9c640f4b72f6414ee41a2be2
+SHA1: 10f1a65f12b036a64d39cc565d965a7940284dc5
+SHA256: 076a25a38aa6835c3c1ac35b8c88827fc38b30b37fa230810d85ad91ee3654ff
+SHA512: 765a0e1a51a3da61241ec59d73e5ec4468f19d85f71e7267f5bcb796c60eeb4b4fecd61f8f10c21f520a8d83bc6ef748532ac72155f4ec59cae57e6a4b582a97
+Description: Development files for libtrigonometry
+

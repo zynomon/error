@@ -2,11 +2,13 @@ Package: doc
 Description: doc is a Qt-based documentation viewer check project at github.com/zynomon/error.doc
 Package: err_
 Description: error.os dashboard a system manager
+Package: libcrash
+Description: COS (CXX) + COSEC (Qt) crash handling libraries
+Package: libterm
+Description: TERM library (TAN terminal launcher)
 Package: libtrigonometry
-Description: Contains COS (CXX) + COSEC (Qt) crash handling libraries
+Description: Metapackage for the trigonometry library set
 Package: Once
 Description: An Onboarder by error.os for new accounts.
-Package: onu
-Description: A  web browser built with Qt and C++ it's tend to be faster
 Package: vex
 Description: An extensive Qt text editor
