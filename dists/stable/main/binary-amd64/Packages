@@ -10,10 +10,10 @@ Recommends: speech-dispatcher, espeak, espeak-ng, man-db
 Suggests: festival, mbrola
 Filename: dists/stable/main/binary-amd64/doc-1.5.deb
 Size: 249478
-MD5sum: 525f716ec674d27b2341dd7e878984a8
-SHA1: ad4a955ffc147afb86a9c7be9dfa2807353c71de
-SHA256: 1e3edaf14d6a9031edb252d00e1a9107974232269f91c7ab4715d2d6be5fbd81
-SHA512: b8ceefc98f5fadee41fd35905713e73c8c22a50c9625a50f09825c40fa0985053263b51344d4ed108e4ec9d6f10c8920c5f38152088e93954f9b28e397997b2d
+MD5sum: 0b93c553ade95c75aa1f7f1e0b2fa20b
+SHA1: 2c182c85848f3a307e29927726fc3cb829c6235d
+SHA256: 6cd8d4b7ec8d47f0953080267d01eff90d302bfb86005eb3f90411a518936bfe
+SHA512: 30219b9d1a30f3a7fdf829ee865111af7a9386c4936f95d8e2fe4cde819c37151242f5700ba32beffaa686813c3f39c51fd2473907e37af1a2926ddb0a9277b6
 Description: doc is a Qt-based documentation viewer check project at github.com/zynomon/error.doc
 
 Package: err_
