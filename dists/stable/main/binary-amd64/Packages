@@ -89,6 +89,21 @@ SHA256: 975186669164954d45d5206b4b1a4f8127ee29fa4a87bba01a224c339c70de67
 SHA512: 59d4309064ffc9f33cb4386c3100e97a10d57d99079aabefb10b0c20e74339a74b9ded56d3dda4aefe8919abac0f1d07c397c1ea8c3415badf424653380e6d23
 Description: An Onboarder by error.os for new accounts.
 
+Package: onu
+Architecture: amd64
+Version: 0.6-LTS
+Priority: optional
+Section: utils
+Maintainer: Zynomon Aelius <zynomon@proton.me>
+Depends: libc6, libqt6core6, libqt6gui6, libqt6widgets6, libqt6webenginewidgets6, libqt6network6, libqt6multimedia6
+Filename: dists/stable/main/binary-amd64/onu-0.6.deb
+Size: 298636
+MD5sum: 10b27758702a44bcaf10d0d6f07e1019
+SHA1: 95178743e07ce52c6bc12e45ee5ebb5832bda4a9
+SHA256: b67f78893d4cc7267f3581f26b35aa0ed67e06f10614da4634edfa193c31b55f
+SHA512: 214ddc3b2bbfe680162816b20b92f139796928da122b06bb0c902f93da82590a39f65cfa44056595e28c08ea7943562decf3a6d20648781231f11f83034484c6
+Description: A  web browser built with Qt and C++ it's tend to be faster
+
 Package: vex
 Architecture: amd64
 Version: 4.3-Cytoplasm

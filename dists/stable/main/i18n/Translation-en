@@ -10,5 +10,7 @@ Package: libtrigonometry
 Description: Metapackage for the trigonometry library set
 Package: Once
 Description: An Onboarder by error.os for new accounts.
+Package: onu
+Description: A  web browser built with Qt and C++ it's tend to be faster
 Package: vex
 Description: An extensive Qt text editor
