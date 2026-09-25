@@ -4,32 +4,32 @@ Version: 1.4
 Priority: optional
 Section: devel
 Maintainer: Zynomon Aelius
-Installed-Size: 564
-Depends: libqt6core6, libqt6gui6, libqt6widgets6, libqt6texttospeech6
+Installed-Size: 625
+Depends: libqt6core6, libqt6gui6, libqt6widgets6, libqt6texttospeech6, ,, libterm
 Recommends: speech-dispatcher
 Suggests: espeak, espeak-ng, festival, mbrola
 Filename: dists/stable/main/binary-amd64/doc.deb
-Size: 227172
-MD5sum: e55fc24b95c98e33bb272b18a6667490
-SHA1: 312121abedd481e644e1659efcb018b3aacc4178
-SHA256: a521c6172f7794edd869d69488d9a3a714065dc033ead5c32338e0b5f0cff2c2
-SHA512: 62c34a75db1a95fb45a369bc83e777703addf91beb06cd344a2b27d58111c80d88fa77cb352c96fa53b56b96a214549bc1e5221be3253ccc12eff80672b4cd25
+Size: 249476
+MD5sum: d9373aa060044255a515c422fc4c01cc
+SHA1: 027c4355fc68201c853ce1a60ec637bca50d264c
+SHA256: a1540f11455e5ee56378b5d8c130e5cd8fabf04ed3867a33cbefb7e33ffa21e6
+SHA512: a59efb2ffba21e628671e75757226033bb830516662082775a52a7e7a9f6434d0f34fead63325fc679d7c51e8f22da1b9fb44d8ee5f2c69ca6c773986dde03d8
 Description: doc is a Qt-based documentation viewer check project at github.com/zynomon/error.doc
 
 Package: err_
 Architecture: amd64
-Version: 3.0
+Version: 3.1
 Priority: optional
 Section: devel
 Maintainer: Zynomon Aelius
-Installed-Size: 1418
-Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libqt6core6t64 (>= 6.8.2), libqt6gui6 (>= 6.4.0), libqt6widgets6 (>= 6.1.2), libstdc++6 (>= 5)
+Installed-Size: 359
+Depends: libterm, libqt6widgets6, libqt6svg6, qt6-image-formats-plugins, libc6 (>= 2.34), libgcc-s1 (>= 3.0), libqt6core6t64 (>= 6.8.2), libqt6gui6 (>= 6.4.0), libqt6widgets6 (>= 6.1.2), libstdc++6 (>= 13)
 Filename: dists/stable/main/binary-amd64/err_.deb
-Size: 1216956
-MD5sum: 5b490a76338c7aaa7190d05940aff02f
-SHA1: 46d08ecc38df2f8e860d029d07c0ff7e8e8803f1
-SHA256: 84e3f523f797c7179634a9abb41e19584d54c6062b726bf6fbb6e147af522148
-SHA512: fb29d24707ebc44fa569a9e20de7d338b0c710e79d455afa81499ec69c4a7e9cab46dee019b2985e158bbc88562550363171985ad8b392303bcf1dfb300900c3
+Size: 125754
+MD5sum: 0b88a10db468c75e6b24983bfaadedfa
+SHA1: ffae86e2f03527ff955e72525fb2ce78c66d3100
+SHA256: 441cba9c9f9c8b08bd4ac29432b1c6759e2f42fbf6fce6a5dbe09b6c5ca3381d
+SHA512: 875c1db2b470d787d747eb54450d41ee3e6da3cfa1c2b3607eedf31eb52b1b702aa45b781e5ca458887e3e46cacbc2d65e77dc7c9ee57732d98e47f4d4b8cbc8
 Description: error.os dashboard a system manager
 
 Package: libcrash
@@ -82,11 +82,11 @@ Maintainer:  Zynomon aelius
 Installed-Size: 225
 Depends: libqt6core6, libqt6gui6, libqt6widgets6, systemd
 Filename: dists/stable/main/binary-amd64/once.deb
-Size: 89880
-MD5sum: 911c2e0e2971477358c897f5f3c1f2da
-SHA1: f67955761b44fafc948869a38406c625288c7f03
-SHA256: 79d92a0c3d2b49f76a0a4a32b9a2d0b2a9ba23da6916772e54a00068cf4f3ed9
-SHA512: 60b8f813d5b1e866ba4f91ec945c6b0979409798c6dc42493c50f590c182a7139e2c89bf69d621b8ad74240cee801479beee625da6f16ab64b2dc94bb4de0c3e
+Size: 98608
+MD5sum: 0a550ddef7ade20e8ffb719c341b56dc
+SHA1: caeda7e1b3308447fdd46a0106a83772bc195534
+SHA256: 975186669164954d45d5206b4b1a4f8127ee29fa4a87bba01a224c339c70de67
+SHA512: 59d4309064ffc9f33cb4386c3100e97a10d57d99079aabefb10b0c20e74339a74b9ded56d3dda4aefe8919abac0f1d07c397c1ea8c3415badf424653380e6d23
 Description: An Onboarder by error.os for new accounts.
 
 Package: vex
