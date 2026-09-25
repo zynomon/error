@@ -7,7 +7,7 @@ Maintainer: Zynomon aelius
 Installed-Size: 225
 Provides: calamares-settings
 Depends: calamares, rsync, cryptsetup, libglib2.0-bin, keyutils, pkexec, qml-module-qtquick-window2, qml-module-qtquick2, dconf-gsettings-backend | gsettings-backend
-Filename: dists/stable/main/binary-all/calamares-settings-error.deb
+Filename: dists/stable/main/binary-all/calamares-settings-error-NS26+1.deb
 Size: 3170272
 MD5sum: b0448cf312be61b0a21f3f1ebeb973ea
 SHA1: fdf047122b006caaafab772f670263f9f78b8fc2
@@ -24,7 +24,7 @@ Essential: yes
 Maintainer: Zynomon Aelius <zynomon@error.os>
 Provides: bibata-cursor-theme
 Depends: plasma-workspace, yakuake, kde-cli-tools, plasma-desktop, qt6-style-kvantum, plymouth, sddm, fastfetch, gtk2-engines-murrine, gtk3-nocsd
-Filename: dists/stable/main/binary-all/error.base.deb
+Filename: dists/stable/main/binary-all/error.base-NS26+1.deb
 Size: 25808748
 MD5sum: b7dfcf4338945367b2ad14a533f67302
 SHA1: 82a3d89a223d53fcdd3374b103c3ed5081b9bdd0
@@ -45,7 +45,7 @@ Version: 1.2
 Priority: optional
 Section: libdevel
 Maintainer: Zynomon Aelius <zynomon@proton.me>
-Filename: dists/stable/main/binary-all/libtrigonometry-dev_1.2_amd64.deb
+Filename: dists/stable/main/binary-all/libtrigonometry-dev-1.2.deb
 Size: 12272
 MD5sum: e70b3fcc9c640f4b72f6414ee41a2be2
 SHA1: 10f1a65f12b036a64d39cc565d965a7940284dc5

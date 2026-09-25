@@ -1,19 +1,19 @@
 Package: doc
 Architecture: amd64
-Version: 1.4
+Version: 1.5
 Priority: optional
 Section: devel
 Maintainer: Zynomon Aelius
 Installed-Size: 625
-Depends: libqt6core6, libqt6gui6, libqt6widgets6, libqt6texttospeech6, ,, libterm
-Recommends: speech-dispatcher
-Suggests: espeak, espeak-ng, festival, mbrola
-Filename: dists/stable/main/binary-amd64/doc.deb
-Size: 249476
-MD5sum: d9373aa060044255a515c422fc4c01cc
-SHA1: 027c4355fc68201c853ce1a60ec637bca50d264c
-SHA256: a1540f11455e5ee56378b5d8c130e5cd8fabf04ed3867a33cbefb7e33ffa21e6
-SHA512: a59efb2ffba21e628671e75757226033bb830516662082775a52a7e7a9f6434d0f34fead63325fc679d7c51e8f22da1b9fb44d8ee5f2c69ca6c773986dde03d8
+Depends: libqt6core6, libqt6gui6, libqt6widgets6, libqt6texttospeech6, libterm
+Recommends: speech-dispatcher, espeak, espeak-ng, man-db
+Suggests: festival, mbrola
+Filename: dists/stable/main/binary-amd64/doc-1.5.deb
+Size: 249478
+MD5sum: 525f716ec674d27b2341dd7e878984a8
+SHA1: ad4a955ffc147afb86a9c7be9dfa2807353c71de
+SHA256: 1e3edaf14d6a9031edb252d00e1a9107974232269f91c7ab4715d2d6be5fbd81
+SHA512: b8ceefc98f5fadee41fd35905713e73c8c22a50c9625a50f09825c40fa0985053263b51344d4ed108e4ec9d6f10c8920c5f38152088e93954f9b28e397997b2d
 Description: doc is a Qt-based documentation viewer check project at github.com/zynomon/error.doc
 
 Package: err_
@@ -24,7 +24,7 @@ Section: devel
 Maintainer: Zynomon Aelius
 Installed-Size: 359
 Depends: libterm, libqt6widgets6, libqt6svg6, qt6-image-formats-plugins, libc6 (>= 2.34), libgcc-s1 (>= 3.0), libqt6core6t64 (>= 6.8.2), libqt6gui6 (>= 6.4.0), libqt6widgets6 (>= 6.1.2), libstdc++6 (>= 13)
-Filename: dists/stable/main/binary-amd64/err_.deb
+Filename: dists/stable/main/binary-amd64/err_-3.1.deb
 Size: 125754
 MD5sum: 0b88a10db468c75e6b24983bfaadedfa
 SHA1: ffae86e2f03527ff955e72525fb2ce78c66d3100
@@ -38,7 +38,7 @@ Version: 1.2
 Priority: optional
 Section: libs
 Maintainer: Zynomon Aelius <zynomon@proton.me>
-Filename: dists/stable/main/binary-amd64/libcrash_1.2_amd64.deb
+Filename: dists/stable/main/binary-amd64/libcrash-1.2.deb
 Size: 1956
 MD5sum: 4b7ff8e0c6c6b8dbd312441ceb9e5c6d
 SHA1: e5f06dad428dbdbef3ee5e37e978a80647e3574c
@@ -52,7 +52,7 @@ Version: 1.2
 Priority: optional
 Section: libs
 Maintainer: Zynomon Aelius <zynomon@proton.me>
-Filename: dists/stable/main/binary-amd64/libterm_1.2_amd64.deb
+Filename: dists/stable/main/binary-amd64/libterm-1.2.deb
 Size: 4896
 MD5sum: 06e2cd741b50bbf8f3c6cec6d477355a
 SHA1: b7c3cbf013c9bcbeb2541bc06d31eafefee324e5
@@ -66,7 +66,7 @@ Version: 1.2
 Priority: optional
 Section: libs
 Maintainer: Zynomon Aelius <zynomon@proton.me>
-Filename: dists/stable/main/binary-amd64/libtrigonometry_1.2_amd64.deb
+Filename: dists/stable/main/binary-amd64/libtrigonometry-1.2.deb
 Size: 796
 MD5sum: 9cdde37cb85f4b81925dfe04d246beaf
 SHA1: e0443eaea5cf4d0e685580b8a4bd45d9565dfd4d
@@ -81,7 +81,7 @@ Priority: optional
 Maintainer:  Zynomon aelius
 Installed-Size: 225
 Depends: libqt6core6, libqt6gui6, libqt6widgets6, systemd
-Filename: dists/stable/main/binary-amd64/once.deb
+Filename: dists/stable/main/binary-amd64/once-1.1.deb
 Size: 98608
 MD5sum: 0a550ddef7ade20e8ffb719c341b56dc
 SHA1: caeda7e1b3308447fdd46a0106a83772bc195534
@@ -96,7 +96,7 @@ Priority: optional
 Section: utils
 Maintainer: Zynomon Aelius <zynomon@proton.me>
 Depends: libqt6core6, libqt6gui6, libqt6widgets6
-Filename: dists/stable/main/binary-amd64/vex.deb
+Filename: dists/stable/main/binary-amd64/vex-4.3.deb
 Size: 234144
 MD5sum: 87a3bee5bb7ee4b8389f690a069bdbac
 SHA1: 7218a057cf682f40e94dd214a796932ba58c134f
