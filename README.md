@@ -27,27 +27,25 @@ sudo ./.sh
 ## File Structure
 
 ```
-error/
-├── .sh
-├── errapp.list
-├── error.list
-├── error.gpg
-├── Live.hook
-├── bootloaders/
-│   ├── grub-pc/
-│   │   ├── grub.cfg
-│   │   ├── splash.png
-│   │   └── live-theme/
-│   └── isolinux/
-│       ├── isolinux.cfg
-│       ├── live.cfg.in
-│       └── menu.cfg
-└── usr/share/fonts/opentype/error.os/
-    ├── NimbusMonoPS-Bold.otf
-    └── NimbusMonoPS-Regular.otf
-```
+.
+├── bootloaders
+│   ├── grub-pc   # MODERN UEFI 
+│   │   ├── grub.cfg
+│   │   ├── live-theme
+│   │   │   └── theme.txt
+│   │   └── splash.png
+│   └── isolinux   # BIOS 
+│       ├── isolinux.cfg
+│       ├── live.cfg.in
+│       ├── menu.cfg
+│       └── splash.png
+├── errapp.list     # APPS THAT IT WILL HAVE IN THE .ISO
+├── error.gpg       # "ERROR.OS" DEBIAN REPOSITORY SIGNATURE
+├── error.list      # REPOSITORY LIST
+├── Live.hook       # SCRIPT TO RUN INSIDE THE LIVE SYSTEM BEFORE IT PACKS TO .ISO
+└── README.md       # THIS IS WHAT YOU ARE CURRENTLY READING
 
-<img align=center width="1400" height="700" alt="NSbeta" src="https://github.com/user-attachments/assets/e13eb000-3fd4-440a-af80-2844fd6c79fb" />
+```
 
 ## Features
 
@@ -72,13 +70,13 @@ lb confg && lb build
 
 ```
 
-## Screenshots
+## Preview
+[Screencast_20260926_130204.webm](https://github.com/user-attachments/assets/256fe5c8-4fdd-4f93-8098-44adf4109871)
 
-![Build Interface](https://github.com/user-attachments/assets/722005a2-0425-4e2b-bfb8-06df7175e534)
+# Naming
 
-![Live-Build Structure](https://github.com/user-attachments/assets/0c70dff4-ad49-4b96-ae9d-0c932c626a67)
-
-![ISO Generation](https://github.com/user-attachments/assets/7d19e7ad-2c88-4bd8-924c-54fe4d65212d)
+<img align=center width="1400" height="700" alt="NSbeta" src="https://github.com/user-attachments/assets/e13eb000-3fd4-440a-af80-2844fd6c79fb" />
+this is how it generates an iso file name.
 
 ## Recovering Configurations
 
@@ -91,7 +89,7 @@ lb confg && lb build
 
 **"Tool Missing: lb"**
 ```bash
-sudo apt install live-build
+sudo apt install live-build git
 ```
 
 **"Permission denied"**
@@ -103,6 +101,7 @@ sudo ./.sh
 - Check build.log
 - Verify 10GB+ free space
 - Check internet connection
+- You Need a debian system at host (Other hosts arent even tested)
 
 **"Missing config files"**
 Use "Recover Configs" menu option
@@ -116,9 +115,18 @@ Edit these files:
 - `bootloaders/grub-pc/splash.png` - Boot splash
 
 # If you wonder how it looks,
-<img width="1398" height="766" alt="image" src="https://github.com/user-attachments/assets/56c588f9-1995-4f05-8c88-26540ee6d153" />
-<img width="1398" height="766" alt="image" src="https://github.com/user-attachments/assets/a9125c59-8830-4250-974f-64750338deec" />
 
-<img width="1398" height="766" alt="image" src="https://github.com/user-attachments/assets/2f89178a-afd1-4ecc-aa72-099c00715820" />
-
-> this is not an exact fresh error.os system there are some additions
+ <img width="1280" height="800" alt="e" src="https://github.com/user-attachments/assets/0e58fc9f-0a90-427a-a1d8-71e18ff2b328" />
+  <img width="1280" height="800" alt="76" src="https://github.com/user-attachments/assets/e1d019ce-888e-48fd-8cc2-23600463dae8" />
+  <img src="https://github.com/user-attachments/assets/0b395737-ede0-4473-83a1-ce3d94ea6b80" alt="gif" />
+  <img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/3938d369-bd56-42a1-a578-6996e49a93b9" />
+  <img width="1280" height="800" alt="dtyt" src="https://github.com/user-attachments/assets/e0dcc805-0198-46b2-8ad2-e85172f3bdd9" />
+  <img width="1280" height="800" alt="cal" src="https://github.com/user-attachments/assets/a5bf7928-cab1-4554-b6e8-f06c44ce1bf1" />
+  <img src="https://github.com/user-attachments/assets/d809d312-d066-4c54-a659-1f0b1f816437" alt="image" />
+  <img width="1280" height="775" alt="image" src="https://github.com/user-attachments/assets/c969cc44-a6c1-44ce-8a53-e24dfb69b514" />
+  <img width="1280" height="800" alt="err" src="https://github.com/user-attachments/assets/75d0ce8f-4eb1-4c0d-9969-f98e22196f06" />
+  <img width="1280" height="800" alt="7" src="https://github.com/user-attachments/assets/383608b6-c732-424a-a046-8c403497b7ba" />
+<img width="1280" height="800" alt="6" src="https://github.com/user-attachments/assets/46c846e9-78e1-465b-87e7-042fc5788c21" />
+<img width="1280" height="800" alt="5" src="https://github.com/user-attachments/assets/7f5f9c32-0e31-4f93-8ef8-cc0edffe7ad1" />
+<img width="1280" height="800" alt="4" src="https://github.com/user-attachments/assets/2883b798-8dd0-41a9-83a9-2492e85be8f2" />
+<img width="1280" height="800" alt="3" src="https://github.com/user-attachments/assets/0b64bcf5-b0e5-48b0-9f61-92aa90d4edf1" />
