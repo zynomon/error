@@ -111,7 +111,7 @@ Priority: optional
 Section: utils
 Maintainer: Zynomon Aelius <zynomon@proton.me>
 Depends: libqt6core6, libqt6gui6, libqt6widgets6
-Filename: dists/stable/main/binary-amd64/vex-4.3.deb
+Filename: dists/stable/main/binary-amd64/vex-4.4.deb
 Size: 234144
 MD5sum: 87a3bee5bb7ee4b8389f690a069bdbac
 SHA1: 7218a057cf682f40e94dd214a796932ba58c134f

@@ -293,6 +293,97 @@ border-radius: initial;
 const ISO_DOWNLOADS = [
 {
   branch: "neospace",
+  title: "Neospace 26+1",
+  description: "Latest stable Neospace release. September 2026. Bugfix update to NS26.",
+  downloadLinks: [
+    {
+      url: "https://archive.org/download/error.os_NS26-1/error.os_NS26%2B1.iso",
+      shieldImg: "https://img.shields.io/badge/ISO-1a365d?style=for-the-badge&logo=sonarr&logoColor=white"
+    },
+    {
+      url: "https://archive.org/details/error.os_NS26-1",
+      shieldImg: "https://img.shields.io/badge/Ia-1a365d?style=for-the-badge&logo=internetarchive&logoColor=white"
+    },
+    {
+      url: "https://archive.org/download/error.os_NS26-1/sums.7z",
+      shieldImg: "https://img.shields.io/badge/sums.7z-1a365d?style=for-the-badge&logo=7-zip&logoColor=white"
+    }
+  ],
+  wcmd: `wget https://archive.org/download/error.os_NS26-1/error.os_NS26%2B1.iso`,
+  fullDescription: `<h1>Neospace 26+1</h1>
+<hr>
+
+<p>It's just a debian based Operating System, not a reskin or something as lame as that, this is an operating system where you will face issues and problems on a daily basis, so the question is.. <b>can you keep up?</b> or quit using it like a looser. This is not a motto nor description of any kind, but reading this is enough for you to understand regarding who is using it.</p>
+
+<p><b>"NS26+1" is the fixation of the bugs found in "NS26" and packed into ".iso"</b></p>
+
+<h2>What it Includes;</h2>
+
+<p>A debian setup simplified. KDE version 6.0+ (Debian repo dependant). error.os packages for daily basis works like text editor <a href="https://github.com/zynomon/vex">Vex 4.4</a>, web browser <a href="https://github.com/zynomon/onu">onu 0.6</a>, documentation application <a href="https://github.com/zynomon/error.doc">doc 1.5</a>, and system manager <a href="https://github.com/zynomon/err_">err_ 3.1</a>.</p>
+<p>Each one of these projects are fully open source. Yep even the exact script used to build this ISO, pretty naive of the team to do so. Right?</p>
+
+<hr>
+
+<h2>Requirements</h2>
+
+<details>
+  <summary><b>CPU:</b> 2+ cores 64-bit processor</summary>
+  <p>Any modern 64-bit processor from AMD or Intel with 2 or more cores.</p>
+</details>
+
+<details>
+  <summary><b>RAM:</b> 2 GB+ minimum</summary>
+  <p>At least 2GB of system memory is required to boot and run the desktop environment.</p>
+</details>
+
+<details>
+  <summary><b>Storage:</b> 9 GB+ recommended</summary>
+  <p>At least 9 GB of available disk space is recommended for installation and basic usage.</p>
+</details>
+
+<details>
+  <summary><b>Graphics:</b> Anything (optional)</summary>
+  <p>Any graphics card or integrated graphics that can display a desktop environment. A dedicated GPU is optional.</p>
+</details>
+
+<details>
+  <summary><b>Motherboard:</b> UEFI/BIOS supported</summary>
+  <p>Any motherboard with standard UEFI or legacy BIOS support.</p>
+</details>
+
+<hr>
+
+<p>Latest updates and patches will be provided by Debian and error.os (both).</p>
+
+<hr>
+
+<h2>Verification Instructions</h2>
+
+<p>Download the ISO and verification archive:</p>
+<pre><code>error.os_NS26+1.iso sums.7z</code></pre>
+
+<p>Extract everything from the archive:</p>
+<pre><code>7z x sums.7z</code></pre>
+
+<p>This will extract: <code>error.os_NS26+1.iso.asc</code>, <code>error.os_NS26+1.iso.md5</code>, <code>error.os_NS26+1.iso.sha256</code>, and <code>error.os_NS26+1.iso.sha512</code>.</p>
+
+<p>Verify GPG signature authenticity:</p>
+<pre><code>gpg --verify error.os_NS26+1.iso.asc error.os_NS26+1.iso</code></pre>
+<p>Expected output: <code>Good signature</code></p>
+
+<p>Verify MD5 checksum:</p>
+<pre><code>md5sum -c error.os_NS26+1.iso.md5</code></pre>
+
+<p>Verify SHA256 checksum:</p>
+<pre><code>sha256sum -c error.os_NS26+1.iso.sha256</code></pre>
+
+<p>Verify SHA512 checksum:</p>
+<pre><code>sha512sum -c error.os_NS26+1.iso.sha512</code></pre>
+
+<p>All checksum commands should return: <code>error.os_NS26+1.iso: OK</code></p>`
+},
+{
+  branch: "neospace",
   title: "Neospace 2026",
   description: "Latest stable Neospace release. April 2026. GPG signed.",
   downloadLinks: [
