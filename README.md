@@ -21,9 +21,9 @@
 ```bash
 git clone https://github.com/zynomon/error.git
 cd error
-sudo ./.sh
+sudo bash ./.sh
 ```
-
+> sudo is needed for running `sudo lb *` commands 
 ## File Structure
 
 ```
